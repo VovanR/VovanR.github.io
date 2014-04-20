@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= @document.title %></title>
+    <meta name="description" content="<%= @document.description %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+</head>
+<body>
+    <h1><%= @document.title %></h1>
+    <%- @content %>
+</body>
+</html>
