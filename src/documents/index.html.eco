@@ -13,7 +13,7 @@ isPage: true
         </div>
 
         <div class="post__meta">
-            <span class="post__date"><%= post.date %></span>
+            <span class="post__date"><%= @pubDate post.date %></span>
         </div>
     </article>
 <% end %>

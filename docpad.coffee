@@ -1,3 +1,5 @@
+moment = require 'moment'
+
 docpadConfig = {
 
     # =================================
@@ -14,6 +16,10 @@ docpadConfig = {
                 'bower_components/normalize-css/normalize.css'
             ]
 
+        # Localized date
+        pubDate: (date) ->
+            moment(date).format('LL')  # December 23 2013
+
 
     # Collections
 
@@ -27,6 +33,13 @@ docpadConfig = {
             robotskirtOptions:
                 EXT_AUTOLINK: false
 
+
+    # Events
+
+    events:
+        generateBefore: (opts) ->
+            # Configure Moment.js
+            moment.lang('ru')
 }
 
 # Export our DocPad Configuration

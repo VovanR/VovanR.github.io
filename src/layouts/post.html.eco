@@ -8,6 +8,6 @@ layout: default
     </div>
 
     <div class="post__meta">
-        <span class="post__date"><%= @document.date %></span>
+        <span class="post__date"><%= @pubDate @document.date %></span>
     </div>
 </article>
