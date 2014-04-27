@@ -21,6 +21,12 @@ docpadConfig = {
         posts: ->
             @getCollection('html').findAllLive({ relativeOutDirPath: 'posts' })
 
+
+    plugins:
+        robotskirt:
+            robotskirtOptions:
+                EXT_AUTOLINK: false
+
 }
 
 # Export our DocPad Configuration
