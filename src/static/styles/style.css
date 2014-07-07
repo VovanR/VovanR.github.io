@@ -11,3 +11,93 @@ pre code {
 code .highlight {
     background-color: #EEE8D5;
 }
+
+
+samp {
+    color: #AA0033;
+}
+
+
+kbd {
+    background-color: #FDF6E3;
+    border-bottom: 2px solid #D5BB7E;
+    border-left: 1px solid #EDE2C9;
+    border-right: 2px solid #C9AF6F;
+    border-top: 1px solid #F8E8BB;
+    color: #007000;
+    padding: 1px 5px;
+    text-shadow: -1px -1px 0px #fff;
+}
+
+
+
+/* Bookmarklet */
+
+.bookmarklet {
+    background: #E6F1F9;
+    border-radius: 5px;
+    cursor: move;
+    display: inline-block;
+    padding: 2px 15px 2px 7px;
+    position: relative;
+}
+
+.bookmarklet:hover {
+    text-decoration: none;
+}
+
+.bookmarklet:before {
+    content: '::';
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    padding: 0 5px 0 0;
+}
+
+.bookmarklet:after {
+    color: #CCCCCC;
+    content: "установка: перетащите эту ссылку на панель закладок";
+    cursor: default;
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    height: 14px;
+    left: 110%;
+    line-height: 14px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    width: 410px;
+}
+
+.bookmarklet:hover:after {
+    color: #657B83;
+}
+
+
+
+/* Note */
+/* from developers.google.com */
+
+.note,
+.caution,
+.warning,
+.special {
+    background-color: #EFEFEF;
+    border-left: 6px solid #999999;
+    padding: 5px 5px 5px 10px;
+}
+
+.warning {
+    background-color: #FFCCCC;
+    border-left-color: #AA0033;
+}
+
+.caution {
+    background-color: #FFFBD9;
+    border-left-color: #FFEF70;
+}
+
+.special {
+    background-color: #E5ECF9;
+    border-left-color: #3366CC;
+}

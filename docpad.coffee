@@ -11,7 +11,7 @@ docpadConfig = {
 
         # Specify some site properties
         site:
-
+            title: 'Блог Владимира Родкина'
             styles: [
                 'bower_components/normalize-css/normalize.css'
             ]

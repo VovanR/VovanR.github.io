@@ -14,7 +14,22 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <h1><%= @document.title %></h1>
-    <%- @content %>
+
+<header class="header">
+    <% if @document.url is '/': %>
+        <h1 class="logo">
+            <span class="logo__text">
+                <%= @site.title %>
+            </span>
+        </h1>
+    <% else: %>
+        <h2 class="logo">
+            <a href="/" class="logo__text big-link"><%= @site.title %></a>
+        </h2>
+    <% end %>
+</header>
+
+<%- @content %>
+
 </body>
 </html>
