@@ -22,26 +22,30 @@ floatleft.png
 
 **Второй** &mdash; перед закрытием родительского блока, добавлять пустой блок:
 
-	<div class="clear"></div>
-	
+```html
+<div class="clear"></div>
+```
+
 [Пример 2](http://jsfiddle.net/VovanR/3Mhuk/1/)
 
 
 **Третий** &mdash; использование `clear fix`
 Берем из [CSS-Tricks](http://css-tricks.com/snippets/css/clear-fix/):
 
-	/* Clear */
-	.group:before,
-	.group:after {
-	    content: "";
-	    display: table;
-	}
-	.group:after {
-	    clear: both;
-	}
-	.group {
-	    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-	}
+```css
+/* Clear */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+```
 
 Вот что получилось:
 [Пример 3](http://jsfiddle.net/VovanR/Lknps/3/)

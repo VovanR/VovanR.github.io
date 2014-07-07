@@ -13,13 +13,17 @@ Go_Home.png
 Но и такую тривиальную задачу можно повесить на отдельную кнопочку:
 <a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Home</a>
 
-	javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);
+```javascript
+javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);
+```
 
 И, чтобы быстро зайти в админку, находясь на любой странице сайта:
 <a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);" title="Админка">Admin</a>
 
-	javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
-	
+```javascript
+javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
+```
+
 <p class="special">**Новинка:** Теперь вы можете в более удобной форме сгенерировать для себя похожую кнопочку. Под катом находится форма генератор. Жми Читать дальше:</p>
 
 <fieldset>
@@ -50,7 +54,7 @@ Go_Home.png
 	</dl>
 </fieldset>
 
-<script type="text/javascript">
+<script>
 ppp = function() {
 	var link = document.getElementById('p-go-home-link').value;
 	var result = "javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/";

@@ -1,0 +1,13 @@
+/* Pre Code */
+
+code {
+    color: #007000;
+}
+
+pre code {
+    white-space: pre-wrap;
+}
+
+code .highlight {
+    background-color: #EEE8D5;
+}
