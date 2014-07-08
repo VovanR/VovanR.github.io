@@ -12,6 +12,8 @@ docpadConfig = {
         # Specify some site properties
         site:
             title: 'Блог Владимира Родкина'
+            author: 'Владимир Родкин'
+            copyrightUrl: 'http://twitter.com/VovanR'
             styles: [
                 'vendor/normalize-css/normalize.css'
             ]

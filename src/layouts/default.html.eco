@@ -31,5 +31,15 @@
 
 <%- @content %>
 
+<footer class="footer">
+    <div class="footer-l">
+        © <a href="<%= @site.copyrightUrl %>"><%= @site.author %></a>, <%= (new Date).getFullYear() %>
+    </div>
+
+    <div class="footer-r">
+        Работает на <a href="http://docpad.org">DocPad</a>, хостится на <a href="https://pages.github.com/">GitHub Pages</a>
+    </div>
+</footer>
+
 </body>
 </html>
