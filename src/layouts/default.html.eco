@@ -9,7 +9,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
     <link rel="stylesheet" href="/styles/hljs/solarized_light.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>

@@ -13,7 +13,7 @@ docpadConfig = {
         site:
             title: 'Блог Владимира Родкина'
             styles: [
-                'bower_components/normalize-css/normalize.css'
+                'vendor/normalize-css/normalize.css'
             ]
 
         # Localized date
