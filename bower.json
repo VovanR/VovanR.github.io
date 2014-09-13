@@ -1,8 +1,8 @@
 {
-    "name": "vovanr.com",
-    "version": "0.0.0",
-    "dependencies": {
-        "normalize-css": "~3.0.1"
-    },
-    "private": true
+  "name": "vovanr.com",
+  "version": "0.0.0",
+  "dependencies": {
+    "normalize-css": "~3.0.1"
+  },
+  "private": true
 }
