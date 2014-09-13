@@ -10,6 +10,8 @@
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
     <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/vendor/pure/pure.css">
+    <link rel="stylesheet" href="/styles/pure-layout-side-menu/css/layouts/side-menu.css">
     <link rel="stylesheet" href="/styles/hljs/solarized_light.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
@@ -24,7 +26,7 @@
         </h1>
     <% else: %>
         <h2 class="logo">
-            <a href="/" class="logo__text big-link"><%= @site.title %></a>
+            <a href="/" class="logo__text"><%= @site.title %></a>
         </h2>
     <% end %>
 </header>
@@ -32,12 +34,18 @@
 <%- @content %>
 
 <footer class="footer">
-    <div class="footer-l">
-        © <a href="<%= @site.copyrightUrl %>"><%= @site.author %></a>, <%= (new Date).getFullYear() %>
-    </div>
+    <div class="legal pure-g">
+        <div class="pure-u-1-2">
+            <p class="legal-copyright">
+                © <a href="<%= @site.copyrightUrl %>"><%= @site.author %></a>, <%= (new Date).getFullYear() %>
+            </p>
+        </div>
 
-    <div class="footer-r">
-        Работает на <a href="http://docpad.org">DocPad</a>, хостится на <a href="https://pages.github.com/">GitHub Pages</a>
+        <div class="pure-u-1-2">
+            <p class="legal-license">
+                Работает на <a href="http://docpad.org">DocPad</a>, хостится на <a href="https://pages.github.com/">GitHub Pages</a>
+            </p>
+        </div>
     </div>
 </footer>
 

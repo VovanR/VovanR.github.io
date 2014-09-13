@@ -19,13 +19,13 @@ samp {
 
 
 kbd {
-    background-color: #FDF6E3;
+    padding: 1px 5px;
+    border-top: 1px solid #F8E8BB;
+    border-right: 2px solid #C9AF6F;
     border-bottom: 2px solid #D5BB7E;
     border-left: 1px solid #EDE2C9;
-    border-right: 2px solid #C9AF6F;
-    border-top: 1px solid #F8E8BB;
+    background-color: #FDF6E3;
     color: #007000;
-    padding: 1px 5px;
     text-shadow: -1px -1px 0px #fff;
 }
 
@@ -34,12 +34,12 @@ kbd {
 /* Bookmarklet */
 
 .bookmarklet {
-    background: #E6F1F9;
-    border-radius: 5px;
-    cursor: move;
+    position: relative;
     display: inline-block;
     padding: 2px 15px 2px 7px;
-    position: relative;
+    border-radius: 5px;
+    background: #E6F1F9;
+    cursor: move;
 }
 
 .bookmarklet:hover {
@@ -47,26 +47,26 @@ kbd {
 }
 
 .bookmarklet:before {
-    content: '::';
     display: inline-block;
-    text-shadow: 0 1px 0 #fff;
     padding: 0 5px 0 0;
+    content: '::';
+    text-shadow: 0 1px 0 #fff;
 }
 
 .bookmarklet:after {
-    color: #CCCCCC;
-    content: "установка: перетащите эту ссылку на панель закладок";
-    cursor: default;
-    display: block;
-    font-size: 12px;
-    font-style: italic;
-    height: 14px;
-    left: 110%;
-    line-height: 14px;
-    margin-top: -7px;
     position: absolute;
     top: 50%;
+    left: 110%;
+    display: block;
+    margin-top: -7px;
     width: 410px;
+    height: 14px;
+    color: #CCCCCC;
+    content: "установка: перетащите эту ссылку на панель закладок";
+    font-style: italic;
+    font-size: 12px;
+    line-height: 14px;
+    cursor: default;
 }
 
 .bookmarklet:hover:after {
@@ -82,22 +82,66 @@ kbd {
 .caution,
 .warning,
 .special {
-    background-color: #EFEFEF;
-    border-left: 6px solid #999999;
     padding: 5px 5px 5px 10px;
+    border-left: 6px solid #999999;
+    background-color: #EFEFEF;
 }
 
 .warning {
-    background-color: #FFCCCC;
     border-left-color: #AA0033;
+    background-color: #FFCCCC;
 }
 
 .caution {
-    background-color: #FFFBD9;
     border-left-color: #FFEF70;
+    background-color: #FFFBD9;
 }
 
 .special {
-    background-color: #E5ECF9;
     border-left-color: #3366CC;
+    background-color: #E5ECF9;
+}
+
+
+
+
+
+.header {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 1.5em 2em;
+    max-width: 800px;
+}
+
+.header .logo {
+    margin: 0;
+    font-weight: 300;
+    font-size: 3em;
+}
+
+.header .logo__text {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer {
+    margin: 0 auto;
+    padding: 1.5em 2em;
+    max-width: 800px;
+    border-top: 1px solid #eee;
+    font-size: 87.5%;
+}
+
+.legal {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.legal-copyright {
+    text-align: left;
+}
+
+.legal-license {
+    text-align: right;
 }
