@@ -15,7 +15,11 @@ docpadConfig = {
             author: 'Владимир Родкин'
             copyrightUrl: 'http://twitter.com/VovanR'
             styles: [
-                'vendor/normalize-css/normalize.css'
+                '/vendor/normalize-css/normalize.css'
+                '/vendor/pure/pure.css'
+                '/styles/pure-layout-side-menu/css/layouts/side-menu.css'
+                '/styles/hljs/solarized_light.css'
+                '/styles/style.css'
             ]
 
         # Localized date

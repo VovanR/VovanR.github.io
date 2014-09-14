@@ -113,16 +113,20 @@ kbd {
     max-width: 800px;
 }
 
-.header .logo {
+
+
+.logo {
     margin: 0;
     font-weight: 300;
     font-size: 3em;
+
+    &__text {
+        color: #333;
+        text-decoration: none;
+    }
 }
 
-.header .logo__text {
-    color: #333;
-    text-decoration: none;
-}
+
 
 .footer {
     margin: 0 auto;
@@ -131,6 +135,8 @@ kbd {
     border-top: 1px solid #eee;
     font-size: 87.5%;
 }
+
+
 
 .legal {
     margin: 0 auto;
@@ -144,4 +150,25 @@ kbd {
 
 .legal-license {
     text-align: right;
+}
+
+
+
+.post {
+    &__title {
+        position: relative;
+        margin: 2em 0 1em;
+        color: #888;
+        font-weight: 300;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__text {
+    }
+
+    &__meta {
+    }
 }

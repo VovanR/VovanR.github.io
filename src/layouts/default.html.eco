@@ -9,11 +9,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
-    <link rel="stylesheet" href="/vendor/pure/pure.css">
-    <link rel="stylesheet" href="/styles/pure-layout-side-menu/css/layouts/side-menu.css">
-    <link rel="stylesheet" href="/styles/hljs/solarized_light.css">
-    <link rel="stylesheet" href="/styles/style.css">
+    <%- @getBlock('styles').add(@site.styles).toHTML() %>
 </head>
 <body>
 
