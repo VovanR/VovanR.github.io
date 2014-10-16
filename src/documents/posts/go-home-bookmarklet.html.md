@@ -11,14 +11,16 @@ Go_Home.png
 
 Часто надо перейти на главную страницу сайта. Для этого приходится убирать лишнее в адресной строке.
 Но и такую тривиальную задачу можно повесить на отдельную кнопочку:
-<a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Home</a>
+
+<a class="b-bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Home</a>
 
 ```javascript
 javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);
 ```
 
 И, чтобы быстро зайти в админку, находясь на любой странице сайта:
-<a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);" title="Админка">Admin</a>
+
+<a class="b-bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);" title="Админка">Admin</a>
 
 ```javascript
 javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
@@ -49,7 +51,7 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 			<label for="p-go-home-button">Кнопка:</label>
 		</dt>
 		<dd>
-			<a id="p-go-home-button" class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);">PushMe</a>
+			<a id="p-go-home-button" class="b-bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);">PushMe</a>
 		</dd>
 	</dl>
 </fieldset>

@@ -11,7 +11,7 @@ docpadConfig = {
 
         # Specify some site properties
         site:
-            title: 'Блог Владимира Родкина'
+            title: 'Владимир Родкин'
             author: 'Владимир Родкин'
             copyrightUrl: 'http://twitter.com/VovanR'
             styles: [
@@ -38,6 +38,9 @@ docpadConfig = {
         robotskirt:
             robotskirtOptions:
                 EXT_AUTOLINK: false
+        stylus:
+            stylusOptions:
+                compress: true
 
 
     # Events

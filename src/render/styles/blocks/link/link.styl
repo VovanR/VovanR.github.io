@@ -1,0 +1,31 @@
+/*
+ * Link
+ */
+
+a,
+.b-link {
+    border-bottom: 1px solid;
+    color: #0433ff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color ease 0.15s,
+                border ease 0.15s;
+
+    &:visited,
+    &._state_visited {
+        color: #3304ff;
+    }
+
+    &:hover,
+    &._state_hover {
+        color: #ff3304;
+    }
+
+    &:active,
+    &._state_active {
+    }
+
+    &:focus,
+    &._state_focus {
+    }
+}

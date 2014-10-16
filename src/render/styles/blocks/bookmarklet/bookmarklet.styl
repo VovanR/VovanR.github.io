@@ -1,0 +1,39 @@
+/*
+ * Bookmarklet
+ */
+
+.b-bookmarklet {
+    position: relative;
+    display: inline-block;
+    padding: 2px 15px 2px 7px;
+    border: 1px solid;
+    background-color: #fff;
+    cursor: move;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:before {
+        display: inline-block;
+        margin-right: 5px;
+        content: '::';
+    }
+
+    &:after {
+        position: absolute;
+        left: 100%;
+        display: inline-block;
+        margin-left: 1em;
+        color: #ccc;
+        content: "перетащите эту ссылку на панель закладок";
+        white-space: nowrap;
+        font-style: italic;
+        font-size: 0.75em;
+        cursor: default;
+    }
+
+    &:hover:after {
+        color: #657b83;
+    }
+}

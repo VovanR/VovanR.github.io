@@ -13,32 +13,32 @@
 </head>
 <body>
 
-<header class="header">
-    <% if @document.url is '/': %>
-        <h1 class="logo">
-            <span class="logo__text">
+<header class="b-header">
+    <% if @document.url is '/index.html': %>
+        <h1 class="b-logo">
+            <span class="b-logo__text">
                 <%= @site.title %>
             </span>
         </h1>
     <% else: %>
-        <h2 class="logo">
-            <a href="/" class="logo__text"><%= @site.title %></a>
+        <h2 class="b-logo">
+            <a href="/" class="b-logo__text"><%= @site.title %></a>
         </h2>
     <% end %>
 </header>
 
 <%- @content %>
 
-<footer class="footer">
-    <div class="legal pure-g">
+<footer class="b-footer">
+    <div class="b-legal pure-g">
         <div class="pure-u-1-2">
-            <p class="legal-copyright">
+            <p class="b-legal-copyright">
                 © <a href="<%= @site.copyrightUrl %>"><%= @site.author %></a>, <%= (new Date).getFullYear() %>
             </p>
         </div>
 
         <div class="pure-u-1-2">
-            <p class="legal-license">
+            <p class="b-legal-license">
                 Работает на <a href="http://docpad.org">DocPad</a>, хостится на <a href="https://pages.github.com/">GitHub Pages</a>
             </p>
         </div>
