@@ -11,9 +11,11 @@ docpadConfig = {
 
         # Specify some site properties
         site:
-            title: 'Владимир Родкин'
+            title: 'VovanR.com'
             author: 'Владимир Родкин'
+            description: 'Блог о фронт-энд вэб-разработке, кодинге и дизайне'
             copyrightUrl: 'http://twitter.com/VovanR'
+            twitter: '@VovanR'
             styles: [
                 '/vendor/normalize-css/normalize.css'
                 '/vendor/pure/pure.css'
@@ -21,6 +23,17 @@ docpadConfig = {
                 '/styles/hljs/solarized_light.css'
                 '/styles/style.css'
             ]
+
+        # Get the prepared site/document title
+        # Often we would like to specify particular formatting to our page's title
+        # we can apply that formatting here
+        pageTitle: ->
+            # if we have a document title, then we should use that and suffix the site's title onto it
+            if @document.title
+                "#{@document.title} — #{@site.title}"
+            # if our document does not have it's own title, then we should just use the site's title
+            else
+                @site.title
 
         # Localized date
         pubDate: (date) ->
