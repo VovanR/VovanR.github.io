@@ -43,14 +43,12 @@ sudo tasksel install lamp-server
 
 Открываем в браузере [http://localhost/](http://localhost/). Если увидели: <samp>"It works!"</samp> — все сделано правильно.
 
-Зададим веб-серверу apache его имя &mdash; для этого введем в консоле:
-
+Зададим веб-серверу apache его имя — для этого введем в консоле:
 ```
 sudo nano /etc/apache2/apache2.conf
 ```
 
 И добавим строку:
-
 ```
 ServerName localhost
 ```
@@ -58,7 +56,6 @@ ServerName localhost
 Вместо `localhost` можно указать ваш домен, если он настроен.
 
 Перезагружаем apache:
-
 ```
 sudo service apache2 restart
 ```
@@ -104,18 +101,22 @@ sudo a2enmod rewrite
 mkdir ~/Sites
 ```
 
-Чтобы жить было легче &mdash; создаем симлинк:
+Чтобы жить было легче — создаем симлинк:
 
 ```
 sudo ln -s $HOME/Sites /sites
 ```
 
 <div class="warning">
-Если ваш раздел зашифрован, то директорию для сайтов придется создавать в другом месте. Например:
+Если ваш раздел зашифрован, то директорию для сайтов придется создавать в другом месте:
 
-<pre><code>mkdir /home/Sites
-sudo ln -s /home/Sites /sites
-sudo ln -s /home/Sites $HOME/sites</code></pre>
+<pre><code>sudo mkdir /home/public_html
+cd /home/public_html
+sudo mkdir `whoami`
+sudo chown `whoami`:`whoami` `whoami`
+chmod +x `whoami`
+ln -s /home/public_html/`whoami` /home/`whoami`/Sites
+sudo ln -s /home/public_html/`whoami` /sites</code></pre>
 </div>
 
 
@@ -182,9 +183,18 @@ sudo service apache2 restart
 
 
 Установим модуль php для работы с JSON
-
 ```
 sudo apt-get install php5-json
+```
+
+Модуль php для работы с картинками
+```
+sudo apt-get install php5-gd
+```
+
+Кеширование
+```
+sudo apt-get install php5-memcache
 ```
 
 
@@ -203,8 +213,8 @@ sudo apt-get install dnsmasq
 address=/vovan/192.168.10.303
 ```
 
-Где `vovan` &mdash; это имя нашего домена, а `192.168.10.303` &mdash; ip адрес компьютера.
-Айпи нужен для того, чтобы наши сайты были доступны из виртуальных машин. Если же вам такая возможность не нужна, то можно оставить адрес по-умолчанию &mdash; `127.0.0.1`.
+Где `vovan` — это имя нашего домена, а `192.168.10.303` — ip адрес компьютера.
+Айпи нужен для того, чтобы наши сайты были доступны из виртуальных машин. Если же вам такая возможность не нужна, то можно оставить адрес по-умолчанию — `127.0.0.1`.
 Узнать свой локальный айпи можно с помощью команды `ifconfig`:
 
 ```
@@ -236,7 +246,6 @@ sudo service dnsmasq restart
 mkdir -p ~/Sites/adminer/www
 mv ~/Downloads/adminer-3.6.1-mysql.php ~/Sites/adminer/www/index.php
 ```
-
 
 ```
 sudo nano /etc/apache2/sites-available/vovan.conf
@@ -278,34 +287,12 @@ sudo service apache2 restart
 <h3 id="anchor-ide">Установка среды разработки</h3>
 Большинство сред разработки написаны на Java, поэтому с нее и начнем.
 
-<h4 id="anchor-java">Установка Java Platform (JDK)</h4>
-[источник](http://habrahabr.ru/post/143113/)
+<h4 id="anchor-java">Установка Java Platform (JDK/JRE)</h4>
 
-1. Идем на сайт загрузок Java SE ([http://www.oracle.com/technetwork/java/javase/downloads](http://www.oracle.com/technetwork/java/javase/downloads)), и качаем пакет (`.rpm`), согласно нашей архитектуре:
-Linux x86 (32-bit)
-Linux x64 (64-bit)
-2. Устанавливаем `alien`, по сути это конвертер пакетов который перепакует скачанные `.rpm` пакеты в нужный нам формат `.deb`, со своими хитростями.
-
-	sudo apt-get install alien
-
-3. Натравливаем «чужого» на скачанный rpm.
-
-	sudo alien jdk-7u4-linux-x64.rpm --scripts
-
-На данном этапе, будет сгенерирован `.deb` пакет, в той же директории.
-4. Далее по накатанной, устанавливаем пакет, создаем симлинки и радуемся жизни.
-
-	sudo dpkg -i jdk_1.7.009-1_i386.deb
-	mkdir -p ~/.mozilla/plugins
-	ln -s /usr/java/jdk1.7.0_09/jre/lib/i386/libjavaplugin_jni.so ~/.mozilla/plugins/
-	ln -s /usr/java/jdk1.7.0_09/jre/lib/i386/libnpjp2.so ~/.mozilla/plugins/
-
-
-Либо есть способ по-проще:
-
-	sudo add-apt-repository ppa:webupd8team/java
-	sudo apt-get update
-	sudo apt-get install oracle-java7-installer
+```
+sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
+sudo apt-get install oracle-java8-installer oracle-java8-set-default
+```
 
 
 <h4 id="anchor-netbeans">Установка NetBeans IDE</h4>

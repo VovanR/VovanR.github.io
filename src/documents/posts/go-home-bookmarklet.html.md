@@ -70,7 +70,7 @@ ppp = function() {
 };
 </script>
 
-Работает это довольно просто: `window.location.protocol` &mdash; возвращает протокол (обычно `http:`), и `window.location.host` &mdash; возвращает хост (например `draft.blogger.com`). Результат применяем к адресу страницы &mdash; `window.location.href`
+Работает это довольно просто: `window.location.protocol` — возвращает протокол (обычно `http:`), и `window.location.host` — возвращает хост (например `draft.blogger.com`). Результат применяем к адресу страницы — `window.location.href`
 
 Пример:
-Находимся на странице `http://vovanr.com/2011/12/blog-post.html`. Щелкаем букмарклет &mdash; попадаем на `http://vovanr.com/`
+Находимся на странице `http://vovanr.com/2011/12/blog-post.html`. Щелкаем букмарклет — попадаем на `http://vovanr.com/`
