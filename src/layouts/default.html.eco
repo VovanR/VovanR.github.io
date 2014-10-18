@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= @pageTitle() %></title>
 
-    <% if @document.url is '/index.html': %>
+    <% if @document.url is '/': %>
         <meta name="description" content="<%= @site.description %>">
     <% end %>
 
@@ -22,7 +22,7 @@
 <body>
 
 <header class="b-header">
-    <% if @document.url is '/index.html': %>
+    <% if @document.url is '/': %>
         <h1 class="b-logo">
             <span class="b-logo__text">
                 <%= @site.author %>
