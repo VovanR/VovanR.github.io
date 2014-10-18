@@ -26,7 +26,7 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
 ```
 
-<p class="special">**Новинка:** Теперь вы можете в более удобной форме сгенерировать для себя похожую кнопочку. Под катом находится форма генератор. Жми Читать дальше:</p>
+<p class="special"><strong>Новинка:</strong> Теперь вы можете в более удобной форме сгенерировать для себя похожую кнопочку. Под катом находится форма генератор. Жми Читать дальше:</p>
 
 <fieldset>
 <legend>Сгенерировать буркмарклет</legend>

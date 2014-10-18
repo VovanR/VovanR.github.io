@@ -14,20 +14,20 @@ date: 2013-01-13
 ```
 
 <p class="note">
-Конкретно для Xubuntu 12.04 - 14.04. Подойдет и для других дистрибутивов, я думаю.
+Конкретно для Xubuntu 12.04 — 14.04. Подойдет и для других дистрибутивов, я думаю.
 </p>
 
 Оглавление:
 
 - [Установка LAMP сервера](#anchor-lamp)
-	- - [Модули apache](#anchor-lamp-apache)
+    - [Модули apache](#anchor-lamp-apache)
 - [Директория проектов](#anchor-sites)
 - [Добавление сайтов в apache](#anchor-site-apache)
 - [Настройка локального DNS](#anchor-dns)
 - [Установка Adminer](#anchor-adminer)
 - [Установка среды разработки](#anchor-ide)
-	- - [Установка Java Platform (JDK)](#anchor-java)
-	- - [Установка NetBeans IDE](#anchor-netbeans)
+    - [Установка Java Platform (JDK)](#anchor-java)
+    - [Установка NetBeans IDE](#anchor-netbeans)
 - [Установка VirtualBox](#anchor-virtualbox)
 
 
@@ -41,7 +41,7 @@ sudo tasksel install lamp-server
 ```
 
 
-Открываем в браузере [http://localhost/](http://localhost/). Если увидели: <samp>"It works!"</samp> – все сделано правильно.
+Открываем в браузере [http://localhost/](http://localhost/). Если увидели: <samp>"It works!"</samp> — все сделано правильно.
 
 Зададим веб-серверу apache его имя &mdash; для этого введем в консоле:
 
@@ -69,7 +69,7 @@ sudo service apache2 restart
 <pre><code>nano ~/.bash_aliases
 alias apre="sudo service apache2 restart"</code></pre>
 
-Чтобы алиас заработал сразу - можно ввести команду:
+Чтобы алиас заработал сразу — можно ввести команду:
 
 <pre><code>source ~/.bashrc</code></pre>
 </div>
@@ -223,7 +223,7 @@ sudo service dnsmasq restart
 
 
 <div class="special">
-Теперь наши сайты доступны по адресам типа [http://example.vovan](http://example.vovan)
+Теперь наши сайты доступны по адресам типа <a href="http://example.vovan">http://example.vovan</a>
 </div>
 
 

@@ -15,12 +15,12 @@ date: 2013-03-03
 
 
 
-### Обрезаем прозрачные областа картинки
-
+### Обрезаем прозрачные области картинки
 
 ![Подготовка картинки с прозрачным фоном](/images/photoshop-actions/photoshop-actions__action-1.png)
 
-<kbd>Image &rarr; Trim...</kbd>
+<kbd>Image</kbd>→<kbd>Trim...</kbd>
+
 `Based On: Transparent Pixels`
 `Trim Away: Top, Left, Bottom, Right`
 
@@ -28,10 +28,10 @@ date: 2013-03-03
 
 ### Обрезаем однотонные области картинки <small>(например иконка на белом фоне)</small>
 
-
 ![Подготовка картинки с цветным фоном](/images/photoshop-actions/photoshop-actions__action-2.png)
 
-<kbd>Image &rarr; Trim...</kbd>
+<kbd>Image</kbd>→<kbd>Trim...</kbd>
+
 `Based On: Bottom Right Pixel Color`
 `Trim Away: Top, Left, Bottom, Right`
 
@@ -39,10 +39,10 @@ date: 2013-03-03
 
 ### Для вертикального градиента делаем шинину 1px
 
-
 ![Подготовка градиента](/images/photoshop-actions/photoshop-actions__action-3.png)
 
-<kbd>Image &rarr; Canvas Size...</kbd>
+<kbd>Image</kbd>→<kbd>Canvas Size...</kbd>
+
 Снимаем галку `"Relative"`, в поле `"Width"` пишем `"1"`.
 
 <p class="special">
