@@ -27,10 +27,18 @@
             <span class="b-logo__text">
                 <%= @site.author %>
             </span>
+            <span class="b-logo__description">
+                <%= @site.description %>
+            </span>
         </h1>
     <% else: %>
         <div class="b-logo">
-            <a href="/" class="b-logo__text"><%= @site.author %></a>
+            <a href="/" class="b-logo__text">
+                <%= @site.author %>
+            </a>
+            <span class="b-logo__description">
+                <%= @site.description %>
+            </span>
         </div>
     <% end %>
 </header>

@@ -13,7 +13,7 @@ docpadConfig = {
         site:
             title: 'VovanR.com'
             author: 'Владимир Родкин'
-            description: 'Блог о фронт-энд вэб-разработке, кодинге и дизайне'
+            description: 'О фронт-энде, кодинге и дизайне'
             copyrightUrl: 'http://twitter.com/VovanR'
             twitter: '@VovanR'
             styles: [
