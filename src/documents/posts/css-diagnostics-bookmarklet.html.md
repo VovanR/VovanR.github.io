@@ -9,7 +9,7 @@ tags:
 date: 2012-07-22
 ```
 
-css-diagnostics-bookmarklet.png Отображение недочетов на странице
+![Отображение недочетов на странице](/images/css-diagnostics-bookmarklet/css-diagnostics-bookmarklet__preview.png)
 
 Часто бывает так, что по окончании процесса верстки и сборки сайта, забываешь проверить код на наличие недочетов. Таких как ссылки со значением атрибута `href="#"` или логотип без тайтла.
 Именно для поиска таких мест и придумали [диагностические css стили](http://css-tricks.com/snippets/css/css-diagnostics/).
