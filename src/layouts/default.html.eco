@@ -43,7 +43,9 @@
     <% end %>
 </header>
 
-<%- @content %>
+<div class="content">
+    <%- @content %>
+</div>
 
 <footer class="b-footer">
     <div class="b-legal pure-g">
