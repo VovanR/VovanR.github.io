@@ -17,5 +17,8 @@
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
     "start": "node_modules/docpad/bin/docpad-server"
+  },
+  "dependencies": {
+    "docpad-plugin-cleanurls": "~2.7.0"
   }
 }
