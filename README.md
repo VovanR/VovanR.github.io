@@ -2,6 +2,11 @@
 
 Powered by [DocPad](http://docpad.org/).
 
+## Deploy
+
+```
+docpad deploy-ghpages --env static
+```
 
 ## License
 
