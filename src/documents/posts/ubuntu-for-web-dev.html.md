@@ -192,7 +192,7 @@ sudo apt-get install php5-json
 sudo apt-get install php5-gd
 ```
 
-Кеширование
+Кэширование
 ```
 sudo apt-get install php5-memcache
 ```

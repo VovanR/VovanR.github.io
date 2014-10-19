@@ -35,7 +35,7 @@ $ locate php.ini
 $ sudo nano /Users/vovan/php.ini
 ```
 
-Включаем поиск: <kbd>Ctrl</kbd>+<kbd>w</kbd>, пишем слово _zone_, жемем <kbd>Enter</kbd>:
+Включаем поиск: <kbd>Ctrl</kbd>+<kbd>w</kbd>, пишем слово _zone_, жмем <kbd>Enter</kbd>:
 
 ```
 [Date]
