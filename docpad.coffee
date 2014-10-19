@@ -11,6 +11,7 @@ docpadConfig = {
 
         # Specify some site properties
         site:
+            url: 'http://vovanr.com'
             title: 'VovanR.com'
             author: 'Владимир Родкин'
             description: 'О фронт-энде, кодинге и дизайне'
@@ -56,6 +57,11 @@ docpadConfig = {
         ghpages:
             deployRemote: 'origin'
             deployBranch: 'master'
+        sitemap:
+            cachetime: 600000
+            changefreq: 'weekly'
+            priority: 0.5
+            filePath: 'sitemap.xml'
 
 
     # Events

@@ -2,6 +2,7 @@
 title: "Блог"
 layout: "default"
 isPage: true
+changefreq: 'daily'
 ---
 
 <section class="b-posts-list">

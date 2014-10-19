@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "docpad-plugin-cleanurls": "~2.7.0",
-    "docpad-plugin-ghpages": "~2.4.3"
+    "docpad-plugin-ghpages": "~2.4.3",
+    "docpad-plugin-sitemap": "~2.2.0"
   }
 }
