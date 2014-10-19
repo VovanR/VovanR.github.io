@@ -72,11 +72,11 @@ sudo mount -a
 ```
 sudo -i
 
-cd /home/vovan &amp;&amp; rsync -avz --progress --delete /home/vovan /media/My-Book-Live/backup --exclude ".*" --exclude "Downloads"
+cd /home/vovan && rsync -avz --progress --delete /home/vovan /media/My-Book-Live/backup --exclude ".*" --exclude "Downloads"
 ```
 
 А так я делаю бэкап виндовой папки "Мои документы".
 
 ```
-cd '/media/Documents/Мои документы' &amp;&amp; rsync -avz --progress --delete '/media/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
+cd '/media/Documents/Мои документы' && rsync -avz --progress --delete '/media/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
 ```
