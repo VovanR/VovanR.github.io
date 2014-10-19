@@ -53,6 +53,9 @@ docpadConfig = {
         stylus:
             stylusOptions:
                 compress: true
+        ghpages:
+            deployRemote: 'origin'
+            deployBranch: 'master'
 
 
     # Events
