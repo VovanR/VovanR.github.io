@@ -32,7 +32,7 @@ date: 2013-01-13
 
 
 
-<h3 id="anchor-lamp">Установка LAMP сервера</h3>
+<h3 id="anchor-lamp">Установка <acronym title="Linux, Apache, MySQL, and PHP">LAMP</acronym> сервера</h3>
 [источник](http://help.ubuntu.ru/wiki/lamp)
 
 ```
@@ -41,9 +41,9 @@ sudo tasksel install lamp-server
 ```
 
 
-Открываем в браузере [http://localhost/](http://localhost/). Если увидели: <samp>"It works!"</samp> — все сделано правильно.
+Открываем в браузере [http://localhost/](http://localhost/). Если увидели: <samp>It works!</samp> — все сделано правильно.
 
-Зададим веб-серверу apache его имя — для этого введем в консоле:
+Зададим веб-серверу *Apache* его имя — для этого введем в консоле:
 ```
 sudo nano /etc/apache2/apache2.conf
 ```
@@ -55,7 +55,7 @@ ServerName localhost
 
 Вместо `localhost` можно указать ваш домен, если он настроен.
 
-Перезагружаем apache:
+Перезапустим *Apache*:
 ```
 sudo service apache2 restart
 ```
@@ -73,7 +73,7 @@ alias apre="sudo service apache2 restart"</code></pre>
 
 
 
-<h4 id="anchor-lamp-apache">Модули apache</h4>
+<h4 id="anchor-lamp-apache">Модули <em>Apache</em></h4>
 Смотрим подключенные модули:
 
 ```
@@ -120,7 +120,7 @@ sudo ln -s /home/public_html/`whoami` /sites</code></pre>
 </div>
 
 
-<h3 id="anchor-site-apache">Добавление сайтов в apache</h3>
+<h3 id="anchor-site-apache">Добавление сайтов в <em>Apache</em></h3>
 
 ```
 sudo nano /etc/apache2/sites-available/vovan.conf
@@ -142,7 +142,7 @@ sudo nano /etc/apache2/sites-available/vovan.conf
 </VirtualHost>
 ```
 
-Включаем созданный хост в апач:
+Включаем созданный хост в *Apache*:
 
 ```
 sudo a2ensite vovan
@@ -175,19 +175,19 @@ sudo a2ensite vovan
 </VirtualHost>
 ```
 
-Перезагружаем Apache:
+Перезапустим *Apache*:
 
 ```
 sudo service apache2 restart
 ```
 
 
-Установим модуль php для работы с JSON
+Установим модуль *PHP* для работы с *JSON*
 ```
 sudo apt-get install php5-json
 ```
 
-Модуль php для работы с картинками
+Модуль *PHP* для работы с картинками
 ```
 sudo apt-get install php5-gd
 ```
@@ -198,8 +198,8 @@ sudo apt-get install php5-memcache
 ```
 
 
-<h3 id="anchor-dns">Настройка локального DNS</h3>
-Установим `dnsmasq`
+<h3 id="anchor-dns">Настройка локального <acronym title="Domain Name System">DNS</acronym></h3>
+Установим *Dnsmasq*
 
 ```
 sudo apt-get install dnsmasq
@@ -213,7 +213,7 @@ sudo apt-get install dnsmasq
 address=/vovan/192.168.10.303
 ```
 
-Где `vovan` — это имя нашего домена, а `192.168.10.303` — ip адрес компьютера.
+Где `vovan` — это имя нашего домена, а `192.168.10.303` — *IP* адрес компьютера.
 Айпи нужен для того, чтобы наши сайты были доступны из виртуальных машин. Если же вам такая возможность не нужна, то можно оставить адрес по-умолчанию — `127.0.0.1`.
 Узнать свой локальный айпи можно с помощью команды `ifconfig`:
 
@@ -224,7 +224,7 @@ ifconfig
 <samp>eth0      Link encap:Ethernet  HWaddr 00:55:88:00:00:00
 inet addr:<strong style="text-decoration:underline;">192.168.10.303</strong> ...</samp>
 
-Перезапустим dnsmasq:
+Перезапустим *Dnsmasq*:
 
 ```
 sudo service dnsmasq restart
@@ -238,8 +238,8 @@ sudo service dnsmasq restart
 
 
 
-<h3 id="anchor-adminer">Установка Adminer</h3>
-Быстрая компактная альтернатива phpMyAdmin
+<h3 id="anchor-adminer">Установка <em>Adminer</em></h3>
+Быстрая компактная альтернатива *phpMyAdmin*
 Качаем: [http://www.adminer.org/](http://www.adminer.org/)
 
 ```
@@ -276,7 +276,7 @@ sudo nano /etc/apache2/sites-available/vovan.conf
 </VirtualHost>
 ```
 
-Перезагружаем apache:
+Перезапустим *Apache*:
 
 ```
 sudo service apache2 restart
@@ -285,9 +285,9 @@ sudo service apache2 restart
 
 
 <h3 id="anchor-ide">Установка среды разработки</h3>
-Большинство сред разработки написаны на Java, поэтому с нее и начнем.
+Большинство сред разработки написаны на *Java*, поэтому с нее и начнем.
 
-<h4 id="anchor-java">Установка Java Platform (JDK/JRE)</h4>
+<h4 id="anchor-java">Установка <em>Java Platform (JDK/JRE)</em></h4>
 
 ```
 sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
@@ -295,15 +295,17 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 ```
 
 
-<h4 id="anchor-netbeans">Установка NetBeans IDE</h4>
+<h4 id="anchor-netbeans">Установка <em>NetBeans IDE</em></h4>
 Качаем: [http://netbeans.org/downloads/](http://netbeans.org/downloads/)
 Устанавливаем:
 
-	sh ~/Downloads/netbeans-7.2.1-ml-php-linux.sh
+```
+sh ~/Downloads/netbeans-7.2.1-ml-php-linux.sh
+```
 
 
 
-<h3 id="anchor-virtualbox">Установка VirtualBox</h3>
+<h3 id="anchor-virtualbox">Установка <em>VirtualBox</em></h3>
 Устанавливаем виртуальную машину через менеджер пакетов...
 Из настроек виртуальной машины нас интересует только следующее:
 
