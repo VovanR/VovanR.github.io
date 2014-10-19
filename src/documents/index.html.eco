@@ -2,7 +2,7 @@
 title: "Блог"
 layout: "default"
 isPage: true
-changefreq: 'daily'
+sitemap: false
 ---
 
 <section class="b-posts-list">
