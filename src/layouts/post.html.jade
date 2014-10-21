@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+article.b-post
+    h1.b-post__title
+        != document.title
+
+    .b-post__text
+        != content
+
+    .b-post__meta
+        span.b-post__date
+            != pubDate(document.date)
