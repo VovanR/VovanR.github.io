@@ -18,6 +18,8 @@
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
     <%- @getBlock('styles').add(@site.styles).toHTML() %>
+
+    <script src="/vendor/modernizr/modernizr.js"></script>
 </head>
 <body>
 
