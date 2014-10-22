@@ -1,0 +1,20 @@
+---
+title: "Блог"
+layout: "default"
+isPage: true
+sitemap: false
+---
+
+section.b-posts-list
+    each post in getCollection('posts').toJSON()
+        article.b-post
+            h2.b-post__title
+                a(href= post.url)
+                    != post.title
+
+            .b-post__text
+                != post.contentRenderedWithoutLayouts
+
+            .b-post__meta
+                span.b-post__date
+                    != pubDate(post.date)

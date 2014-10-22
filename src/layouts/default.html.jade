@@ -1,0 +1,58 @@
+doctype html
+html(lang='ru')
+    head
+        title= pageTitle()
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        meta(name='twitter:card', content='summary')
+        meta(name='twitter:site', content= site.twitter)
+        meta(name='twitter:creator', content= site.twitter)
+
+        if document.url === '/'
+            meta(name='description', content= site.description)
+
+        //- Place favicon.ico and apple-touch-icon(s) in the root directory
+
+        != getBlock('styles').add(site.styles).toHTML()
+
+        script(src="/vendor/modernizr/modernizr.js")
+
+    body
+        header.b-header
+            if document.url === '/'
+                h1.b-logo
+                    span.b-logo__text
+                        != site.author
+                    span.b-logo__description
+                        != site.description
+            else
+                .b-logo
+                    a.b-logo__text(href='/')
+                        != site.author
+                    span.b-logo__description
+                        != site.description
+
+        .b-content
+            != content
+
+        footer.b-footer
+            .b-legal.pure-g
+                .pure-u-1-2
+                    p.b-legal-copyright
+                        | © <a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
+
+                .pure-u-1-2
+                    p.b-legal-license
+                        | Работает на <a href='http://docpad.org'>DocPad</a>, хостится на <a href='https://pages.github.com/'>GitHub Page</a>
+
+        //- Yandex.Metrika counter
+        script(src='//mc.yandex.ru/metrika/watch.js')
+        script
+            | try { var yaCounter14218288 = new Ya.Metrika({ id:14218288, webvisor:true });} catch(e) { }
+        noscript
+            div
+                img(src='//mc.yandex.ru/watch/14218288', style='position:absolute; left:-9999px;', alt='')
+        //- Yandex.Metrika counter
