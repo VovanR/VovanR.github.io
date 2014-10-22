@@ -1,0 +1,14 @@
+---
+layout: 'default'
+title: '500 Internal Server Error'
+dynamic: true
+sitemap: false
+---
+
+p
+    | Ooops! Something went wrong while we were processing your request to <code>#{req.url}</code>. Here's the details:
+
+p
+    pre
+        code
+            != err ? (err.message || err.stack || '') : ''
