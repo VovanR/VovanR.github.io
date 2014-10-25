@@ -5,16 +5,13 @@ isPage: true
 sitemap: false
 ---
 
-section.b-posts-list
+section.b-short-posts
     each post in getCollection('posts').toJSON()
-        article.b-post
-            h2.b-post__title
+        article.b-short-post
+            h2.b-short-post__title
                 a(href= post.url)
                     != post.title
 
-            .b-post__text
-                != post.contentRenderedWithoutLayouts
-
-            .b-post__meta
-                span.b-post__date
+            .b-short-post__meta
+                span.b-short-post__date
                     != pubDate(post.date)
