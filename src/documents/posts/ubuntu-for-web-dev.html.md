@@ -19,16 +19,19 @@ date: 2013-01-13
 
 Оглавление:
 
-- [Установка LAMP сервера](#anchor-lamp)
-    - [Модули apache](#anchor-lamp-apache)
+- [Установка *LAMP* сервера](#anchor-lamp)
+    - [Модули *Apache*](#anchor-lamp-apache)
 - [Директория проектов](#anchor-sites)
-- [Добавление сайтов в apache](#anchor-site-apache)
-- [Настройка локального DNS](#anchor-dns)
-- [Установка Adminer](#anchor-adminer)
+- [Добавление сайтов в *Apache*](#anchor-site-apache)
+- [*PHP*](#anchor-php)
+    - [Модули *PHP*](#anchor-php-modules)
+    - [Настройки *PHP* (php.ini)](#anchor-php-ini)
+- [Настройка локального *DNS*](#anchor-dns)
+- [Установка *Adminer*](#anchor-adminer)
 - [Установка среды разработки](#anchor-ide)
-    - [Установка Java Platform (JDK)](#anchor-java)
-    - [Установка NetBeans IDE](#anchor-netbeans)
-- [Установка VirtualBox](#anchor-virtualbox)
+    - [Установка *Java Platform (JDK)*](#anchor-java)
+    - [Установка *NetBeans IDE*](#anchor-netbeans)
+- [Установка *VirtualBox*](#anchor-virtualbox)
 
 
 
@@ -182,6 +185,10 @@ sudo service apache2 restart
 ```
 
 
+<h3 id="anchor-php"><em>PHP</em></h3>
+
+<h4 id="anchor-php-modules">Модули <em>PHP</em></h4>
+
 Установим модуль *PHP* для работы с *JSON*
 ```
 sudo apt-get install php5-json
@@ -196,6 +203,21 @@ sudo apt-get install php5-gd
 ```
 sudo apt-get install php5-memcache
 ```
+
+<h4 id="anchor-php-ini">Настройка <em>PHP</em> <small>(php.ini)</small></h4>
+
+```
+nano /etc/php5/apache2/php.ini
+```
+Меняем следующие настройки:
+```
+short_open_tag On
+error_reporting = E_ALL
+post_max_size = 128M
+upload_max_filesize = 512M
+date.timezone = "Europe/Moscow"
+```
+Свою временную зону смотрим по адресу [http://ru2.php.net/manual/en/timezones.php](http://ru2.php.net/manual/en/timezones.php).
 
 
 <h3 id="anchor-dns">Настройка локального <acronym title="Domain Name System">DNS</acronym></h3>
