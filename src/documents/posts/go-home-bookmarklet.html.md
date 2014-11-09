@@ -12,7 +12,7 @@ date: 2011-12-13
 Часто надо перейти на главную страницу сайта. Для этого приходится убирать лишнее в адресной строке.
 Но и такую тривиальную задачу можно повесить на отдельную кнопочку:
 
-<a class="b-bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Home</a>
+<a class="b-bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Index</a>
 
 ```javascript
 javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);
