@@ -4,8 +4,12 @@
 
 p,
 .b-paragraph {
-    margin: 0 0 1em;
+    margin: 0 0 15px;
     padding: 0;
+
+    * + & {
+        margin-top: 15px;
+    }
 
     a,
     .b-link {

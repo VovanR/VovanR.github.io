@@ -1,45 +1,91 @@
-html
-    font-size: 100%
+html {
+    font-size: 100%;
+}
 
-body
-    line-height: 1.5
-    color: #777
+body {
+    line-height: 1.5;
+    color: #777;
+}
 
 
-h1
-h2
-h3
-h4
-h5
-h6
-    line-height: 1.1
+/*
+ * Headings
+ */
 
-h1
-    font-size: 2em
-    font-weight: 300
-    margin: 0 0 0.67em
+base-heading-font-family = "Helvetica Neue", Helvetica, Arial, sans-serif
+base-heading-font-weight = normal
+base-heading-color = #444
+base-heading-text-transform = none
+base-heading-margin-top = 25px
 
-h2
-    font-size: 1.5em
-    font-weight: 300
-    margin: 0 0 0.83em
+base-h1-font-size = 36px
+base-h1-line-height = 42px
 
-h3
-    font-size: 1.17em
-    font-weight: 400
-    margin: 0 0 1em
+base-h2-font-size = 24px
+base-h2-line-height = 30px
 
-h4
-    font-size: 1.125em
-    font-weight: 400
-    margin: 0 0 1.33em
+base-h3-font-size = 18px
+base-h3-line-height = 24px
 
-h5
-    font-size: 0.83em
-    font-weight: 600
-    margin: 0 0 1.67em
+base-h4-font-size = 16px
+base-h4-line-height = 22px
 
-h6
-    font-size: 0.67em
-    font-weight: 600
-    margin: 0 0 2.33em
+base-h5-font-size = 14px
+base-h5-line-height = 20px
+
+base-h6-font-size = 12px
+base-h6-line-height = 18px
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 base-margin-vertical;
+    font-family: base-heading-font-family;
+    font-weight: base-heading-font-weight;
+    color: base-heading-color;
+    text-transform: base-heading-text-transform;
+
+    * + & {
+        margin-top: base-heading-margin-top;
+    }
+}
+
+h1 {
+    font-size: base-h1-font-size;
+    line-height: base-h1-line-height;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: base-h2-font-size;
+    line-height: base-h2-line-height;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: base-h3-font-size;
+    line-height: base-h3-line-height;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: base-h4-font-size;
+    line-height: base-h4-line-height;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: base-h5-font-size;
+    line-height: base-h5-line-height;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: base-h6-font-size;
+    line-height: base-h6-line-height;
+    font-weight: 600;
+}
