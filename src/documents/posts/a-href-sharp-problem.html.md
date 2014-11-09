@@ -12,17 +12,17 @@ date: 2014-11-08
 
 Рассмотрим что можно использовать, а от чего лучше отказаться:
 
-## `a(href="link_anywhere")`
+## a(href="link_anywhere")
 Для обеспечения перехода к странице по ссылке, если отключен *JavaScript*.
 
 Пример №1: ссылка авторизации `a(href="/login/")` — открывает форму авторизации, а если *JavaScript* отключен, то осуществляет переходит на страницу авторизации.
 
 Пример №2: ссылка `a(href="#anchor-page-header")` — анимация скроллинга к началу страницы. Без *JavaScript* происходит перемещение к началу страницы, если шапке сайта задан `id="anchor-page-header"` или там создан якорь `a(name="anchor-page-header")`.
 
-## `a(href="#")`
+## a(href="#")
 Не использовать.
 
-## `a(href="javascript:void(0)")`
+## a(href="javascript:void(0)")
 Использовать только для букмарклетов.
 
 Например [букмарклет для перехода на главную страницу](/posts/go-home-bookmarklet):
@@ -33,20 +33,20 @@ date: 2014-11-08
 <a href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" class="b-bookmarklet" title="На главную">Index</a>
 
 
-## `a(href="")` или `a(href)`
+## a(href="") или a(href)
 Не использовать.
 
-## `a`
+## a
 Не использовать.
 Равносильно `span`.
 
-## `span`
+## span
 Использовать, если не нужна навигация клавишей <kbd>Tab</kbd> или с помощью плагина [VimFx](https://addons.mozilla.org/EN-US/firefox/addon/vimfx/).
 
-## `span(tabindex="0")`
+## span(tabindex="0")
 Использовать.
 
-## `button(type="button")`
+## button(type="button")
 Использовать.
 
 <table class="b-super-table">
@@ -76,7 +76,7 @@ date: 2014-11-08
 <td><span class="b-super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Навигация по Tab</td>
+<td class="b-super-table__problem">Навигация по <kbd>Tab</kbd></td>
 <td><span class="b-super-table__true">✓</span></td>
 <td><span class="b-super-table__true">✓</span></td>
 <td><span class="b-super-table__true">✓</span></td>
@@ -87,7 +87,7 @@ date: 2014-11-08
 <td><span class="b-super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Вызов по Enter</td>
+<td class="b-super-table__problem">Вызов по <kbd>Enter</kbd></td>
 <td><span class="b-super-table__true">✓</span></td>
 <td><span class="b-super-table__true">✓</span></td>
 <td><span class="b-super-table__true">✓</span></td>
@@ -98,7 +98,7 @@ date: 2014-11-08
 <td><span class="b-super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Вызов по Space</td>
+<td class="b-super-table__problem">Вызов по <kbd>Space</kbd></td>
 <td><span class="b-super-table__false">✗</span></td>
 <td><span class="b-super-table__false">✗</span></td>
 <td><span class="b-super-table__false">✗</span></td>
@@ -109,7 +109,7 @@ date: 2014-11-08
 <td><span class="b-super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">При отключенном JavaScript</td>
+<td class="b-super-table__problem">При отключенном <em>JavaScript</em></td>
 <td><span class="b-super-table__true">✓</span></td>
 <td><span class="b-super-table__false">✗</span></td>
 <td><span class="b-super-table__false">✗</span></td>
