@@ -6,5 +6,8 @@
     "modernizr": "~2.8.3",
     "normalize-css": "~3.0.1",
     "pure": "~0.5.0"
+  },
+  "dependencies": {
+    "uikit": "~2.11.1"
   }
 }
