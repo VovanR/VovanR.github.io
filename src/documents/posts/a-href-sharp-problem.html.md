@@ -132,3 +132,7 @@ date: 2014-11-08
 </tr>
 </tbody>
 </table>
+
+## Дополнительные материалы:
+- [Правильные ссылки](http://www.artlebedev.ru/tools/technogrette/html/links/)
+- [Почему `<a href="javascript:...">` - плохо](http://javascript.ru/unsorted/why_href_js_is_bad)
