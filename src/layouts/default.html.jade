@@ -18,7 +18,7 @@ html(lang='ru')
 
         != getBlock('styles').add(site.styles).toHTML()
 
-        script(src="/vendor/modernizr/modernizr.js")
+        script(src="/js/libs/modernizr/modernizr.js")
 
     body
         header.b-header
@@ -39,12 +39,12 @@ html(lang='ru')
             != content
 
         footer.b-footer
-            .b-legal.pure-g
-                .pure-u-1-2
+            .b-legal.uk-grid
+                .uk-width-1-2
                     p.b-legal-copyright
                         | © <a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
 
-                .pure-u-1-2
+                .uk-width-1-2
                     p.b-legal-license
                         | Работает на <a href='http://docpad.org'>DocPad</a>, хостится на <a href='https://pages.github.com/'>GitHub Page</a>
 

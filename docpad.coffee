@@ -18,9 +18,6 @@ docpadConfig = {
             copyrightUrl: 'http://twitter.com/VovanR'
             twitter: '@VovanR'
             styles: [
-                '/vendor/normalize-css/normalize.css'
-                '/vendor/pure/pure.css'
-                '/styles/hljs/solarized_light.css'
                 '/styles/style.css'
             ]
 

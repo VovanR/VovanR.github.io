@@ -2,7 +2,8 @@
     "exclude": [
         ".git/**",
         "node_modules/**",
-        "static/vendor/**"
+        "src/vendor/**",
+        "out/**"
     ],
     "always-semicolon": true,
     "block-indent": 4,

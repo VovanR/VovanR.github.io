@@ -16,7 +16,8 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
+    "start": "node_modules/docpad/bin/docpad-server",
+    "postinstall": "./node_modules/.bin/bower install"
   },
   "dependencies": {
     "docpad": "~6.69.1",
