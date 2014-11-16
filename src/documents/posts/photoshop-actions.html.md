@@ -2,8 +2,8 @@
 title: Photoshop экшены для верстальщика
 layout: post
 tags:
-  - 'Photoshop'
-  - 'Actions'
+  - 'photoshop'
+  - 'actions'
 date: 2013-03-03
 ```
 

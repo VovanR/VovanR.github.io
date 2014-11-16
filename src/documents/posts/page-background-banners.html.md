@@ -2,8 +2,8 @@
 title: Баннеры на фоне сайта
 layout: post
 tags:
-  - 'CSS'
-  - 'HTML'
+  - 'css'
+  - 'html'
 date: 2012-08-07
 ```
 

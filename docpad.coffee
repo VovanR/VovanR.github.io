@@ -20,6 +20,28 @@ docpadConfig = {
             styles: [
                 '/styles/style.css'
             ]
+            tagNames:
+                'wd-mybook-live': 'WD My Book Live'
+                actions: 'Actions'
+                apache: 'Apache'
+                backup: 'Backup'
+                bash: 'Bash'
+                bookmarklet: 'Bookmarklet'
+                bug: 'Bug'
+                css: 'CSS'
+                diagnostics: 'Diagnostics'
+                dns: 'DNS'
+                dnsmasq: 'Dnsmasq'
+                html: 'HTML'
+                java: 'Java'
+                javascript: 'JavaScript'
+                lamp: 'LAMP'
+                linux: 'Linux'
+                netbeans: 'NetBeans'
+                photoshop: 'Photoshop'
+                php: 'PHP'
+                svn: 'SVN'
+                virtualbox: 'VirtualBox'
 
         # Get the prepared site/document title
         # Often we would like to specify particular formatting to our page's title

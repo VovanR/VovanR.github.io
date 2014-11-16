@@ -11,8 +11,8 @@ article.b-post
 
     .b-post__meta
         span.b-tags
-            each val in document.tags
-                span(class='b-tags__tag')= val
+            each tag in document.tags
+                span(class='b-tags__tag')= site.tagNames[tag] || tag
 
         span.b-post__date
             != pubDate(document.date)

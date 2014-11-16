@@ -2,8 +2,8 @@
 title: Переключаем пост на Habrahabr в мобильный вид
 layout: post
 tags:
-  - 'Bookmarklet'
-  - 'JavaScript'
+  - 'bookmarklet'
+  - 'javascript'
 date: 2011-11-05
 ```
 

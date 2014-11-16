@@ -2,8 +2,8 @@
 title: Букмарклет для сброса кэша
 layout: post
 tags:
-  - 'Bookmarklet'
-  - 'JavaScript'
+  - 'bookmarklet'
+  - 'javascript'
 date: 2011-12-12
 ```
 

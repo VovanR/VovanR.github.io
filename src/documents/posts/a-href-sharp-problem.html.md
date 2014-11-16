@@ -2,7 +2,7 @@
 title: Как не использовать a(href="#")
 layout: post
 tags:
-  - 'JavaScript'
+  - 'javascript'
 date: 2014-11-08
 ```
 
