@@ -10,7 +10,12 @@ article.b-post
         != content
 
     .b-post__meta
+        span.b-tags
+            each val in document.tags
+                span(class='b-tags__tag')= val
+
         span.b-post__date
             != pubDate(document.date)
+
         .b-post__share
             <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,gplus" data-yashareTheme="counter"></div>
