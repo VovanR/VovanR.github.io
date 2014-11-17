@@ -208,7 +208,7 @@ sudo apt-get install php5-memcache
 <h4 id="anchor-php-ini">Настройка <em>PHP</em> <small>(php.ini)</small></h4>
 
 ```
-nano /etc/php5/apache2/php.ini
+sudo nano /etc/php5/apache2/php.ini
 ```
 Меняем следующие настройки:
 ```
@@ -228,7 +228,9 @@ date.timezone = "Europe/Moscow"
 sudo apt-get install dnsmasq
 ```
 
-Вносим правку в файл `/etc/dnsmasq.conf`
+```
+sudo nano /etc/dnsmasq.conf
+```
 Находим строку с настройкой адреса `address=/`
 Правим ее следующим образом:
 
