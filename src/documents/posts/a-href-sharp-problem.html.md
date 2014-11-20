@@ -3,6 +3,7 @@ title: Как не использовать a(href="#")
 layout: post
 tags:
   - 'javascript'
+  - 'html'
 date: 2014-11-08
 ```
 
@@ -48,6 +49,8 @@ date: 2014-11-08
 
 ## button(type="button")
 Использовать.
+
+## Таблица возможностей
 
 <table class="b-super-table">
 <thead>
@@ -111,13 +114,13 @@ date: 2014-11-08
 <tr>
 <td class="b-super-table__problem">При отключенном <em>JavaScript</em></td>
 <td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
+<td><span>-</span></td>
 </tr>
 <tr>
 <td class="b-super-table__problem">Нет <em>URL</em> при наведении</td>
