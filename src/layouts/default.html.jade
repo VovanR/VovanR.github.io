@@ -36,6 +36,8 @@ html(lang='ru')
                         != site.author
                     span.b-logo__description
                         != site.description
+            .b-google-plusone
+                .g-plusone(data-annotation="none", data-href="http://vovanr.com")
 
         .b-content
             != content
@@ -58,3 +60,13 @@ html(lang='ru')
             div
                 img(src='//mc.yandex.ru/watch/14218288', style='position:absolute; left:-9999px;', alt='')
         //- Yandex.Metrika counter
+
+        //- +1 Button
+        script
+            | window.___gcfg = {lang: 'ru'};
+            | (function() {
+            |     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            |     po.src = 'https://apis.google.com/js/platform.js';
+            |     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            | })();
+        //- +1 Button
