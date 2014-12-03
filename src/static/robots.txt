@@ -2,3 +2,5 @@
 # http://code.google.com/web/controlcrawlindex/
 
 User-agent: *
+
+Sitemap: http://vovanr.com/sitemap.xml

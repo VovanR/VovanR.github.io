@@ -14,10 +14,6 @@ html(lang='ru')
         if document.url === '/'
             meta(name='description', content= site.description)
 
-        //- Place favicon.ico and apple-touch-icon(s) in the root directory
-        link(rel="shortcut icon", href="/favicon.ico")
-        link(rel="apple-touch-icon-precomposed", href="/apple-touch-icon.png")
-
         != getBlock('styles').add(site.styles).toHTML()
 
         script(src="/js/libs/modernizr/modernizr.js")
@@ -44,11 +40,11 @@ html(lang='ru')
             .b-legal.uk-grid
                 .uk-width-1-2
                     p.b-legal-copyright
-                        | © <a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
+                        | ©&nbsp;<a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
 
                 .uk-width-1-2
                     p.b-legal-license
-                        | Работает на <a href='http://docpad.org'>DocPad</a>, хостится на <a href='https://pages.github.com/'>GitHub Page</a>
+                        | Работает&nbsp;на&nbsp;<a href='http://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Page</a>
 
         //- Yandex.Metrika counter
         script(src='//mc.yandex.ru/metrika/watch.js')
