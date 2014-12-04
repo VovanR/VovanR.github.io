@@ -7,11 +7,11 @@
 
 
 .b-short-post {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.25em;
 
     &__title {
         position: relative;
-        margin: 0 0 0.15em;
+        margin: 0;
         font-weight: 300;
         font-size: 1.25em;
         color #333;
@@ -19,10 +19,15 @@
 
     &__meta {
         line-height: 1.2;
+        color: rgba(0, 0, 0, 0);
+        transition: color ease 0.25s;
+
+        .b-short-post:hover & {
+            color: rgba(0, 0, 0, 0.5);
+        }
     }
 
     &__date {
-        text-transform: uppercase;
         letter-spacing: 0.12em;
         font-size: 0.6em;
     }
