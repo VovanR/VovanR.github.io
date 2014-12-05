@@ -17,6 +17,10 @@ html(lang='ru')
         link(rel="shortcut icon", href="/favicon.ico")
         link(rel="apple-touch-icon", href="/apple-touch-icon.png")
 
+        //- http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        link(rel="icon", sizes="192x192", href="/favicon-192x192.png")
+        meta(name="theme-color", content="#154489")
+
         != getBlock('styles').add(site.styles).toHTML()
 
         script(src="/js/libs/modernizr/modernizr.js")
