@@ -9,8 +9,8 @@ date: 2014-11-20
 
 ## Установка *Bower*
 У вас должен быть установлен *Node.js* и *Git*.
-Для установки *Node.js* на локальной машине, я советую использовать [Node Version Manager](https://github.com/creationix/nvm).
-Теперь ставим [Bower](http://bower.io/)
+Для установки *Node.js* на локальной машине, я советую использовать [Node Version Manager](//github.com/creationix/nvm).
+Теперь ставим [Bower](//bower.io/)
 ```
 npm install -g bower
 ```
@@ -59,7 +59,7 @@ STATICFILES_DIRS = (
 
 ### Пример подключения *jQuery* из *CDN*
 За основу взят шаблон [HTML5 Boilerplate](
-https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html)
+//github.com/h5bp/html5-boilerplate/blob/master/dist/index.html)
 ```django
 <!doctype html>
 <html class="no-js" lang="">
@@ -115,4 +115,5 @@ https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html)
 ```
 
 ## Дополнительные материалы:
-[Bower: зачем фронтенду нужен менеджер пакетов](http://nano.sapegin.ru/all/bower)
+[Bower: зачем фронтенду нужен менеджер пакетов](//nano.sapegin.ru/all/bower)
+[How To Install Node.js on an Ubuntu 14.04 server](//www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
