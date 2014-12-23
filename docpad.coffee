@@ -31,6 +31,7 @@ docpadConfig = {
                 bug: 'Bug'
                 css: 'CSS'
                 diagnostics: 'Diagnostics'
+                diff: 'diff'
                 django: 'Django'
                 dns: 'DNS'
                 dnsmasq: 'Dnsmasq'
@@ -39,10 +40,12 @@ docpadConfig = {
                 javascript: 'JavaScript'
                 lamp: 'LAMP'
                 linux: 'Linux'
+                meld: 'Meld'
                 netbeans: 'NetBeans'
                 photoshop: 'Photoshop'
                 php: 'PHP'
                 svn: 'SVN'
+                ubuntu: 'Ubuntu'
                 virtualbox: 'VirtualBox'
 
         # Get the prepared site/document title

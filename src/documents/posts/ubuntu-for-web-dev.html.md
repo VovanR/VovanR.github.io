@@ -2,14 +2,15 @@
 title: Настройка Ubuntu для веб-разработчика
 layout: post
 tags:
+  - 'apache'
   - 'dns'
   - 'dnsmasq'
-  - 'php'
-  - 'apache'
   - 'html'
   - 'java'
-  - 'linux'
   - 'lamp'
+  - 'linux'
+  - 'php'
+  - 'ubuntu'
   - 'virtualbox'
 date: 2013-01-13
 ```

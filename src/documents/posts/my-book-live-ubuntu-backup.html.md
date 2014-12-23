@@ -4,6 +4,7 @@ layout: post
 tags:
   - 'backup'
   - 'linux'
+  - 'ubuntu'
   - 'wd-my-book-live'
 date: 2012-01-04
 ```
