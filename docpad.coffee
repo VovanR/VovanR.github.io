@@ -30,6 +30,7 @@ docpadConfig = {
                 bower: 'Bower'
                 bug: 'Bug'
                 css: 'CSS'
+                development: 'Development'
                 diagnostics: 'Diagnostics'
                 diff: 'diff'
                 django: 'Django'
