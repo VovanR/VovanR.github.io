@@ -12,7 +12,7 @@ docpadConfig = {
         # Specify some site properties
         site:
             url: 'http://vovanr.com'
-            title: 'VovanR.com'
+            title: 'Блог Владимира Родкина'
             author: 'Владимир Родкин'
             description: 'О фронт-энде, кодинге и дизайне'
             copyrightUrl: 'http://twitter.com/VovanR'
@@ -55,7 +55,7 @@ docpadConfig = {
         pageTitle: ->
             # if we have a document title, then we should use that and suffix the site's title onto it
             if @document.title
-                "#{@document.title} — #{@site.title}"
+                @document.title
             # if our document does not have it's own title, then we should just use the site's title
             else
                 @site.title
