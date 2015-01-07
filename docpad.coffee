@@ -14,7 +14,7 @@ docpadConfig = {
             url: 'http://vovanr.com'
             title: 'Блог Владимира Родкина'
             author: 'Владимир Родкин'
-            description: 'О фронт-энде, кодинге и дизайне'
+            description: 'Про фронт-энд'
             copyrightUrl: 'http://twitter.com/VovanR'
             twitter: '@VovanR'
             styles: [
