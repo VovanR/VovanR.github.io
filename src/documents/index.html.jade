@@ -6,7 +6,7 @@ sitemap: false
 
 section.b-short-posts
     each post in getCollection('posts').toJSON()
-        article.b-short-post
+        article.b-short-post.b-short-post_state_inactive
             h2.b-short-post__title
                 a(href= post.url)
                     != post.title
@@ -14,3 +14,20 @@ section.b-short-posts
             .b-short-post__meta
                 span.b-short-post__date
                     != pubDate(post.date)
+
+script
+    | (function (global) {
+    |     // We don't waiting for footer dom loaded
+    |     var posts = document.querySelectorAll('.b-short-post');
+    |     var postsLength = posts.length;
+    |     var showNext = function (index) {
+    |         setTimeout(function () {
+    |             posts[index].classList.remove('b-short-post_state_inactive');
+    |             index += 1;
+    |             if (index < postsLength) {
+    |                 showNext(index);
+    |             }
+    |         }, 25);
+    |     };
+    |     showNext(0);
+    | })(window);
