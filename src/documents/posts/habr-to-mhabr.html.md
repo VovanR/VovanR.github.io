@@ -9,17 +9,17 @@ date: 2011-11-05
 
 ![](/images/habr-to-mhabr/habr-to-mhabr__preview.png)
 
-Букмарклет кнопка для переключения страницы [Хабрахабр](http://habrahabr.ru/) в мобильный вид.
+Букмарклет кнопка для переключения страницы [Хабрахабр](//habrahabr.ru/) в мобильный вид.
 
 **Установка:**
 Перетащите эту ссылку на вашу панель закладок:
 
-<a class="b-bookmarklet" title="Habr to mHabr" href="javascript: var myurl = window.location.pathname; myurl = myurl.match(/\/\d{6}\//); location.href = 'http://habrahabr.ru/mob/post' + escape(myurl[0]); void(0);">Habr to mHabr</a>
+<a class="b-bookmarklet" title="Habr to mHabr" href="javascript:!function(o){var n=o.location;n.href=n.protocol+'//m.'+n.host+n.pathname}(window);void(0);">to mHabr</a>
 
 Или создайте новую закладку, в адрес вставьте код:
 
 ```javascript
-javascript: var myurl = window.location.pathname; myurl = myurl.match(/\/\d{6}\//); location.href = 'http://habrahabr.ru/mob/post' + escape(myurl[0]); void(0);
+javascript:!function(o){var n=o.location;n.href=n.protocol+'//m.'+n.host+n.pathname}(window);void(0);
 ```
 
 Затем добавить эту закладку в вашу панель закладок.
@@ -31,6 +31,4 @@ javascript: var myurl = window.location.pathname; myurl = myurl.match(/\/\d{6}\/
 Я обычно интересные статьи сохраняю в веб архив _(Ctrl+s) **"Веб архив (единственный файл)"**_ в формате _**.mht**_ и читаю на телефоне через оперу мобайл.
 Ранняя версия:
 
-```javascript
-javascript: var myurl = window.location.pathname; myarr = myurl.split('/'); var i = myarr.length - 2; myurl = myarr[i]; location = 'http://habrahabr.ru/mob/post/' + escape(myurl); void(0);
-```
+Исходники проекта: [Habr To mHabr Bookmarklet](//github.com/VovanR/habr-to-mhabr-bookmarklet)
