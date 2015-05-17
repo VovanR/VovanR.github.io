@@ -23,6 +23,7 @@ docpadConfig = {
             tagNames:
                 'wd-mybook-live': 'WD My Book Live'
                 actions: 'Actions'
+                amd: 'AMD'
                 apache: 'Apache'
                 backup: 'Backup'
                 bash: 'Bash'
@@ -45,6 +46,7 @@ docpadConfig = {
                 netbeans: 'NetBeans'
                 photoshop: 'Photoshop'
                 php: 'PHP'
+                requirejs: 'RequireJS'
                 svn: 'SVN'
                 ubuntu: 'Ubuntu'
                 virtualbox: 'VirtualBox'
