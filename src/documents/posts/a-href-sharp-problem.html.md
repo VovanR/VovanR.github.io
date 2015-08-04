@@ -9,7 +9,7 @@ date: 2014-11-08
 
 Решил разобраться чем заменить *HTML* тэг `a` при верстке контролов, которые программируются яваскриптом.
 
-Тесты всех вариантов, описанных ниже: [jsfiddle.net/VovanR/omt6am8z/](http://jsfiddle.net/VovanR/omt6am8z/).
+Тесты всех вариантов, описанных ниже: [jsfiddle.net/VovanR/omt6am8z/](https://jsfiddle.net/VovanR/omt6am8z/).
 
 Рассмотрим что можно использовать, а от чего лучше отказаться:
 
@@ -31,7 +31,7 @@ date: 2014-11-08
 <a href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Index</a>
 ```
 
-<a href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" class="b-bookmarklet" title="На главную">Index</a>
+<a href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" class="bookmarklet" title="На главную">Index</a>
 
 
 ## a(href="") или a(href)
@@ -52,68 +52,68 @@ date: 2014-11-08
 
 ## Таблица возможностей
 
-<table class="b-super-table">
+<table class="super-table">
 <thead>
 <tr>
 <th></th>
-<th class="b-super-table__type"><div><code>a(href="link_anywhere")</code></div></th>
-<th class="b-super-table__type"><div><code>a(href="#")</code></div></th>
-<th class="b-super-table__type"><div><code>a(href="javascript:void(0)")</code></div></th>
-<th class="b-super-table__type"><div><code>a(href="")</code> и <code>a(href)</code></div></th>
-<th class="b-super-table__type"><div><code>a</code></div></th>
-<th class="b-super-table__type"><div><code>span</code></div></th>
-<th class="b-super-table__type"><div><code>span(tabindex="0")</code></div></th>
-<th class="b-super-table__type"><div><code>button(type="button")</code></div></th>
+<th class="super-table__type"><div><code>a(href="link_anywhere")</code></div></th>
+<th class="super-table__type"><div><code>a(href="#")</code></div></th>
+<th class="super-table__type"><div><code>a(href="javascript:void(0)")</code></div></th>
+<th class="super-table__type"><div><code>a(href="")</code> и <code>a(href)</code></div></th>
+<th class="super-table__type"><div><code>a</code></div></th>
+<th class="super-table__type"><div><code>span</code></div></th>
+<th class="super-table__type"><div><code>span(tabindex="0")</code></div></th>
+<th class="super-table__type"><div><code>button(type="button")</code></div></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="b-super-table__problem">Не нужет <code>preventDefault</code></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">Не нужет <code>preventDefault</code></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Навигация по <kbd>Tab</kbd></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">Навигация по <kbd>Tab</kbd></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Вызов по <kbd>Enter</kbd></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">Вызов по <kbd>Enter</kbd></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Вызов по <kbd>Space</kbd></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">Вызов по <kbd>Space</kbd></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">При отключенном <em>JavaScript</em></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">При отключенном <em>JavaScript</em></td>
+<td><span class="super-table__true">✓</span></td>
 <td><span>-</span></td>
 <td><span>-</span></td>
 <td><span>-</span></td>
@@ -123,15 +123,15 @@ date: 2014-11-08
 <td><span>-</span></td>
 </tr>
 <tr>
-<td class="b-super-table__problem">Нет <em>URL</em> при наведении</td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__false">✗</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
-<td><span class="b-super-table__true">✓</span></td>
+<td class="super-table__problem">Нет <em>URL</em> при наведении</td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__false">✗</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
+<td><span class="super-table__true">✓</span></td>
 </tr>
 </tbody>
 </table>

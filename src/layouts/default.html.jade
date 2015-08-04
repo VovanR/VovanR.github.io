@@ -40,31 +40,31 @@ html(lang='ru')
         script(src="/js/libs/modernizr/modernizr.js")
 
     body
-        header.b-header
+        header.header
             if document.url === '/'
-                h1.b-logo
-                    span.b-logo__text
+                h1.logo
+                    span.logo__text
                         != site.author
-                    span.b-logo__description
+                    span.logo__description
                         != site.description
             else
-                .b-logo
-                    a.b-logo__text(href='/')
+                .logo
+                    a.logo__text(href='/')
                         != site.author
-                    span.b-logo__description
+                    span.logo__description
                         != site.description
 
-        .b-content
+        .content
             != content
 
-        footer.b-footer
-            .b-legal.uk-grid
+        footer.footer
+            .legal.uk-grid
                 .uk-width-1-2
-                    p.b-legal__copyright
+                    p.legal__copyright
                         | ©&nbsp;<a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
 
                 .uk-width-1-2
-                    p.b-legal__license
+                    p.legal__license
                         | Работает&nbsp;на&nbsp;<a href='http://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
 
         //- GoogleAnalytics

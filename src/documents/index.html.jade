@@ -4,25 +4,25 @@ isPage: true
 sitemap: false
 ---
 
-section.b-short-posts
+section.short-posts
     each post in getCollection('posts').toJSON()
-        article.b-short-post.b-short-post_state_inactive
-            h2.b-short-post__title
+        article.short-post.short-post_state_inactive.js-short-post
+            h2.short-post__title
                 a(href= post.url)
                     != post.title
 
-            .b-short-post__meta
-                span.b-short-post__date
+            .short-post__meta
+                span.short-post__date
                     != pubDate(post.date)
 
 script
-    | (function (global) {
+    | (function () {
     |     // We don't waiting for footer dom loaded
-    |     var posts = document.querySelectorAll('.b-short-post');
+    |     var posts = document.querySelectorAll('.js-short-post');
     |     var postsLength = posts.length;
     |     var showNext = function (index) {
     |         setTimeout(function () {
-    |             posts[index].classList.remove('b-short-post_state_inactive');
+    |             posts[index].classList.remove('short-post_state_inactive');
     |             index += 1;
     |             if (index < postsLength) {
     |                 showNext(index);
@@ -30,4 +30,4 @@ script
     |         }, 25);
     |     };
     |     showNext(0);
-    | })(window);
+    | })();

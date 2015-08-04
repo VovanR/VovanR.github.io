@@ -322,7 +322,7 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 
 
 <h4 id="anchor-netbeans">Установка <em>NetBeans IDE</em></h4>
-Качаем: [http://netbeans.org/downloads/](http://netbeans.org/downloads/)
+Качаем: [https://netbeans.org/downloads/](https://netbeans.org/downloads/)
 Устанавливаем:
 
 ```

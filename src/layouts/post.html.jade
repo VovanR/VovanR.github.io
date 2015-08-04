@@ -2,20 +2,20 @@
 layout: default
 ---
 
-article.b-post
-    h1.b-post__title
+article.post
+    h1.post__title
         != document.title
 
-    .b-post__text
+    .post__text
         != content
 
-    .b-post__meta
-        span.b-tags
+    .post__meta
+        span.tags
             each tag in document.tags
-                span(class='b-tags__tag')= site.tagNames[tag] || tag
+                span(class='tags__tag')= site.tagNames[tag] || tag
 
-        span.b-post__date
+        span.post__date
             != pubDate(document.date)
 
-        .b-post__share
+        .post__share
             <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script><div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="vkontakte,facebook,twitter,gplus" data-yashareTheme="counter"></div>

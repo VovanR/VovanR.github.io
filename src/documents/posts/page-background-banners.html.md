@@ -9,7 +9,7 @@ date: 2012-08-07
 
 ![](/images/page-background-banners/page-background-banners__preview.png)
 
-Как поставить баннеры на фон страницы сайта? Без горизонтальной прокрутки? Элементарно: [пример](http://jsfiddle.net/VovanR/k9wec/2/).
+Как поставить баннеры на фон страницы сайта? Без горизонтальной прокрутки? Элементарно: [пример](https://jsfiddle.net/VovanR/k9wec/2/).
 
 Пример полностью скопирован с [Яндекса](http://football2012.yandex.ru/).
 
@@ -25,17 +25,17 @@ body {
     position: relative;
     z-index: 0;
 }
-.b-page {
+.page {
     background: #445A71;
     min-width: 300px;
     margin: 0;
     padding: 0;
 }
-.b-page_banner_ru {
+.page_banner_ru {
     background: #0C1D63;
 }
 
-.b-wrotator {
+.wrotator {
     text-align: center;
     width: 100%;
     height: 500px;
@@ -43,28 +43,28 @@ body {
     z-index: 1;
     overflow: hidden;
 }
-    .b-wrotator__i {
+    .wrotator__i {
         min-width: 300px;
         max-width: 400px;
         margin: 0 auto;
         position: relative;
     }
-        .b-wrotator__left {
+        .wrotator__left {
             width: 200px;
             height: 500px;
             position: absolute;
             left: -200px;
         }
-        .b-page_banner_ru .b-wrotator__left {
+        .page_banner_ru .wrotator__left {
             background: transparent url("http://placehold.it/100x500/f8abe1/fff&text=BANNER") 100% 0 no-repeat;
         }
-        .b-wrotator__right {
+        .wrotator__right {
             width: 200px;
             height: 500px;
             position: absolute;
             right: -200px;
         }
-        .b-page_banner_ru .b-wrotator__right {
+        .page_banner_ru .wrotator__right {
             background: transparent url("http://placehold.it/100x500/f8abe1/fff&text=BANNER") no-repeat;
         }
 
@@ -91,15 +91,15 @@ body {
     <title>Баннеры по бокам страницы</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-<body class="b-page b-page_banner_ru">
+<body class="page page_banner_ru">
 
-<div class="b-wrotator">
-    <div class="b-wrotator__i">
+<div class="wrotator">
+    <div class="wrotator__i">
         <!-- Баннер слева -->
-        <a class="b-wrotator__left" href="http://ya.ru/" target="_blank"></a>
+        <a class="wrotator__left" href="http://ya.ru/" target="_blank"></a>
 
         <!-- Баннер справа -->
-        <a class="b-wrotator__right" href="http://ya.ru/" target="_blank"></a>
+        <a class="wrotator__right" href="http://ya.ru/" target="_blank"></a>
     </div>
 </div>
 

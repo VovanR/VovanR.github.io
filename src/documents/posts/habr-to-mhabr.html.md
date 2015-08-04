@@ -14,7 +14,7 @@ date: 2011-11-05
 **Установка:**
 Перетащите эту ссылку на вашу панель закладок:
 
-<a class="b-bookmarklet" title="Habr to mHabr" href="javascript:!function(o){var n=o.location;n.href=n.protocol+'//m.'+n.host+n.pathname}(window);void(0);">to mHabr</a>
+<a class="bookmarklet" title="Habr to mHabr" href="javascript:!function(o){var n=o.location;n.href=n.protocol+'//m.'+n.host+n.pathname}(window);void(0);">to mHabr</a>
 
 Или создайте новую закладку, в адрес вставьте код:
 
