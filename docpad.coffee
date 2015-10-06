@@ -75,9 +75,6 @@ docpadConfig = {
 
 
     plugins:
-        robotskirt:
-            robotskirtOptions:
-                EXT_AUTOLINK: false
         stylus:
             stylusOptions:
                 compress: true
@@ -99,7 +96,7 @@ docpadConfig = {
     events:
         generateBefore: (opts) ->
             # Configure Moment.js
-            moment.lang('ru')
+            moment.locale('ru')
 }
 
 # Export our DocPad Configuration
