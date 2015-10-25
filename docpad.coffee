@@ -25,6 +25,7 @@ docpadConfig = {
                 actions: 'Actions'
                 amd: 'AMD'
                 apache: 'Apache'
+                atom: 'Atom'
                 backup: 'Backup'
                 bash: 'Bash'
                 bookmarklet: 'Bookmarklet'
@@ -38,12 +39,14 @@ docpadConfig = {
                 dns: 'DNS'
                 dnsmasq: 'Dnsmasq'
                 html: 'HTML'
+                ie: 'Internet Explorer'
                 java: 'Java'
                 javascript: 'JavaScript'
                 lamp: 'LAMP'
                 linux: 'Linux'
                 meld: 'Meld'
                 netbeans: 'NetBeans'
+                nodejs: 'Node.js'
                 photoshop: 'Photoshop'
                 php: 'PHP'
                 requirejs: 'RequireJS'
@@ -89,6 +92,17 @@ docpadConfig = {
         rss:
             default:
                 collection: 'posts'
+        marked:
+            markedOptions:
+                pedantic: false
+                gfm: true
+                sanitize: false
+                highlight: null
+        highlightjs:
+            replaceTab: null
+            aliases:
+                yaml: 'python'
+                shell: 'bash'
 
 
     # Events
