@@ -124,11 +124,11 @@ sudo ln -s $HOME/Sites /sites
 
 <pre class="highlight"><code class="hljs bash">sudo mkdir /home/public_html
 cd /home/public_html
-sudo mkdir `whoami`
-sudo chown `whoami`:`whoami` `whoami`
-chmod +x `whoami`
-ln -s /home/public_html/`whoami` /home/`whoami`/Sites
-sudo ln -s /home/public_html/`whoami` /sites</code></pre>
+sudo mkdir \`whoami\`
+sudo chown \`whoami\`:\`whoami\` \`whoami\`
+chmod +x \`whoami\`
+ln -s /home/public_html/\`whoami\` /home/\`whoami\`/Sites
+sudo ln -s /home/public_html/\`whoami\` /sites</code></pre>
 </div>
 
 
