@@ -2,16 +2,14 @@
 title: Баннеры на фоне сайта
 layout: post
 tags:
-  - 'css'
-  - 'html'
+    - 'css'
+    - 'html'
 date: 2012-08-07
 ```
 
 ![](/images/page-background-banners/page-background-banners__preview.png)
 
 Как поставить баннеры на фон страницы сайта? Без горизонтальной прокрутки? Элементарно: [пример](https://jsfiddle.net/VovanR/k9wec/2/).
-
-Пример полностью скопирован с [Яндекса](http://football2012.yandex.ru/).
 
 **CSS:**
 

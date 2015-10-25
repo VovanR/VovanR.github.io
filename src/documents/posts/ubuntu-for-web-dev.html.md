@@ -244,7 +244,7 @@ sudo apt-get install dnsmasq
 sudo nano /etc/dnsmasq.conf
 ```
 
-Находим строку с настройкой адреса `address=/`
+Находим строку с настройкой адреса `address=/` (включаем поиск: <kbd>Ctrl</kbd>+<kbd>w</kbd>, пишем слово `address=/`, жмем <kbd>Enter</kbd>)
 
 Правим ее следующим образом:
 
@@ -318,7 +318,7 @@ sudo service apache2 restart
 ```
 
 
-<h3 id="anchor-ie-vm">Установка <em>Node.js</em></h3>
+<h3 id="anchor-nodejs">Установка <em>Node.js</em></h3>
 
 Ставим по инструкции ([installation-instructions](https://github.com/nodesource/distributions#installation-instructions)):
 

@@ -2,16 +2,17 @@
 title: Быстрая диагностика HTML кода
 layout: post
 tags:
-  - 'bookmarklet'
-  - 'css'
-  - 'diagnostics'
-  - 'javascript'
+    - 'bookmarklet'
+    - 'css'
+    - 'diagnostics'
+    - 'javascript'
 date: 2012-07-22
 ```
 
 ![Отображение недочетов на странице](/images/css-diagnostics-bookmarklet/css-diagnostics-bookmarklet__preview.png)
 
 Часто бывает так, что по окончании процесса верстки и сборки сайта, забываешь проверить код на наличие недочетов. Таких как ссылки со значением атрибута `href="#"` или логотип без тайтла.
+
 Именно для поиска таких мест и придумали [диагностические css стили](//css-tricks.com/snippets/css/css-diagnostics/).
 
 Так как каждый раз вставлять руками данный стиль дело довольно расточительное, я написал [букмарклет кнопочку](//ru.wikipedia.org/wiki/Букмарклет) для браузера, нажав которую, вы увидите все самое интересное.

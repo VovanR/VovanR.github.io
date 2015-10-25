@@ -2,14 +2,15 @@
 title: Букмарклет для перехода на главную страницу
 layout: post
 tags:
-  - 'bookmarklet'
-  - 'javascript'
+    - 'bookmarklet'
+    - 'javascript'
 date: 2011-12-13
 ```
 
 ![](/images/go-home-bookmarklet/go-home-bookmarklet__preview.png)
 
 Часто надо перейти на главную страницу сайта. Для этого приходится убирать лишнее в адресной строке.
+
 Но и такую тривиальную задачу можно повесить на отдельную кнопочку:
 
 <a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Index</a>
@@ -26,8 +27,6 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
 ```
 
-<p class="special"><strong>Новинка:</strong> Теперь вы можете в более удобной форме сгенерировать для себя похожую кнопочку. Под катом находится форма генератор. Жми Читать дальше:</p>
-
 <fieldset>
 <legend>Сгенерировать буркмарклет</legend>
 	<dl class="form">
@@ -35,7 +34,7 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 			<label for="p-go-home-link">Цель:</label>
 		</dt>
 		<dd>
-			<input id="p-go-home-link" onchange="ppp();" onkeyup="ppp();" type="text" value="admin">
+			<input id="p-go-home-link" onchange="ppp();" onkeyup="ppp();" type="text" style="width:100%" value="admin">
 		</dd>
 	</dl>
 	<dl class="form">
@@ -43,7 +42,7 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 			<label for="p-go-home-result">Выхлоп:</label>
 		</dt>
 		<dd>
-			<input id="p-go-home-result" class="big" onclick="this.select();" readonly type="text" value="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);">
+			<input id="p-go-home-result" class="big" onclick="this.select();" readonly type="text" style="width:100%" value="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);">
 		</dd>
 	</dl>
 	<dl class="form">
@@ -73,4 +72,5 @@ ppp = function() {
 Работает это довольно просто: `window.location.protocol` — возвращает протокол (обычно `http:`), и `window.location.host` — возвращает хост (например `draft.blogger.com`). Результат применяем к адресу страницы — `window.location.href`
 
 Пример:
+
 Находимся на странице `http://vovanr.com/2011/12/blog-post.html`. Щелкаем букмарклет — попадаем на `http://vovanr.com/`

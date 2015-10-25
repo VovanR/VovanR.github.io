@@ -2,21 +2,25 @@
 title: Как использовать Bower в Django
 layout: post
 tags:
-  - 'bower'
-  - 'django'
+    - 'bower'
+    - 'django'
 date: 2014-11-20
 ```
 
 ## Установка *Bower*
 У вас должен быть установлен *Node.js* и *Git*.
-Для установки *Node.js* на локальной машине, я советую использовать [Node Version Manager](//github.com/creationix/nvm).
-Теперь ставим [Bower](//bower.io/)
-```
+
+[Устанавливаем *Node.js*](/posts/ubuntu-for-web-dev/#anchor-nodejs).
+
+Теперь ставим [Bower](http://bower.io/)
+
+```bash
 npm install -g bower
 ```
 
 ## Настройки для *Bower*
 Создаем в корне проекта файл `.bowerrc`
+
 ```json
 {
   "directory": "./bower_components/vendor"
@@ -24,6 +28,7 @@ npm install -g bower
 ```
 
 И файл `bower.json`
+
 ```json
 {
   "name": "myproject",
@@ -40,12 +45,14 @@ npm install -g bower
 
 ## Установка пакетов
 В корне проекта запускаем:
-```
+
+```bash
 bower install
 ```
 
 ## Настройка *Django*
-Чтобы пакеты бовера стали доступны через `staticfiles`, добавим директорию в настройках проекта (`settings.py`)
+Чтобы пакеты бовера стали доступны через `staticfiles`, добавим директорию в настройках проекта (`settings.py`):
+
 ```python
 STATICFILES_DIRS = (
     . . .
@@ -55,11 +62,12 @@ STATICFILES_DIRS = (
 
 ## Вызов библиотек в шаблоне
 Подключаем `{% load staticfiles %}` в шаблоне нашего приложения.
+
 Теперь мы можем подключать библиотеки так: `{% static 'vendor/jquery/dist/jquery.min.js' %}`
 
 ### Пример подключения *jQuery* из *CDN*
-За основу взят шаблон [HTML5 Boilerplate](
-//github.com/h5bp/html5-boilerplate/blob/master/dist/index.html)
+За основу взят шаблон [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html)
+
 ```django
 <!doctype html>
 <html class="no-js" lang="">
@@ -115,5 +123,5 @@ STATICFILES_DIRS = (
 ```
 
 ## Дополнительные материалы:
-[Bower: зачем фронтенду нужен менеджер пакетов](//nano.sapegin.ru/all/bower)
-[How To Install Node.js on an Ubuntu 14.04 server](//www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)
+- [Bower: зачем фронтенду нужен менеджер пакетов](http://nano.sapegin.ru/all/bower)
+- [How To Install Node.js on an Ubuntu 14.04 server](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server)

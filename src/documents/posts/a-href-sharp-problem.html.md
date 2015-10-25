@@ -2,14 +2,14 @@
 title: Как не использовать a(href="#")
 layout: post
 tags:
-  - 'javascript'
-  - 'html'
+    - 'javascript'
+    - 'html'
 date: 2014-11-08
 ```
 
 Решил разобраться чем заменить *HTML* тэг `a` при верстке контролов, которые программируются яваскриптом.
 
-Тесты всех вариантов, описанных ниже: [jsfiddle.net/VovanR/omt6am8z/](https://jsfiddle.net/VovanR/omt6am8z/).
+Тесты всех вариантов, описанных ниже: [jsfiddle.net/VovanR/omt6am8z/](https://jsfiddle.net/VovanR/omt6am8z/)
 
 Рассмотрим что можно использовать, а от чего лучше отказаться:
 
@@ -27,6 +27,7 @@ date: 2014-11-08
 Использовать только для букмарклетов.
 
 Например [букмарклет для перехода на главную страницу](/posts/go-home-bookmarklet):
+
 ```html
 <a href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Index</a>
 ```
@@ -39,6 +40,7 @@ date: 2014-11-08
 
 ## a
 Не использовать.
+
 Равносильно `span`.
 
 ## span

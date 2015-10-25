@@ -2,7 +2,7 @@
 title: Как и где вести свои заметки
 layout: post
 tags:
-  - 'development'
+    - 'development'
 date: 2014-12-23
 ```
 
@@ -17,8 +17,10 @@ date: 2014-12-23
 
 ## Хранилище заметок *Dropbox*
 Можно использовать любое другое облачное хранилище.
+
 Структура каталога у меня выглядит следующим образом:
-```
+
+```nohighlight
 ~/Dropbox/Notes/
 ├── AMD.md
 ├── Backbone.md
@@ -43,28 +45,37 @@ date: 2014-12-23
 ├── TRASH.md
 └── Vim.md
 ```
+
 Это дает мне доступ к заметкам с любого устройства в любое время.
+
 Заметки в актуальном состоянии везде и всегда.
 
 ## Язык разметки *Markdown*
 Простой, понятный, мощный, популярный, [стандартизированный](//commonmark.org/).
+
 Заметки легко экспортировать в любую систему, так как *Markdown* поддерживется везде.
 
 ## Текстовый редактор *Sublime Text*
 Быстрый, гибкий, дружелюбный.
+
 Можно использовать любой другой легковесный редактор. Главное, чтобы он автоматически сохранял измененные файлы (<kbd>Ctrl</kbd>+<kbd>s</kbd> — наш враг), поддерживал проекты и быстро запускался.
+
 На компьютере у меня создан проект для данной директории. Проект находится в другой папке, чтобы не вызывать конфликтов от разных систем:
-```
+
+```nohighlight
 ~/Documents/Notes/
 ├── Notes.sublime-project
 └── Notes.sublime-workspace
 ```
+
 Важно включить настройку автосохранения файла при потере фокуса
-```
+
+```json
 {
   "save_on_focus_lost": true
 }
 ```
+
 Для удобства и нормальной подсветки синтаксиса я ставлю плагин [MarkdownEditing](//sublime.wbond.net/packages/MarkdownEditing)
 
 ![Заметки в Sublime Text](/images/simple-powerful-notes/simple-powerful-notes__preview.png)
@@ -74,7 +85,8 @@ date: 2014-12-23
 
 ## Примеры
 Структура заметки
-<pre><code class="markdown"># <Название раздела>
+
+<pre class="highlight"><code class="hljs markdown"># <Название раздела>
 
 ----
 
@@ -87,7 +99,8 @@ See: <ссылка на источник>
 </code></pre>
 
 Живой пример `~/Dropbox/Notes/Bash.md`:
-<pre><code class="markdown"># Bash
+
+<pre class="highlight"><code class="hljs markdown"># Bash
 
 ----
 
@@ -106,6 +119,7 @@ sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
 
 ## Архивация
 See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
+
 ```bash
 tar cvf archive_name.tar dirname/
 tar cvzf archive_name.tar.gz dirname/
