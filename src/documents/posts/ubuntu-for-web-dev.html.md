@@ -48,7 +48,7 @@ sudo apt-get install tasksel
 sudo tasksel install lamp-server
 ```
 
-Открываем в браузере [http://localhost/](http://localhost/) Если увидели: <samp>It works!</samp> — все сделано правильно.
+Открываем в браузере `http://localhost/` Если увидели: <samp>It works!</samp> — все сделано правильно.
 
 Зададим веб-серверу *Apache* его имя — для этого введем в консоле:
 
@@ -317,6 +317,8 @@ sudo nano /etc/apache2/sites-available/vovan.conf
 sudo service apache2 restart
 ```
 
+По адресу `http://adminer.vovan` мы можем управлять локальными *MySQL* базами.
+
 
 <h3 id="anchor-nodejs">Установка <em>Node.js</em></h3>
 
@@ -405,4 +407,6 @@ Add shared folder
 
 <h4 id="anchor-ie-vm">Установка <em>Internet Explorer</em></h4>
 
-Качаем нужные версии: [https://dev.modern.ie/tools/vms/](https://dev.modern.ie/tools/vms/)
+Качаем и ставим нужные версии: [https://dev.modern.ie/tools/vms/](https://dev.modern.ie/tools/vms/)
+
+Теперь, запущенный локально сайт, например `http://localhost:3000` на виртуалке будет доступен по адресу `http://10.0.2.2:3000/` А те, что добавлены в апач, по тем же ссылкам: `http://adminer.vovan` например.
