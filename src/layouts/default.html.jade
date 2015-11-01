@@ -41,18 +41,29 @@ html(lang='ru')
 
     body
         header.header
-            if document.url === '/'
-                h1.logo
-                    span.logo__text
-                        != site.author
-                    span.logo__description
-                        != site.description
-            else
-                .logo
-                    a.logo__text(href='/')
-                        != site.author
-                    span.logo__description
-                        != site.description
+            .uk-flex.uk-flex-middle
+                .uk-width-1-2
+                    if document.url === '/'
+                        h1.logo
+                            span.logo__text
+                                != site.author
+                            span.logo__description
+                                != site.description
+                    else
+                        .logo
+                            a.logo__text(href='/')
+                                != site.author
+                            span.logo__description
+                                != site.description
+
+                .uk-width-1-2
+                    nav.header__nav.nav
+                        .nav__item
+                            if document.url !== '/services'
+                                a.nav__link(href='/services')
+                                    | Сервисы
+                            else
+                                | Сервисы
 
         .content
             != content

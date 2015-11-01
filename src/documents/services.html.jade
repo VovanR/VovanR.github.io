@@ -1,0 +1,34 @@
+---
+layout: "default"
+isPage: true
+sitemap: false
+---
+
+section.short-services
+    each service in getCollection('services').toJSON()
+        article.short-service.short-service_state_inactive.js-short-service
+            h2.short-service__title
+                a(href= service.href, target='_blank')
+                    != service.name
+            p.short-service__desc
+                != service.desc
+            .short-service__meta
+                a(href= service.source, target='blank')
+                    | Source
+
+script
+    | (function () {
+    |     // We don't waiting for footer dom loaded
+    |     var posts = document.querySelectorAll('.js-short-service');
+    |     var postsLength = posts.length;
+    |     var showNext = function (index) {
+    |         setTimeout(function () {
+    |             posts[index].classList.remove('short-service_state_inactive');
+    |             index += 1;
+    |             if (index < postsLength) {
+    |                 showNext(index);
+    |             }
+    |         }, 25);
+    |     };
+    |     showNext(0);
+    | })();

@@ -75,6 +75,8 @@ docpadConfig = {
     collections:
         posts: ->
             @getCollection('html').findAllLive({ relativeOutDirPath: 'posts' }, [date:-1])
+        services: ->
+            @getCollection('html').findAllLive({ relativeOutDirPath: 'services' }, [date:-1])
 
 
     plugins:
