@@ -325,7 +325,7 @@ sudo service apache2 restart
 Ставим по инструкции ([installation-instructions](https://github.com/nodesource/distributions#installation-instructions)):
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
