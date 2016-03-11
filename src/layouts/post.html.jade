@@ -10,11 +10,11 @@ article.post
         != content
 
     .post__meta
-        span.tags
+        .tags.post__tags
             each tag in document.tags
                 span(class='tags__tag')= site.tagNames[tag] || tag
 
-        span.post__date
+        .post__date
             != pubDate(document.date)
 
         .post__share
