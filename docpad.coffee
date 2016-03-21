@@ -17,6 +17,20 @@ docpadConfig = {
             description: 'Про фронт-энд'
             copyrightUrl: 'http://twitter.com/VovanR'
             twitter: '@VovanR'
+            socialLinks: [
+                {
+                    name: 'Твитер'
+                    url: 'https://twitter.com/VovanR'
+                }
+                {
+                    name: 'Гитхаб'
+                    url: 'https://github.com/VovanR'
+                }
+                {
+                    name: 'нпм'
+                    url: 'https://www.npmjs.com/~vovanr'
+                }
+            ]
             styles: [
                 '/styles/style.css'
             ]

@@ -79,16 +79,13 @@ html(lang='ru')
             .legal.uk-grid
                 .uk-width-1-2
                     .legal__copyright
-                        | ©&nbsp;<a href='#{site.copyrightUrl}'>#{site.author}</a>, #{(new Date).getFullYear()}
+                        | ©&nbsp;#{site.author}, #{(new Date).getFullYear()}
 
                 .uk-width-1-2
                     .legal__social
-                        a(href='https://twitter.com/VovanR')
-                            | Твитер
-                        a(href='https://github.com/VovanR')
-                            | Гитхаб
-                        a(href='https://www.npmjs.com/~vovanr')
-                            | нпм
+                        each item in site.socialLinks
+                            a(href= item.url)
+                                != item.name
 
                     .legal__license
                         | Блог&nbsp;работает&nbsp;на&nbsp;<a href='http://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
