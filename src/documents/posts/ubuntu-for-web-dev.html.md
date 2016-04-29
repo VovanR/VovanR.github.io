@@ -325,8 +325,8 @@ sudo service apache2 restart
 Ставим по инструкции ([installation-instructions](https://github.com/nodesource/distributions#installation-instructions)):
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install nodejs
 ```
 
 Чтобы избежать проблем с правами — переопределим местонахождение пакетов ([fixing-npm-permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions)):
@@ -363,9 +363,9 @@ sh ~/Downloads/netbeans-7.2.1-ml-php-linux.sh
 
 <h4 id="anchor-atom">Установка <em>[Atom](https://atom.io/)</em></h4>
 
+Качаем `.deb`
 ```shell
-sudo add-apt-repository ppa:webupd8team/atom && sudo apt-get update
-sudo apt-get install atom
+sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```
 
 Чтобы никогда не увидеть ошибку <samp>TypeError: Unable to watch path</samp> ([typeerror-unable-to-watch-path](https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path)):
