@@ -5,6 +5,7 @@ tags:
     - 'bookmarklet'
     - 'javascript'
 date: 2011-11-05
+status: old
 ```
 
 ![](/images/habr-to-mhabr/habr-to-mhabr__preview.png)

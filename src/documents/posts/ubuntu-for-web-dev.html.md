@@ -16,6 +16,7 @@ tags:
     - 'ubuntu'
     - 'virtualbox'
 date: 2013-01-13
+status: popular
 ```
 
 <p class="note">Проверено на Xubuntu 12.04 – 15.10. Подойдет и для других дистрибутивов.</p>

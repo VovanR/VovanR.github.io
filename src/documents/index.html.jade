@@ -6,7 +6,7 @@ sitemap: false
 
 section.short-posts
     each post in getCollection('posts').toJSON()
-        article.short-post.short-post_state_inactive.js-short-post
+        article.short-post.short-post_state_inactive.js-short-post(class=post.status ? ('short-post_status_' + post.status) : '')
             h2.short-post__title
                 a(href= post.url)
                     != post.title

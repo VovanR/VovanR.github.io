@@ -5,6 +5,7 @@ tags:
     - 'linux'
     - 'netbeans'
 date: 2011-10-08
+status: old
 ```
 
 Источник [Sunny Talks Tech: High-Res Dock Icons from Netbeans](http://sunnytalkstech.blogspot.com/2010/01/high-res-dock-icons-from-netbeans.html)
