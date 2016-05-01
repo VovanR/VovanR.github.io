@@ -19,7 +19,7 @@ date: 2013-01-13
 status: popular
 ```
 
-<p class="note">Проверено на Xubuntu 12.04 – 15.10. Подойдет и для других дистрибутивов.</p>
+<p class="note">Проверено на Xubuntu 12.04 – 16.04. Подойдет и для других дистрибутивов.</p>
 
 - [Установка *LAMP* сервера](#anchor-lamp)
     - [Модули *Apache*](#anchor-lamp-apache)
