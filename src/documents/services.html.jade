@@ -8,12 +8,12 @@ section.short-services
     each service in getCollection('services').toJSON()
         article.short-service.short-service_state_inactive.js-short-service
             h2.short-service__title
-                a(href= service.href, target='_blank')
+                a(href= service.href)
                     != service.name
             p.short-service__desc
                 != service.desc
             .short-service__meta
-                a(href= service.source, target='blank')
+                a(href= service.source)
                     | Исходный код
 
 script
