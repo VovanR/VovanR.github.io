@@ -24,7 +24,7 @@ status: old
 javascript: var myurl = window.location.pathname; myurl = myurl.match(/\/\d{6}\//); location.href = 'http://html-pdf-converter.com/ru/convert?u=' + 'http://habrahabr.ru/mob/post' + escape(myurl[0]); void(0);
 ```
 
-Более подробно установка букмарклета описана в смежном посте [Переключаем пост на Habrahabr в мобильный вид](/posts/habr-to-mhabr)
+Более подробно установка букмарклета описана в смежном посте [Переключаем пост на Habrahabr в мобильный вид](/posts/habr-to-mhabr/)
 
 ## Использование
 
