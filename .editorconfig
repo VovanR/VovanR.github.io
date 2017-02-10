@@ -26,8 +26,5 @@ indent_size = 2
 [*.css]
 indent_style = space
 
-[*.less]
-indent_style = space
-
 [*.styl]
 indent_style = space
