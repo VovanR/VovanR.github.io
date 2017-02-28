@@ -40,53 +40,50 @@ html(lang='ru')
 
     body
         header.header
-            .uk-flex.uk-flex-middle
-                .uk-width-1-3
-                    if document.url === '/'
-                        h1.logo
-                            span.logo__text
-                                != site.author
-                            span.logo__description
-                                != site.description
-                    else
-                        .logo
-                            a.logo__text(href='/')
-                                != site.author
-                            span.logo__description
-                                != site.description
+            .header__name
+                if document.url === '/'
+                    h1.logo
+                        span.logo__text
+                            != site.author
+                        span.logo__description
+                            != site.description
+                else
+                    .logo
+                        a.logo__text(href='/')
+                            != site.author
+                        span.logo__description
+                            != site.description
 
-                .uk-width-1-3
-                    span.logo__image.logo__image_size_64
+            .header__logo
+                span.logo__image.logo__image_size_64
 
-                .uk-width-1-3
-                    nav.nav.header__nav
-                        .nav__item
-                            if document.url !== '/services'
-                                a.nav__link(href='/services/')
-                                    | Сервисы
-                            else
+            .header__nav
+                nav.nav
+                    .nav__item
+                        if document.url !== '/services'
+                            a.nav__link(href='/services/')
                                 | Сервисы
-                        .nav__item
-                            a.nav__link(href='http://vovanr.github.io/notes/')
-                                | Заметки
+                        else
+                            | Сервисы
+                    .nav__item
+                        a.nav__link(href='http://vovanr.github.io/notes/')
+                            | Заметки
 
         .content
             != content
 
         footer.footer
-            .legal.uk-grid
-                .uk-width-1-2
-                    .legal__copyright
-                        | ©&nbsp;#{site.author}, #{(new Date).getFullYear()}
+            .footer__social-list
+                each item in site.socialLinks
+                    a(href= item.url)
+                        != item.name
 
-                .uk-width-1-2
-                    .legal__social
-                        each item in site.socialLinks
-                            a(href= item.url)
-                                != item.name
+            .footer__copyright
+                a(href="https://github.com/vovanr/vovanr.github.io")
+                    | ©&nbsp;#{site.author}, #{(new Date).getFullYear()}
 
-                    .legal__license
-                        | Блог&nbsp;работает&nbsp;на&nbsp;<a href='http://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
+            .footer__build-info
+                | Блог&nbsp;работает&nbsp;на&nbsp;<a href='http://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
 
         //- GoogleAnalytics
         script
