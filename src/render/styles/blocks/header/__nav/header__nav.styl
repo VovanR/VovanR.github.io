@@ -9,6 +9,7 @@
     }
 
     .nav__link {
+        display: inline-block;
     }
 }
 
@@ -19,17 +20,21 @@
 
         .nav {
             float: none;
+            overflow: hidden;
+            margin-left: -5px;
         }
 
         .nav__item {
-            display: inline-block;
-
-            & + .nav__item {
-                margin-left: 10px;
-            }
+            float: left;
+            padding-right: 5px;
+            padding-left: 5px;
         }
 
         .nav__link {
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-right: -5px;
+            margin-left: -5px;
         }
     }
 }

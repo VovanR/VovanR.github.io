@@ -94,3 +94,6 @@ html(lang='ru')
             | ga('create', 'UA-56742197-1', 'auto');
             | ga('send', 'pageview');
         //- GoogleAnalytics
+
+        script
+            | (function(){document.querySelector('html').classList.add('js')})()
