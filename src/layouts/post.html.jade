@@ -10,6 +10,9 @@ article.post
         != content
 
     .post__meta
+        a.post__source(href=postSourceURL() target='_blank' rel='noopener')
+            | Исходный код статьи
+
         .tags.post__tags
             each tag in document.tags
                 span(class='tags__tag')= site.tagNames[tag] || tag

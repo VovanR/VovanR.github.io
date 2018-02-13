@@ -14,6 +14,7 @@ docpadConfig = {
             description: 'Про фронт-энд'
             copyrightUrl: 'http://twitter.com/VovanR'
             twitter: '@VovanR'
+            siteSourceURL: 'https://github.com/VovanR/VovanR.github.io/tree/source'
             socialLinks: [
                 {
                     name: 'Твитер'
@@ -81,6 +82,9 @@ docpadConfig = {
         pubDate: (date) ->
             # December 23 2013
             moment(date).format('LL')
+
+        postSourceURL: ->
+            @site.siteSourceURL + '/src/documents/posts/' + @document.filename
 
 
     # Collections
