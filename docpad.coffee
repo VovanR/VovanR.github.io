@@ -101,10 +101,6 @@ docpadConfig = {
             stylusOptions:
                 compress: true
 
-        ghpages:
-            deployRemote: 'origin'
-            deployBranch: 'master'
-
         sitemap:
             cachetime: 600000
             changefreq: 'weekly'

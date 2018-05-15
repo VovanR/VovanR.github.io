@@ -1,9 +1,9 @@
 {
   "name": "VovanR",
   "version": "0.0.0",
+  "private": true,
   "devDependencies": {
     "docpad-plugin-cleanurls": "^2.8.1",
-    "docpad-plugin-ghpages": "^2.4.4",
     "docpad-plugin-highlightjs": "^2.4.0",
     "docpad-plugin-jade": "^2.10.0",
     "docpad-plugin-marked": "^2.3.0",
@@ -13,10 +13,8 @@
     "docpad": "^6.79.0",
     "moment": "^2.17.1"
   },
-  "main": "./node_modules/.bin/docpad-server",
   "scripts": {
-    "start": "./node_modules/.bin/docpad-server",
-    "deploy": "./node_modules/.bin/docpad deploy-ghpages --env static"
-  },
-  "dependencies": {}
+    "start": "docpad-server",
+    "build": "docpad generate --silent --env static"
+  }
 }
