@@ -33,6 +33,7 @@ docpadConfig = {
                 '/styles/style.css'
             ]
             tagNames:
+                'gh-pages': 'GitHub Pages'
                 'wd-mybook-live': 'WD My Book Live'
                 actions: 'Actions'
                 amd: 'AMD'
@@ -44,6 +45,7 @@ docpadConfig = {
                 bower: 'Bower'
                 bug: 'Bug'
                 css: 'CSS'
+                deploy: 'Deploy'
                 development: 'Development'
                 diagnostics: 'Diagnostics'
                 diff: 'diff'
@@ -63,6 +65,7 @@ docpadConfig = {
                 php: 'PHP'
                 requirejs: 'RequireJS'
                 svn: 'SVN'
+                travis: 'Travis CI'
                 ubuntu: 'Ubuntu'
                 virtualbox: 'VirtualBox'
 
