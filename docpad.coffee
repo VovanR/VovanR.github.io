@@ -52,6 +52,7 @@ docpadConfig = {
                 django: 'Django'
                 dns: 'DNS'
                 dnsmasq: 'Dnsmasq'
+                docker: 'Docker'
                 html: 'HTML'
                 ie: 'Internet Explorer'
                 java: 'Java'
@@ -68,6 +69,7 @@ docpadConfig = {
                 travis: 'Travis CI'
                 ubuntu: 'Ubuntu'
                 virtualbox: 'VirtualBox'
+                windows: 'Windows'
 
         # Get the prepared site/document title
         # Often we would like to specify particular formatting to our page's title
