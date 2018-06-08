@@ -10,6 +10,8 @@ section.short-services
             h2.short-service__title
                 a(href= service.href)
                     != service.name
+                    if service.icon
+                        img.short-service__icon(src= service.href + service.icon)
             p.short-service__desc
                 != service.desc
             .short-service__meta
