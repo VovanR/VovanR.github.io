@@ -362,9 +362,9 @@ sh ~/Downloads/netbeans-7.2.1-ml-php-linux.sh
 ```
 
 
-<h4 id="anchor-atom">Установка <em>[Atom](https://atom.io/)</em></h4>
+<h4 id="anchor-atom">Установка <em>Atom</em></h4>
 
-Качаем `.deb`
+Качаем `.deb` с [официального сайта](https://atom.io)
 ```shell
 sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```
