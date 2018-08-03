@@ -88,6 +88,9 @@ docpadConfig = {
             # December 23 2013
             moment(date).format('LL')
 
+        pubDateForDatetimeAttribute: (date) ->
+            moment(date).format('YYYY-MM-DD')
+
         postSourceURL: ->
             @site.siteSourceURL + '/src/documents/posts/' + @document.filename
 

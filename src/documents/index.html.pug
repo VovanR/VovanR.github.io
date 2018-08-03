@@ -12,7 +12,7 @@ section.short-posts
                     != post.title
 
             .short-post__meta
-                span.short-post__date
+                time.short-post__date(datetime= pubDateForDatetimeAttribute(post.date))
                     != pubDate(post.date)
 
 script

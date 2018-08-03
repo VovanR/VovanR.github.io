@@ -17,7 +17,7 @@ article.post
             each tag in document.tags
                 span(class='tags__tag')= site.tagNames[tag] || tag
 
-        .post__date
+        time.post__date(datetime= pubDateForDatetimeAttribute(document.date))
             != pubDate(document.date)
 
         .post__share
