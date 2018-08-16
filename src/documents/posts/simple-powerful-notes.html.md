@@ -118,7 +118,7 @@ sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
 
 
 ## Архивация
-See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
+See: https://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
 
 ```bash
 tar cvf archive_name.tar dirname/

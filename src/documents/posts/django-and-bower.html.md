@@ -12,7 +12,7 @@ date: 2014-11-20
 
 [Устанавливаем *Node.js*](/posts/ubuntu-for-web-dev/#anchor-nodejs).
 
-Теперь ставим [Bower](http://bower.io/)
+Теперь ставим [Bower](https://bower.io/)
 
 ```bash
 npm install -g bower
@@ -93,7 +93,7 @@ STATICFILES_DIRS = (
 </head>
 <body>
     <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->

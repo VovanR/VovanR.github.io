@@ -54,7 +54,7 @@ body {
             left: -200px;
         }
         .page_banner_ru .wrotator__left {
-            background: transparent url("http://placehold.it/100x500/f8abe1/fff&text=BANNER") 100% 0 no-repeat;
+            background: transparent url("https://placehold.it/100x500/f8abe1/fff&text=BANNER") 100% 0 no-repeat;
         }
         .wrotator__right {
             width: 200px;
@@ -63,7 +63,7 @@ body {
             right: -200px;
         }
         .page_banner_ru .wrotator__right {
-            background: transparent url("http://placehold.it/100x500/f8abe1/fff&text=BANNER") no-repeat;
+            background: transparent url("https://placehold.it/100x500/f8abe1/fff&text=BANNER") no-repeat;
         }
 
 .l-width__i {
@@ -94,10 +94,10 @@ body {
 <div class="wrotator">
     <div class="wrotator__i">
         <!-- Баннер слева -->
-        <a class="wrotator__left" href="http://ya.ru/" target="_blank"></a>
+        <a class="wrotator__left" href="https://ya.ru/" target="_blank"></a>
 
         <!-- Баннер справа -->
-        <a class="wrotator__right" href="http://ya.ru/" target="_blank"></a>
+        <a class="wrotator__right" href="https://ya.ru/" target="_blank"></a>
     </div>
 </div>
 

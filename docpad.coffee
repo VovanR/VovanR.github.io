@@ -8,11 +8,11 @@ docpadConfig = {
     templateData:
         # Specify some site properties
         site:
-            url: 'http://vovanr.com'
+            url: 'https://vovanr.com'
             title: 'Блог Владимира Родкина'
             author: 'Владимир Родкин'
             description: 'Про фронт-энд'
-            copyrightUrl: 'http://twitter.com/VovanR'
+            copyrightUrl: 'https://twitter.com/VovanR'
             twitter: '@VovanR'
             siteSourceURL: 'https://github.com/VovanR/VovanR.github.io/tree/source'
             socialLinks: [

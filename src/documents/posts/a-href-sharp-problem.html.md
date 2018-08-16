@@ -139,5 +139,5 @@ date: 2014-11-08
 </table>
 
 ## Дополнительные материалы:
-- [Правильные ссылки](http://www.artlebedev.ru/tools/technogrette/html/links/)
+- [Правильные ссылки](https://www.artlebedev.ru/technogrette/html/links/)
 - [Почему `<a href="javascript:...">` - плохо](http://javascript.ru/unsorted/why_href_js_is_bad)

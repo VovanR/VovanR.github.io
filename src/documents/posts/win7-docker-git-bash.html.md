@@ -44,7 +44,7 @@ MSYS_NO_PATHCONV=1 docker run --rm -it -p 8080:8080 -v $(pwd)/nginx:/etc/nginx:r
 ```
 
 ## Ошибка доступа к диску
-[источник](http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows)
+[источник](https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows)
 
 Ошибка ниже возникает, если запускаемый проект находится не на диске `C:`. По умолчанию виртуальная машина *Docker Toolbox* имеет доступ только к диску `C:`
 
@@ -83,7 +83,7 @@ curl http://192.168.99.100:8080
 ```
 
 ## Материалы
-- [How to use a directory outside `C:\Users` with Docker Toolbox on Windows/Docker for Windows](http://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows)
+- [How to use a directory outside `C:\Users` with Docker Toolbox on Windows/Docker for Windows](https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows)
 - [Running nginx in debug mode](https://docs.docker.com/samples/library/nginx/#running-nginx-in-debug-mode)
 - [Use volumes](https://docs.docker.com/storage/volumes/)
 - [Get Started, Part 2: Containers](https://docs.docker.com/get-started/part2/)

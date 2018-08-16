@@ -1,6 +1,6 @@
 # www.robotstxt.org/
-# http://code.google.com/web/controlcrawlindex/
+# https://developers.google.com/search/reference/robots_txt
 
 User-agent: *
 
-Sitemap: http://vovanr.com/sitemap.xml
+Sitemap: https://vovanr.com/sitemap.xml

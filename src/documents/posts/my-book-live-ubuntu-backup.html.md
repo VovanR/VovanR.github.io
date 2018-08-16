@@ -23,7 +23,7 @@ date: 2012-01-04
     ![Добавление папки для пользователя](/images/my-book-live-ubuntu-backup/my-book-live-ubuntu-backup__configure-3.png)
 
 
-4.  Сделаем автоматически подключаемый диск (более подробно по [ссылке](http://ubuntuforums.org/showthread.php?t=1658828) и [тут](https://help.ubuntu.com/community/MountWindowsSharesPermanently)).
+4.  Сделаем автоматически подключаемый диск (более подробно по [ссылке](https://ubuntuforums.org/showthread.php?t=1658828) и [тут](https://help.ubuntu.com/community/MountWindowsSharesPermanently)).
 
     ```bash
     sudo mkdir /root/smb/
