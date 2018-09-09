@@ -53,6 +53,7 @@ docpadConfig = {
                 dns: 'DNS'
                 dnsmasq: 'Dnsmasq'
                 docker: 'Docker'
+                favicon: 'Favicon'
                 html: 'HTML'
                 ie: 'Internet Explorer'
                 java: 'Java'
@@ -65,6 +66,7 @@ docpadConfig = {
                 photoshop: 'Photoshop'
                 php: 'PHP'
                 requirejs: 'RequireJS'
+                svg: 'SVG'
                 svn: 'SVN'
                 travis: 'Travis CI'
                 ubuntu: 'Ubuntu'
@@ -131,6 +133,7 @@ docpadConfig = {
             aliases:
                 yaml: 'python'
                 shell: 'bash'
+                svg: 'html'
 
 
     # Events
