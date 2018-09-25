@@ -7,6 +7,8 @@ date: 2018-09-10
 status: draft
 ```
 
+naming conventions
+
 ## Булево
 
 - `disabled`
