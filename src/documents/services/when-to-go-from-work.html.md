@@ -5,4 +5,6 @@ href: https://vovanr.github.io/when-to-go-from-work
 source: https://github.com/VovanR/when-to-go-from-work
 date: 2018-02-02
 icon: /logo.svg
+tags:
+    - time
 ```

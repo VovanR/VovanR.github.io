@@ -72,6 +72,22 @@ docpadConfig = {
                 ubuntu: 'Ubuntu'
                 virtualbox: 'VirtualBox'
                 windows: 'Windows'
+            serviceTagNames:
+                calculator: 'Калькулятор'
+                converter: 'Конвертер'
+                date: 'Дата'
+                development: 'Разработка'
+                file: 'Файл'
+                formatter: 'Форматирование'
+                number: 'Число'
+                productivity: 'Продуктивность'
+                relax: 'Отдых'
+                sound: 'Звук'
+                statistics: 'Статистика'
+                template: 'Шаблонизация'
+                text: 'Текст'
+                time: 'Время'
+                weather: 'Погода'
 
         # Get the prepared site/document title
         # Often we would like to specify particular formatting to our page's title
