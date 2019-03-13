@@ -85,15 +85,5 @@ html(lang='ru')
             .footer__build-info
                 | Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
 
-        //- GoogleAnalytics
-        script
-            | (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            | (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            | m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            | })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            | ga('create', 'UA-56742197-1', 'auto');
-            | ga('send', 'pageview');
-        //- GoogleAnalytics
-
         script
             | (function(){document.querySelector('html').classList.add('js')})()
