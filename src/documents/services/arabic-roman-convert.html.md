@@ -4,6 +4,7 @@ desc: Конвертирует арабские цифры в римские с 
 href: https://vovanr.github.io/arabic-roman-convert.js
 source: https://github.com/VovanR/arabic-roman-convert.js
 date: 2014-04-21
+icon: /logo.svg
 tags:
     - converter
     - number
