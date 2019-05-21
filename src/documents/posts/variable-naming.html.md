@@ -13,12 +13,22 @@ naming conventions
 
 - `disabled`
 - `enabled`
+- `visible`
 
 
 ## Функция проверка условие
 
+- `checkCustomSignUpFields`
+
+## Функция проверки состояния
+
 - `isOnline`
 - `isDisabled`
+- `isVisible`
+
+## Функция валидации
+
+- `validateString`
 
 
 ## Функция сравнения
