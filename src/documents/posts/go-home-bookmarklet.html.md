@@ -13,18 +13,18 @@ date: 2011-12-13
 
 Но и такую тривиальную задачу можно повесить на отдельную кнопочку:
 
-<a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);" title="На главную">Index</a>
+<a class="bookmarklet" href="javascript:!function(l){l.href=l.protocol+'//'+l.host}(window.location);void(0);" title="На главную">Index</a>
 
 ```javascript
-javascript:window.location.href=window.location.protocol+'//'+window.location.host;void(0);
+javascript:!function(l){l.href=l.protocol+"//"+l.host}(window.location);void(0);
 ```
 
 И, чтобы быстро зайти в админку, находясь на любой странице сайта:
 
-<a class="bookmarklet" href="javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);" title="Админка">Admin</a>
+<a class="bookmarklet" href="javascript:!function(l){l.href=l.protocol+'//'+l.host+'/admin/'}(window.location);void(0);" title="Админка">Admin</a>
 
 ```javascript
-javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/admin/';void(0);
+javascript:!function(l){l.href=l.protocol+"//"+l.host+"/admin/"}(window.location);void(0);
 ```
 
 <fieldset>
@@ -66,11 +66,11 @@ javascript:window.location.href=window.location.protocol+'//'+window.location.ho
 <script>
 window.generateBookmarklet = function() {
 	var link = document.getElementById('p-go-home-link').value;
-	var result = "javascript:window.location.href=window.location.protocol+'//'+window.location.host+'/";
+	var result = "javascript:!function(l){l.href=l.protocol+'//'+l.host+'/";
 	if (link != '') {
 		result += link;
 	}
-	result += "';void(0);";
+	result += "'}(window.location);void(0);";
 	document.getElementById('p-go-home-result').value = result;
 	document.getElementById('p-go-home-button').href = result;
 };
