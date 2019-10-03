@@ -7,38 +7,72 @@ date: 2018-09-10
 status: draft
 ```
 
-naming conventions
+Naming conventions
 
 ## Булево
 
+Переменная или свойство:
 - `disabled`
 - `enabled`
 - `visible`
+- `loading`
 
 
-## Функция проверка условие
+## Функция проверка условия
 
+Функция или метод:
 - `checkCustomSignUpFields`
+
+Возвращает булево значение.
+
 
 ## Функция проверки состояния
 
+Функция или метод:
 - `isOnline`
 - `isDisabled`
 - `isVisible`
+- `isLoading`
 
-## Функция валидации
+Возвращает булево значение.
 
+
+## Валидация
+
+Метод:
 - `validateString`
+- `validateEmail`
+
+Функция:
+- `stringValidator`
+- `emailValidator`
 
 
 ## Функция сравнения
 
-- `compareDate`
+Метод:
+- `сomparatoreDate(a, b)`
+- `comparatoreString(a, b)`
+- `comparatorBoolean(a, b)`
+
+Функция:
+- `dateComparator(a, b)`
+- `stringComparator(a, b)`
+- `booleanComparator(a, b)`
+
+Возвращаемое значение:
+- `a === b` — `0`
+- `a > b` — `-1`
+- `a < b` — `1`
 
 
 ## Функция преобразования
 
-- `prepareFetchData`
+Подготовка данных для отправки:
+- `prepareData`
+
+Преобразование полученных данных:
+- `processFetchData`
 
 
 ## Функция вычислений
@@ -55,10 +89,15 @@ BUTTON_VARIANT = {
 }
 ```
 
+```js
+DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING
+```
+
 
 ## Метод
 
 - `getName`
+- `setName`
 
 
 ## Обработчик события
@@ -71,6 +110,11 @@ BUTTON_VARIANT = {
 
 ## Класс
 
+Базовый класс:
+- `BaseValidator`
+
+- `EmailValidator`
+
 
 ## Переменная
 
@@ -79,6 +123,21 @@ BUTTON_VARIANT = {
 
 - `curriedSum`
 - `curriedProcessInputData`
+
+
+## Мемоизация
+
+- `memoizedCalculateDate`
+
+
+## Debounce
+
+- `debouncedFetchData`
+
+
+## Throttle
+
+- `throttledSaveData`
 
 
 ## Материалы
