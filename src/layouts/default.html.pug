@@ -38,6 +38,9 @@ html(lang='ru')
 
         != getBlock('styles').add(site.styles).toHTML()
 
+        script.
+            document.querySelector('html').classList.add('js')
+
     body
         header.header
             .header__name
@@ -84,6 +87,3 @@ html(lang='ru')
 
             .footer__build-info
                 | Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a>
-
-        script
-            | (function(){document.querySelector('html').classList.add('js')})()
