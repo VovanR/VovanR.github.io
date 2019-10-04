@@ -51,9 +51,9 @@ Naming conventions
 ## Функция сравнения
 
 Метод:
-- `сomparatoreDate(a, b)`
-- `comparatoreString(a, b)`
-- `comparatorBoolean(a, b)`
+- `compareDate(a, b)`
+- `compareString(a, b)`
+- `compareBoolean(a, b)`
 
 Функция:
 - `dateComparator(a, b)`
@@ -62,8 +62,8 @@ Naming conventions
 
 Возвращаемое значение:
 - `a === b` — `0`
-- `a > b` — `-1`
-- `a < b` — `1`
+- `a < b` — `-1`
+- `a > b` — `1`
 
 
 ## Функция преобразования
@@ -84,8 +84,8 @@ Naming conventions
 
 ```js
 BUTTON_VARIANT = {
-    DANGER: 'danger',
-    WARNING: 'warning',
+  DANGER: 'danger',
+  WARNING: 'warning',
 }
 ```
 
@@ -110,7 +110,7 @@ DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING
 
 ## Класс
 
-Базовый класс:
+Базовый класс с префиксом `Base`:
 - `BaseValidator`
 
 - `EmailValidator`
