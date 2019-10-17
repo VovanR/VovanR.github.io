@@ -59,6 +59,14 @@ certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n myapp-certificate -i rootCA.pem
 _Пуск_ → _Панель управления_ → _Свойства браузера_ → _Содержание_ → _Сертификаты_ → _Доверенные корневые центры сертификации_  
 Жмём кнопку _«Импорт»_
 
+
+### Windows 10
+
+_Start_ → _Control Panel_ → _Network and Internet_ → _Internet Options_ → _Content_ → _Certificates_ → _Trusted Root Certification Authorities_  
+_Import..._ → _Next_ → Выбрать `rootCA.pfx` → _Next_ → Заполнить _Password_ → _Next_ → _Finish_  
+Security warning → _Yes_
+
+
 ## 3. Создаём сертификат домена
 
 Создаём файл `server.csr.cnf` со следующим содержимым.  
