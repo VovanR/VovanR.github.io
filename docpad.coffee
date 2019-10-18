@@ -9,7 +9,7 @@ docpadConfig = {
         # Specify some site properties
         site:
             url: 'https://vovanr.com'
-            title: 'Блог Владимира Родкина'
+            title: 'Владимир Родкин'
             author: 'Владимир Родкин'
             description: 'Про фронт-энд'
             copyrightUrl: 'https://twitter.com/VovanR'
