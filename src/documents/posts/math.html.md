@@ -30,6 +30,9 @@ sign    significand |
 - Multiplication (Умножение)
 - Division (Деление)
 
+- Remainder (Остаток от деления)
+- Exponentiation (Возведение в степень)
+
 - Approximation (Приближение)
 
 - Rounding modes
@@ -39,3 +42,4 @@ sign    significand |
 
 - [Floating-point arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
 - [Exposing Floating Point](https://ciechanow.ski/exposing-floating-point/)
+- [JavaScript for impatient programmers. Numbers](https://exploringjs.com/impatient-js/ch_numbers.html)
