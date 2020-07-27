@@ -54,6 +54,7 @@ docpadConfig = {
                 dnsmasq: 'Dnsmasq'
                 docker: 'Docker'
                 favicon: 'Favicon'
+                git: 'Git'
                 html: 'HTML'
                 ie: 'Internet Explorer'
                 java: 'Java'
