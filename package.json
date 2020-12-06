@@ -4,14 +4,14 @@
   "private": true,
   "devDependencies": {
     "docpad": "6.79.4",
-    "docpad-plugin-cleanurls": "^2.11.0",
-    "docpad-plugin-highlightjs": "^2.6.0",
-    "docpad-plugin-marked": "^2.5.0",
-    "docpad-plugin-pug": "^2.2.0",
-    "docpad-plugin-rss": "^2.3.1",
-    "docpad-plugin-sitemap": "^2.5.0",
-    "docpad-plugin-stylus": "^2.14.0",
-    "moment": "^2.22.2"
+    "docpad-plugin-cleanurls": "2.11.0",
+    "docpad-plugin-highlightjs": "2.6.0",
+    "docpad-plugin-marked": "2.5.0",
+    "docpad-plugin-pug": "2.2.0",
+    "docpad-plugin-rss": "2.3.1",
+    "docpad-plugin-sitemap": "2.5.0",
+    "docpad-plugin-stylus": "2.14.0",
+    "moment": "2.22.2"
   },
   "scripts": {
     "start": "docpad-server",
