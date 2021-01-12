@@ -21,5 +21,13 @@ article.post(class=document.status ? ('post_status_' + document.status) : '')
             != pubDate(document.date)
 
         .post__share
-            <script src="//yastatic.net/share2/share.js"></script>
-            <div class="ya-share2" data-services="vkontakte,facebook,gplus,twitter" data-counter=""></div>
+            script(src="/vendor/likely/likely.js")
+            link(rel="stylesheet" href="/vendor/likely/likely.css")
+
+            .likely
+              .twitter
+              .facebook
+              .vkontakte
+              .telegram
+              .odnoklassniki
+              .linkedin
