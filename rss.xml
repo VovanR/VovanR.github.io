@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Владимир Родкин]]></title>
+        <description><![CDATA[Про фронт-энд]]></description>
+        <link>https://vovanr.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Thu, 14 Jan 2021 06:12:18 GMT</lastBuildDate>
+        <atom:link href="https://vovanr.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Владимир Родкин]]></author>
+        <pubDate>Thu, 14 Jan 2021 06:12:11 GMT</pubDate>
+        <item>
+            <title><![CDATA[Git mailmap или как объединить разработчика]]></title>
+            <description><![CDATA[<p>Бывает, что разработчик коммитит под разными именами или имейлами, а это часто может сбивать с толку.
+Например при работе с историей коммитов мы ищем нужный коммит от определённого разработчика, но он в те далёкие времена называл себя по-другому.</p>
+<p>Гит позволяет объединить данные такого разработчика.</p>
+<p>Например команда <code>git shortlog -s -n -e</code> выводит количество коммитов на каждого разработчика.
+Если один разработчик коммитил под разными имейлами или именами, то вывод будет таким:</p>
+<pre class="highlight"><code class="hljs basic"><span class="hljs-symbol">10 </span>Foo Bar &lt;foo.bar@gmail.<span class="hljs-keyword">com</span>&gt;
+<span class="hljs-symbol">3 </span>Foo Bar &lt;foo.bar@ya.ru&gt;
+<span class="hljs-symbol">4 </span>Foo B. Bar &lt;foo.bar@example.<span class="hljs-keyword">com</span>&gt;
+<span class="hljs-symbol">1 </span>Foobar &lt;foo.bar@baz.<span class="hljs-keyword">com</span>&gt;</code></pre><p>Можно объединить такие записи.
+Для этого создаём в репозитории файл <code>.mailmap</code> и описываем маппинги.
+Например мы хотим объединить разработчика из вывода выше в такой вид: <code>Foo Bar &lt;foo.bar@gmail.com&gt;</code>.</p>
+<p>Для этого надо:</p>
+<ol>
+<li>Обновить имя для имейлов <code>&lt;foo.bar@example.com&gt;</code> и <code>&lt;foo.bar@baz.com&gt;</code> на <code>Foo Bar</code>.</li>
+<li>Объединить имейлы <code>&lt;foo.bar@ya.ru&gt;</code>, <code>&lt;foo.bar@example.com&gt;</code> и <code>&lt;foo.bar@baz.com&gt;</code> на <code>&lt;foo.bar@gmail.com&gt;</code>.</li>
+</ol>
+<p>Файл <code>.mailmap</code> будет выглядеть так:</p>
+<pre class="highlight"><code class="hljs armasm"><span class="hljs-symbol">Foo</span> <span class="hljs-keyword">Bar </span>&lt;foo.<span class="hljs-keyword">bar@example.com&gt;
+</span><span class="hljs-symbol">Foo</span> <span class="hljs-keyword">Bar </span>&lt;foo.<span class="hljs-keyword">bar@baz.com&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@ya.ru&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@example.com&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@baz.com&gt;</span></code></pre><p>Теперь вывод команды будет правильным:</p>
+<pre class="highlight"><code class="hljs basic"><span class="hljs-symbol">18 </span>Foo Bar &lt;foo.bar@gmail.<span class="hljs-keyword">com</span>&gt;</code></pre><p>В файле можно оставлять комментарии, может быть полезно, если пользователей много:</p>
+<pre class="highlight"><code class="hljs dts"><span class="hljs-meta"># See: https:<span class="hljs-comment">//git-scm.com/docs/git-shortlog#_mapping_authors</span></span>
+<span class="hljs-meta"># git shortlog -s -n -e</span>
+
+<span class="hljs-meta"># Foo Bar</span>
+Foo Bar <span class="hljs-params">&lt;foo.bar@example.com&gt;</span>
+
+<span class="hljs-meta"># Baz Qux</span>
+Baz Qux <span class="hljs-params">&lt;baz.qux@example.com&gt;</span>
+<span class="hljs-params">&lt;baz.qux@example.com&gt;</span> <span class="hljs-params">&lt;baz@example.com&gt;</span>
+<span class="hljs-params">&lt;baz.qux@example.com&gt;</span> <span class="hljs-params">&lt;baz.q@example.com&gt;</span></code></pre><p>Маппинги, описанные в файле <code>.mailmap</code> влияют так же на вывод комманды <code>git log</code> — данные автора коммита обновятся и там.</p>
+<h2 id="-">Дополнительные материалы</h2>
+<ul>
+<li><a href="https://git-scm.com/docs/git-shortlog#_mapping_authors">Mapping Authors</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/git-mailmap</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/git-mailmap</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[https://localhost]]></title>
+            <description><![CDATA[<h2 id="1-">1. Создаём корневой сертификат</h2>
+<p>Генерируем ключ (RSA-2048 key)</p>
+<pre class="highlight"><code class="hljs bash">openssl genrsa -des3 -out rootCA.key 2048</code></pre>
+<p>Генерируем корневой сертификат (Root SSL certificate)</p>
+<pre class="highlight"><code class="hljs bash">openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem</code></pre>
+<h2 id="2-">2. Добавляем корневой сертификат в список доверенных</h2>
+<h3 id="ubuntu">Ubuntu</h3>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Network_Security_Services">Network Security Services</a> — Просмотр и управление сертификатами для браузеров</li>
+<li><a href="https://superuser.com/a/657177/274603">Mozilla NSS library</a> — Почему <code>update-ca-certificates</code> недостаточно</li>
+<li><a href="https://github.com/dakshshah96/local-cert-generator">local-cert-generator</a></li>
+</ul>
+<pre class="highlight"><code class="hljs bash">sudo cp rootCA.pem /usr/<span class="hljs-built_in">local</span>/share/ca-certificates/rootCA.crt
+sudo update-ca-certificates</code></pre>
+<p><strong>Добавляем корневой сертификат в Firefox и Chrome</strong></p>
+<pre class="highlight"><code class="hljs bash">sudo apt install libnss3-tools
+openssl pkcs12 -<span class="hljs-built_in">export</span> -out rootCA.pfx -inkey rootCA.key -<span class="hljs-keyword">in</span> rootCA.crt
+pk12util -d sql:<span class="hljs-variable">$HOME</span>/.pki/nssdb -i rootCA.pfx
+certutil -d sql:<span class="hljs-variable">$HOME</span>/.pki/nssdb -A -t <span class="hljs-string">"C,,"</span> -n myapp-certificate -i rootCA.pem</code></pre>
+<p>Перезагружаем браузер.</p>
+<p>Если не помогло:</p>
+<ul>
+<li>Firefox: <em>Preferences</em> → <em>Privacy &amp; Security</em> → <em>Certificates</em> → <em>View Certificates...</em> → <em>Authorities</em> → <em>Import...</em> → выбираем <code>rootCA.pem</code></li>
+<li>Chrome: <em>Settings</em> → <em>Privacy and security</em> → <em>Manage certificates</em> → <em>Authorities</em> → <em>Import</em> → выбираем <code>rootCA.pem</code></li>
+</ul>
+<p>Перезагружаем браузер.</p>
+<h3 id="windows-7">Windows 7</h3>
+<ul>
+<li><a href="https://blogs.technet.microsoft.com/sbs/2008/05/08/installing-a-self-signed-certificate-as-a-trusted-root-ca-in-windows-vista/">Installing a Self-Signed Certificate as a Trusted Root CA in Windows Vista</a></li>
+</ul>
+<p><em>Пуск</em> → <em>Панель управления</em> → <em>Свойства браузера</em> → <em>Содержание</em> → <em>Сертификаты</em> → <em>Доверенные корневые центры сертификации</em><br>Жмём кнопку <em>«Импорт»</em></p>
+<h3 id="windows-10">Windows 10</h3>
+<p><em>Start</em> → <em>Control Panel</em> → <em>Network and Internet</em> → <em>Internet Options</em> → <em>Content</em> → <em>Certificates</em> → <em>Trusted Root Certification Authorities</em><br><em>Import...</em> → <em>Next</em> → Выбрать <code>rootCA.pfx</code> → <em>Next</em> → Заполнить <em>Password</em> → <em>Next</em> → <em>Finish</em><br>Security warning → <em>Yes</em></p>
+<h2 id="3-">3. Создаём сертификат домена</h2>
+<p>Создаём файл <code>server.csr.cnf</code> со следующим содержимым.<br>В котором <code>CN</code> — доменное имя. Остальные поля заполняются как на шаге создания корневого сертификата.</p>
+<pre class="highlight"><code class="hljs ini"><span class="hljs-section">[req]</span>
+<span class="hljs-attr">default_bits</span>=<span class="hljs-number">2048</span>
+<span class="hljs-attr">prompt</span>=<span class="hljs-literal">no</span>
+<span class="hljs-attr">default_md</span>=sha256
+<span class="hljs-attr">distinguished_name</span>=req_distinguished_name
+
+<span class="hljs-section">[req_distinguished_name]</span>
+<span class="hljs-attr">C</span>=RU
+<span class="hljs-attr">ST</span>=Saint-Petersburg
+<span class="hljs-attr">L</span>=Saint-Petersburg
+<span class="hljs-attr">O</span>=RandomOrganization
+<span class="hljs-attr">OU</span>=RandomOrganizationUnit
+<span class="hljs-attr">emailAddress</span>=hello@example.com
+<span class="hljs-attr">CN</span>=localhost</code></pre><p>Создаём файл <code>v3.ext</code><br>Где <code>DNS.1</code> — как поле <code>CN</code> в файле <code>server.csr.cnf</code></p>
+<pre class="highlight"><code class="hljs ini"><span class="hljs-attr">authorityKeyIdentifier</span>=keyid,issuer
+<span class="hljs-attr">basicConstraints</span>=CA:<span class="hljs-literal">FALSE</span>
+<span class="hljs-attr">keyUsage</span> = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+<span class="hljs-attr">subjectAltName</span> = @alt_names
+
+<span class="hljs-section">[alt_names]</span>
+<span class="hljs-attr">DNS.1</span> = localhost</code></pre><p>Генерируем доменный ключ</p>
+<pre class="highlight"><code class="hljs bash">openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key -config server.csr.cnf</code></pre>
+<p>Генерируем доменный сертификат</p>
+<pre class="highlight"><code class="hljs bash">openssl x509 -req -<span class="hljs-keyword">in</span> server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext</code></pre>
+<p>Помещаем сгенерированные ключ и сертификат в директорию для Докер-контейнера</p>
+<pre class="highlight"><code class="hljs awk">nginx<span class="hljs-regexp">/etc/</span>ssl<span class="hljs-regexp">/certs/</span>server.crt
+nginx<span class="hljs-regexp">/etc/</span>ssl<span class="hljs-regexp">/private/</span>server.key</code></pre><h2 id="4-https-nginx-">4. Добавляем настройки для работы HTTPS в <em>NGINX-конфиг</em></h2>
+<pre class="highlight"><code class="hljs diff">. . .
+
+ http {
+   server {
+<span class="hljs-deletion">-    listen 7272;</span>
+<span class="hljs-addition">+    listen 7272 ssl;</span>
+
+<span class="hljs-addition">+    ssl_certificate /etc/ssl/certs/server.crt;</span>
+<span class="hljs-addition">+    ssl_certificate_key /etc/ssl/private/server.key;</span>
+
+     . . .</code></pre>
+<h2 id="5-nginx-">5. Обновляем команду запуска <em>NGINX</em> Докер-контейнера</h2>
+<pre class="highlight"><code class="hljs diff"> docker run --rm -it -p 7272:7272 \
+   -v $(pwd)/nginx:/etc/nginx:ro \
+<span class="hljs-addition">+  -v $(pwd)/nginx/etc/ssl/certs:/etc/ssl/certs \</span>
+<span class="hljs-addition">+  -v $(pwd)/nginx/etc/ssl/private:/etc/ssl/private \</span>
+   --name myapp-nginx nginx</code></pre>
+<h2 id="-">Дополнительные материалы</h2>
+<ul>
+<li><a href="https://github.com/twitchdev/extensions-samples/tree/master/boilerplate">Twitch Extensions Boilerplate</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec">How to get HTTPS working on your local development environment in 5 minutes</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/https-localhost</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/https-localhost</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Tue, 15 Oct 2019 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Математика]]></title>
+            <description><![CDATA[<pre class="highlight"><code class="hljs gherkin">                  exponent
+                     |<span class="hljs-string">
+-1.2345 = -12345 × 10¯⁴
+</span>|<span class="hljs-string">            </span>|<span class="hljs-string">      </span>|
+sign    significand |<span class="hljs-string">
+                   base</span></code></pre><ul>
+<li>Sign (Знак)</li>
+<li>Exponent (Экспонента)</li>
+<li>Significand field (Значение)</li>
+<li>Total bits (Всего бит)</li>
+<li>Exponent bias (Смещение экспоненты)</li>
+<li>Bits precision (Точность бит)</li>
+<li><p>Number of decimal digits (Количество десятичных цифр)</p>
+</li>
+<li><p>Addition (Сложение)</p>
+</li>
+<li><p>Subtraction (Вычитание)</p>
+</li>
+<li><p>Multiplication (Умножение)</p>
+</li>
+<li><p>Division (Деление)</p>
+</li>
+<li><p>Remainder (Остаток от деления)</p>
+</li>
+<li><p>Exponentiation (Возведение в степень)</p>
+</li>
+<li><p>Approximation (Приближение)</p>
+</li>
+<li><p>Rounding modes</p>
+</li>
+</ul>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">Floating-point arithmetic</a></li>
+<li><a href="https://ciechanow.ski/exposing-floating-point/">Exposing Floating Point</a></li>
+<li><a href="https://exploringjs.com/impatient-js/ch_numbers.html">JavaScript for impatient programmers. Numbers</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/math</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/math</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Букмарклет тултипа информации по задаче из JIRA]]></title>
+            <description><![CDATA[<p><img src="/images/jira-issue-info-bookmarklet/jira-issue-info-bookmarklet__preview.png" alt=""></p>
+<p>Мне надо составлять строку формата <code>&quot;&lt;issue_id&gt;: &lt;issue_name&gt;&quot;</code>, например есть задача <code>FOO-5</code> с названием &quot;Fix number input&quot;
+Строка должна получиться следующего вида: &quot;FOO-5: Fix number input&quot;
+А так же нужен ID и URL задачи</p>
+<p><a class="bookmarklet" href="javascript:!function({JIRA:JIRA,AJS:AJS,location:location}){const id=JIRA.Issue.getIssueKey(),title=id+': '+document.getElementById('summary-val').innerText,url=location.origin+'/browse/'+id,style='font-family: monospace; box-sizing: border-box; width: 100%; resize: none;',flag=AJS.flag({body:`<div><textarea style='${style}' rows='2'>${title}\n${url}</textarea><input value='${url}' style='${style}'/><input value='${id}' style='${style}'/></div>`});function copy({target:target}){target.select(),document.execCommand('copy')}flag.querySelector('textarea').addEventListener('click',copy),flag.querySelectorAll('input').forEach(el=>el.addEventListener('click',copy))}(window);void(0);" title="JIRA Issue Info">JI</a></p>
+<p>Код букмарклета:</p>
+<pre class="highlight"><code class="hljs javascript">javascript:!<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{JIRA:JIRA,AJS:AJS,location:location}</span>)</span>{<span class="hljs-keyword">const</span> id=JIRA.Issue.getIssueKey(),title=id+<span class="hljs-string">": "</span>+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"summary-val"</span>).innerText,url=location.origin+<span class="hljs-string">"/browse/"</span>+id,style=<span class="hljs-string">"font-family: monospace; box-sizing: border-box; width: 100%; resize: none;"</span>,flag=AJS.flag({<span class="hljs-attr">body</span>:<span class="hljs-string">`&lt;div&gt;&lt;textarea style="<span class="hljs-subst">${style}</span>" rows="2"&gt;<span class="hljs-subst">${title}</span>\n<span class="hljs-subst">${url}</span>&lt;/textarea&gt;&lt;input value="<span class="hljs-subst">${url}</span>" style="<span class="hljs-subst">${style}</span>"/&gt;&lt;input value="<span class="hljs-subst">${id}</span>" style="<span class="hljs-subst">${style}</span>"/&gt;&lt;/div&gt;`</span>});<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copy</span>(<span class="hljs-params">{target:target}</span>)</span>{target.select(),<span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">"copy"</span>)}flag.querySelector(<span class="hljs-string">"textarea"</span>).addEventListener(<span class="hljs-string">"click"</span>,copy),flag.querySelectorAll(<span class="hljs-string">"input"</span>).forEach(<span class="hljs-function"><span class="hljs-params">el</span>=&gt;</span>el.addEventListener(<span class="hljs-string">"click"</span>,copy))}(<span class="hljs-built_in">window</span>);<span class="hljs-keyword">void</span>(<span class="hljs-number">0</span>);</code></pre>
+<p>Исходный код:</p>
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{ JIRA, AJS, location }</span>) </span>{
+  <span class="hljs-keyword">const</span> id = JIRA.Issue.getIssueKey();
+  <span class="hljs-keyword">const</span> name = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"summary-val"</span>).innerText;
+
+  <span class="hljs-keyword">const</span> title = id + <span class="hljs-string">": "</span> + name;
+  <span class="hljs-keyword">const</span> url = location.origin + <span class="hljs-string">"/browse/"</span> + id;
+
+  <span class="hljs-keyword">const</span> style =
+    <span class="hljs-string">"font-family: monospace; box-sizing: border-box; width: 100%; resize: none;"</span>;
+
+  <span class="hljs-keyword">const</span> flag = AJS.flag({
+    <span class="hljs-attr">body</span>: <span class="hljs-string">`&lt;div&gt;&lt;textarea style="<span class="hljs-subst">${style}</span>" rows="2"&gt;<span class="hljs-subst">${title}</span>
+<span class="hljs-subst">${url}</span>&lt;/textarea&gt;&lt;input value="<span class="hljs-subst">${url}</span>" style="<span class="hljs-subst">${style}</span>"/&gt;&lt;input value="<span class="hljs-subst">${id}</span>" style="<span class="hljs-subst">${style}</span>"/&gt;&lt;/div&gt;`</span>
+  });
+
+  flag.querySelector(<span class="hljs-string">"textarea"</span>).addEventListener(<span class="hljs-string">"click"</span>, copy);
+  flag
+    .querySelectorAll(<span class="hljs-string">"input"</span>)
+    .forEach(<span class="hljs-function"><span class="hljs-params">el</span> =&gt;</span> el.addEventListener(<span class="hljs-string">"click"</span>, copy));
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copy</span>(<span class="hljs-params">{ target }</span>) </span>{
+    target.select();
+    <span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">"copy"</span>);
+  }
+})(<span class="hljs-built_in">window</span>);</code></pre>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://docs.atlassian.com/aui/7.9.5/docs/flag.html">Компонент <code>Flag</code> для показа сообщений в JIRA</a></li>
+<li><a href="https://github.com/VovanR/working-bookmarklets">Исходный код букмарклета</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/jira-issue-info-bookmarklet</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/jira-issue-info-bookmarklet</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Wed, 31 Oct 2018 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Нэйминг (именование) переменных]]></title>
+            <description><![CDATA[<p>Naming conventions</p>
+<h2 id="-">Булево</h2>
+<p>Переменная или свойство:</p>
+<ul>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+<li><code>visible</code></li>
+<li><code>loading</code></li>
+</ul>
+<h2 id="-">Функция проверка условия</h2>
+<p>Функция или метод:</p>
+<ul>
+<li><code>checkCustomSignUpFields</code></li>
+</ul>
+<p>Возвращает булево значение.</p>
+<h2 id="-">Функция проверки состояния</h2>
+<p>Функция или метод:</p>
+<ul>
+<li><code>isOnline</code></li>
+<li><code>isDisabled</code></li>
+<li><code>isVisible</code></li>
+<li><code>isLoading</code></li>
+</ul>
+<p>Возвращает булево значение.</p>
+<h2 id="-">Валидация</h2>
+<p>Метод:</p>
+<ul>
+<li><code>validateString</code></li>
+<li><code>validateEmail</code></li>
+</ul>
+<p>Функция:</p>
+<ul>
+<li><code>stringValidator</code></li>
+<li><code>emailValidator</code></li>
+</ul>
+<h2 id="-">Функция сравнения</h2>
+<p>Метод:</p>
+<ul>
+<li><code>compareDate(a, b)</code></li>
+<li><code>compareString(a, b)</code></li>
+<li><code>compareBoolean(a, b)</code></li>
+</ul>
+<p>Функция:</p>
+<ul>
+<li><code>dateComparator(a, b)</code></li>
+<li><code>stringComparator(a, b)</code></li>
+<li><code>booleanComparator(a, b)</code></li>
+</ul>
+<p>Возвращаемое значение:</p>
+<ul>
+<li><code>a === b</code> — <code>0</code></li>
+<li><code>a &lt; b</code> — <code>-1</code></li>
+<li><code>a &gt; b</code> — <code>1</code></li>
+</ul>
+<h2 id="-">Функция преобразования</h2>
+<p>Подготовка данных для отправки:</p>
+<ul>
+<li><code>prepareData</code></li>
+</ul>
+<p>Преобразование полученных данных:</p>
+<ul>
+<li><code>processFetchData</code></li>
+</ul>
+<h2 id="-">Функция вычислений</h2>
+<ul>
+<li><code>calculateDays</code></li>
+</ul>
+<h2 id="-">Константа</h2>
+<pre class="highlight"><code class="hljs javascript">BUTTON_VARIANT = {
+  <span class="hljs-attr">DANGER</span>: <span class="hljs-string">'danger'</span>,
+  <span class="hljs-attr">WARNING</span>: <span class="hljs-string">'warning'</span>,
+}</code></pre>
+<pre class="highlight"><code class="hljs javascript">DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING</code></pre>
+<h2 id="-">Метод</h2>
+<ul>
+<li><code>getName</code></li>
+<li><code>setName</code></li>
+</ul>
+<h2 id="-">Обработчик события</h2>
+<p><code>HIA</code> (Handle Item Action)</p>
+<ul>
+<li><code>handleClick</code></li>
+<li><code>handleListItemClick</code></li>
+</ul>
+<h2 id="-">Класс</h2>
+<p>Базовый класс с префиксом <code>Base</code>:</p>
+<ul>
+<li><p><code>BaseValidator</code></p>
+</li>
+<li><p><code>EmailValidator</code></p>
+</li>
+</ul>
+<h2 id="-">Переменная</h2>
+<h2 id="-">Каррирование</h2>
+<ul>
+<li><code>curriedSum</code></li>
+<li><code>curriedProcessInputData</code></li>
+</ul>
+<h2 id="-">Мемоизация</h2>
+<ul>
+<li><code>memoizedCalculateDate</code></li>
+</ul>
+<h2 id="debounce">Debounce</h2>
+<ul>
+<li><code>debouncedFetchData</code></li>
+</ul>
+<h2 id="throttle">Throttle</h2>
+<ul>
+<li><code>throttledSaveData</code></li>
+</ul>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://habr.com/post/172091/">90 рекомендаций по стилю написания программ на C++</a></li>
+<li><a href="https://ymatuhin.ru/front-end/how-to-name-variables/">Как называть переменные</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/variable-naming</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/variable-naming</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Mon, 10 Sep 2018 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Как создать логотип для проекта]]></title>
+            <description><![CDATA[<p>Шаблон иконки</p>
+<pre class="highlight"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 256 256"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"256"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"256"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M0 0h256v256H0z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span>/&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">"128"</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">"128"</span> <span class="hljs-attr">r</span>=<span class="hljs-string">"120"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"blue"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre>
+<p><img src="/images/create-project-logo/logo-template.svg" alt="Logo template"></p>
+<p>Добавить иконку в <code>README.md</code></p>
+<pre class="highlight"><code class="hljs md"><span class="hljs-section"># my-new-project</span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"right"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"120"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"120"</span>
+     <span class="hljs-attr">src</span>=<span class="hljs-string">"./logo.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"My new project logo"</span>&gt;</span></span></code></pre>
+<p>Генерируем фавиконки с помощью <a href="https://realfavicongenerator.net/">Favicon Generator</a></p>
+<pre class="highlight"><code class="hljs bash">  &gt; tree
+  .
+  ├── public
+  │   ├── android-chrome-192x192.png
+  │   ├── android-chrome-512x512.png
+  │   ├── apple-touch-icon.png
+  │   ├── browserconfig.xml
+  │   ├── favicon-16x16.png
+  │   ├── favicon-32x32.png
+  │   ├── favicon.ico
+  │   ├── manifest.json
+  │   ├── mstile-144x144.png
+  │   ├── mstile-150x150.png
+  │   ├── mstile-310x150.png
+  │   ├── mstile-310x310.png
+  │   ├── mstile-70x70.png
+  │   └── safari-pinned-tab.svg
+  ├── logo.svg
+  ├── package.json
+  └── README.md</code></pre>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://realfavicongenerator.net/">Favicon Generator. For real.</a></li>
+<li><a href="https://github.com/VovanR/vovanr-project-logos">vovanr-project-logos</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/create-project-logo</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/create-project-logo</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Thu, 06 Sep 2018 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Запуск докер на Windows 7, Docker Toolbox, Git Bash]]></title>
+            <description><![CDATA[<p>Установить <em>Docker Toolbox</em> <a href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/</a><br>
+Если уже установлен <em>VirtualBox</em>, то в установщике <em>Docker Toolbox</em> снимаем галку <em>VirtualBox</em></p>
+<p>Запускаем наш контейнер</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx:/etc/nginx:ro --name my-nginx-server nginx</code></pre>
+<p>В директории <code>nginx</code> должен лежать конфиг-файл <code>nginx.conf</code></p>
+<p>Можно передать напрямую</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --name my-nginx-server nginx</code></pre>
+<p>Посмотреть что подключилось</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --name my-nginx-server nginx ls -al /etc/nginx</code></pre>
+<h2 id="-">Ошибка конвертирования путей</h2>
+<p><a href="https://github.com/docker/toolbox/issues/456">источник</a></p>
+<p>Ошибка возниает в <em>Git Bash</em> из-за конвертирования путей</p>
+<p class="warning">C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: invalid mode: \Program Files\Git\etc\nginx;ro.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.</p>
+
+<p>Добавляем переменную среды <code>MSYS_NO_PATHCONV=1</code></p>
+<pre class="highlight"><code class="hljs bash">MSYS_NO_PATHCONV=1 docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx:/etc/nginx:ro --name my-nginx-server nginx</code></pre>
+<h2 id="-">Ошибка доступа к диску</h2>
+<p><a href="https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows">источник</a></p>
+<p>Ошибка ниже возникает, если запускаемый проект находится не на диске <code>C:</code>. По умолчанию виртуальная машина <em>Docker Toolbox</em> имеет доступ только к диску <code>C:</code></p>
+<p class="warning">C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "process_linux.go:402: container init caused \"rootfs_linux.go:58: mounting \\\"/e/work/my-project/ngin
+x/nginx.conf\\\" to rootfs \\\"/mnt/sda1/var/lib/docker/aufs/mnt/1f1bcd6fa585643c7\\\" at \\\"/mnt/sda1/var/lib/docker/aufs/mnt/1f1bcd6fa585643c7/etc/nginx/nginx.conf\\\"
+caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type.</p>
+
+<p>Останавливаем машину</p>
+<pre class="highlight"><code class="hljs bash">docker-machine stop</code></pre>
+<p>Открываем <em>VirtualBox</em>, идем в настройки виртуальной машины <em>Docker Toolbox</em></p>
+<p><em>Settings</em> → <em>Shared Folders</em> → <em>Add share</em></p>
+<ul>
+<li>Path: <code>E:\</code></li>
+<li>Folder name: <code>e/</code></li>
+</ul>
+<p>Отметить <em>&quot;Авто-подключение&quot;</em></p>
+<p>Запускаем машину</p>
+<pre class="highlight"><code class="hljs bash">docker-machine start</code></pre>
+<p>Узнать IP-адрес запущенного nginx-сервера</p>
+<pre class="highlight"><code class="hljs bash">docker-machine ip</code></pre>
+<p><samp>192.168.99.100</samp></p>
+<p>Проверяем</p>
+<pre class="highlight"><code class="hljs bash">curl http://192.168.99.100:8080</code></pre>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows">How to use a directory outside <code>C:\Users</code> with Docker Toolbox on Windows/Docker for Windows</a></li>
+<li><a href="https://docs.docker.com/samples/library/nginx/#running-nginx-in-debug-mode">Running nginx in debug mode</a></li>
+<li><a href="https://docs.docker.com/storage/volumes/">Use volumes</a></li>
+<li><a href="https://docs.docker.com/get-started/part2/">Get Started, Part 2: Containers</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/win7-docker-git-bash</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/win7-docker-git-bash</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Mon, 21 May 2018 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Автоматический деплой GitHub Pages через Travis CI]]></title>
+            <description><![CDATA[<p>Задача: есть репозиторий организации на гитхабе (<a href="https://github.com/inside-demo/webpack-global-vendor-demo">inside-demo/webpack-global-vendor-demo</a>).<br>
+Надо после изменения ветки <code>master</code> собирать демо на <a href="https://pages.github.com/">GitHub Pages</a> (<a href="https://inside-demo.github.io/webpack-global-vendor-demo/">inside-demo.github.io/webpack-global-vendor-demo</a>).</p>
+<p>Этапы деплоя:</p>
+<ol>
+<li>Установить зависимости: <code>npm install</code></li>
+<li>Собрать проект: <code>npm run build</code></li>
+<li>Добавить директорию <code>build</code></li>
+<li>Закоммитить в ветку <code>gh-pages</code></li>
+</ol>
+<h2 id="-github-travis-ci">Создаем GitHub-токен для деплоя из Travis CI</h2>
+<p><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">источник</a></p>
+<p>Переходим на <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a><br>
+Жмем <em>&quot;Generate new token&quot;</em><br>
+Называем токен <code>inside-demo/webpack-global-vendor-demo</code><br>
+Отмечаем только <em>&quot;public_repo&quot;</em><br>
+Копируем токен</p>
+<h2 id="-travis-ci">Подключаем Travis CI</h2>
+<p>Переходим на страницу <a href="https://travis-ci.org/profile/inside-demo">https://travis-ci.org/profile/inside-demo</a><br>
+Жмем <em>&quot;Sync account&quot;</em><br>
+Когда синхронизация закончится, появится наш репозиторий<br>
+Переходим в <a href="https://travis-ci.org/inside-demo/webpack-global-vendor-demo">https://travis-ci.org/inside-demo/webpack-global-vendor-demo</a><br>
+Включаем проект <em>&quot;Activate repository&quot;</em><br>
+Перезагружаем страницу</p>
+<h3 id="-github-">Добавляем GitHub-токен в травис</h3>
+<p><a href="https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings">источник</a></p>
+<p>Жмем <em>&quot;More options&quot;</em> → <em>&quot;Settings&quot;</em><br>
+Создаем в <em>&quot;Environment Variables&quot;</em></p>
+<ul>
+<li>Name: <code>GITHUB_TOKEN</code></li>
+<li>Value: <code>Вставляем сгенерированный GitHub-токен</code></li>
+</ul>
+<p>Жмем <em>&quot;Add&quot;</em></p>
+<h2 id="-travis-yml">Добавляем настройки деплоя в <code>.travis.yml</code></h2>
+<p><a href="https://docs.travis-ci.com/user/deployment/pages/">источник</a></p>
+<p>Создаем в проекте файл <code>.travis.yml</code><br>
+Добавляем секцию <code>deploy</code><br>
+Добавляем запуск сборки перед деплоем в секцию <code>before_deploy</code><br>
+Так как билд добавлен в <code>.gitignore</code>, необходимо переписать файл <code>.gitignore</code></p>
+<pre class="highlight"><code class="hljs python">language: node_js
+node_js: node
+
+before_deploy:
+  - npm run build
+  - echo -e <span class="hljs-string">"node_modules\npackage-lock.json"</span> &gt; .gitignore
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master</code></pre>
+<p>Если в проекте есть тесты, которые запускаются на разных версиях <em>NodeJS</em>, то надо обновить правило <code>on</code> в секции <code>deploy</code>, чтобы сборка собиралась один раз</p>
+<pre class="highlight"><code class="hljs python">language: node_js
+node_js:
+  - <span class="hljs-number">10</span>
+  - <span class="hljs-number">8</span>
+
+before_deploy:
+  - npm run build
+  - echo -e <span class="hljs-string">"node_modules\npackage-lock.json"</span> &gt; .gitignore
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
+    node: <span class="hljs-number">10</span></code></pre>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://docs.travis-ci.com/user/deployment/pages/">GitHub Pages Deployment</a></li>
+<li><a href="https://docs.travis-ci.com/user/customizing-the-build#The-Build-Lifecycle">Customizing the Build. The Build Lifecycle</a></li>
+</ul>
+<h2 id="-">Примеры</h2>
+<ul>
+<li><a href="https://github.com/geops/ole2/blob/master/.travis.yml">https://github.com/geops/ole2/blob/master/.travis.yml</a></li>
+<li><a href="https://github.com/inside-demo/webpack-global-vendor-demo/blob/master/.travis.yml">https://github.com/inside-demo/webpack-global-vendor-demo/blob/master/.travis.yml</a></li>
+<li><a href="https://github.com/VovanR/VovanR.github.io/blob/source/.travis.yml">https://github.com/VovanR/VovanR.github.io/blob/source/.travis.yml</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Tue, 15 May 2018 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[RequireJS подключение зависимостей модуля]]></title>
+            <description><![CDATA[<p>Чтобы избежать головной боли, я придерживаюсь следующего шаблона:</p>
+<ul>
+<li>Каждая зависимость в новой строке</li>
+<li>Зависимости, которые ничего не возвращают, подключаются в секции <code>nothing returns</code></li>
+</ul>
+<pre class="highlight"><code class="hljs javascript">define([
+    <span class="hljs-string">'jquery'</span>,
+    <span class="hljs-string">'lodash'</span>,
+
+    <span class="hljs-comment">// nothing returns</span>
+    <span class="hljs-string">'jqueryCookie'</span>,
+    <span class="hljs-string">'jqueryPerfectScrollbar'</span>,
+    <span class="hljs-string">'jqueryRaty'</span>,
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
+    $,
+    _
+</span>) </span>{
+
+    <span class="hljs-string">'use strict'</span>;
+
+    <span class="hljs-comment">// Module code...</span>
+
+});</code></pre>
+<p>Это упрощает рефакторинг и беглый парсинг взглядом.</p>
+]]></description>
+            <link>https://vovanr.com/posts/requirejs-module-dependencies</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/requirejs-module-dependencies</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Sun, 17 May 2015 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu сравнение папок и файлов]]></title>
+            <description><![CDATA[<p>Как сравнить два каталога или лог-файла?</p>
+<p>Для этого я использую программу <a href="//meldmerge.org/"><em>Meld</em></a>.</p>
+<h2 id="-">Установка</h2>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install meld</code></pre>
+<h2 id="-">Использование</h2>
+<h3 id="-">Запуск из терминала</h3>
+<pre class="highlight"><code class="hljs bash">meld ./foo ../bar/baz</code></pre>
+<h3 id="-">Запуск из меню</h3>
+<p>Запускаем, сравниваем</p>
+<p><img src="/images/ubuntu-diff-folders-and-files/ubuntu-diff-folders-and-files__preview.png" alt="Сравнение логов"></p>
+<p>Еще можно смотреть <em>git-диффы</em> и решать конфликты при мерже.</p>
+<h2 id="-">Настройки</h2>
+<p>Не забываем добавить в игнор папки сторонних модулей <code>node_modules</code> и <code>bower_components</code>
+<kbd>Meld</kbd>→<kbd>Preferences</kbd>→<kbd>File Filters</kbd></p>
+<p><img src="/images/ubuntu-diff-folders-and-files/ubuntu-diff-folders-and-files__ignore-dirs.png" alt="Игнорирование директорий"></p>
+<h2 id="-">Дополнительные материалы:</h2>
+<ul>
+<li><a href="//habrahabr.ru/post/150001/">Обзор инструментов для визуального сравнения и разрешения конфликтов слияния</a></li>
+</ul>
+]]></description>
+            <link>https://vovanr.com/posts/ubuntu-diff-folders-and-files</link>
+            <guid isPermaLink="true">https://vovanr.com/posts/ubuntu-diff-folders-and-files</guid>
+            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <pubDate>Tue, 23 Dec 2014 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

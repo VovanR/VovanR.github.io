@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="ru"><head><title>Git mailmap или как объединить разработчика</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post"><h1 class="post__title">Git mailmap или как объединить разработчика</h1><div class="post__text"><p>Бывает, что разработчик коммитит под разными именами или имейлами, а это часто может сбивать с толку.
+Например при работе с историей коммитов мы ищем нужный коммит от определённого разработчика, но он в те далёкие времена называл себя по-другому.</p>
+<p>Гит позволяет объединить данные такого разработчика.</p>
+<p>Например команда <code>git shortlog -s -n -e</code> выводит количество коммитов на каждого разработчика.
+Если один разработчик коммитил под разными имейлами или именами, то вывод будет таким:</p>
+<pre class="highlight"><code class="hljs basic"><span class="hljs-symbol">10 </span>Foo Bar &lt;foo.bar@gmail.<span class="hljs-keyword">com</span>&gt;
+<span class="hljs-symbol">3 </span>Foo Bar &lt;foo.bar@ya.ru&gt;
+<span class="hljs-symbol">4 </span>Foo B. Bar &lt;foo.bar@example.<span class="hljs-keyword">com</span>&gt;
+<span class="hljs-symbol">1 </span>Foobar &lt;foo.bar@baz.<span class="hljs-keyword">com</span>&gt;</code></pre><p>Можно объединить такие записи.
+Для этого создаём в репозитории файл <code>.mailmap</code> и описываем маппинги.
+Например мы хотим объединить разработчика из вывода выше в такой вид: <code>Foo Bar &lt;foo.bar@gmail.com&gt;</code>.</p>
+<p>Для этого надо:</p>
+<ol>
+<li>Обновить имя для имейлов <code>&lt;foo.bar@example.com&gt;</code> и <code>&lt;foo.bar@baz.com&gt;</code> на <code>Foo Bar</code>.</li>
+<li>Объединить имейлы <code>&lt;foo.bar@ya.ru&gt;</code>, <code>&lt;foo.bar@example.com&gt;</code> и <code>&lt;foo.bar@baz.com&gt;</code> на <code>&lt;foo.bar@gmail.com&gt;</code>.</li>
+</ol>
+<p>Файл <code>.mailmap</code> будет выглядеть так:</p>
+<pre class="highlight"><code class="hljs armasm"><span class="hljs-symbol">Foo</span> <span class="hljs-keyword">Bar </span>&lt;foo.<span class="hljs-keyword">bar@example.com&gt;
+</span><span class="hljs-symbol">Foo</span> <span class="hljs-keyword">Bar </span>&lt;foo.<span class="hljs-keyword">bar@baz.com&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@ya.ru&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@example.com&gt;
+</span>&lt;foo.<span class="hljs-keyword">bar@gmail.com&gt; </span>&lt;foo.<span class="hljs-keyword">bar@baz.com&gt;</span></code></pre><p>Теперь вывод команды будет правильным:</p>
+<pre class="highlight"><code class="hljs basic"><span class="hljs-symbol">18 </span>Foo Bar &lt;foo.bar@gmail.<span class="hljs-keyword">com</span>&gt;</code></pre><p>В файле можно оставлять комментарии, может быть полезно, если пользователей много:</p>
+<pre class="highlight"><code class="hljs dts"><span class="hljs-meta"># See: https:<span class="hljs-comment">//git-scm.com/docs/git-shortlog#_mapping_authors</span></span>
+<span class="hljs-meta"># git shortlog -s -n -e</span>
+
+<span class="hljs-meta"># Foo Bar</span>
+Foo Bar <span class="hljs-params">&lt;foo.bar@example.com&gt;</span>
+
+<span class="hljs-meta"># Baz Qux</span>
+Baz Qux <span class="hljs-params">&lt;baz.qux@example.com&gt;</span>
+<span class="hljs-params">&lt;baz.qux@example.com&gt;</span> <span class="hljs-params">&lt;baz@example.com&gt;</span>
+<span class="hljs-params">&lt;baz.qux@example.com&gt;</span> <span class="hljs-params">&lt;baz.q@example.com&gt;</span></code></pre><p>Маппинги, описанные в файле <code>.mailmap</code> влияют так же на вывод комманды <code>git log</code> — данные автора коммита обновятся и там.</p>
+<h2 id="-">Дополнительные материалы</h2>
+<ul>
+<li><a href="https://git-scm.com/docs/git-shortlog#_mapping_authors">Mapping Authors</a></li>
+</ul>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/git-mailmap.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Development</span><span class="tags__tag">Git</span></div><time class="post__date" datetime="2020-07-27">27 июля 2020 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>

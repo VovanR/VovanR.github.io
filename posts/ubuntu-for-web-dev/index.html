@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="ru"><head><title>Настройка Ubuntu для веб-разработчика</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post post_status_popular"><h1 class="post__title">Настройка Ubuntu для веб-разработчика</h1><div class="post__text"><p class="note">Проверено на Xubuntu 12.04 – 16.10. Подойдет и для других дистрибутивов.</p>
+
+<ul>
+<li><a href="#anchor-lamp">Установка <em>LAMP</em> сервера</a><ul>
+<li><a href="#anchor-lamp-apache">Модули <em>Apache</em></a></li>
+</ul>
+</li>
+<li><a href="#anchor-sites">Директория проектов</a></li>
+<li><a href="#anchor-site-apache">Добавление сайтов в <em>Apache</em></a></li>
+<li><a href="#anchor-php"><em>PHP</em></a><ul>
+<li><a href="#anchor-php-modules">Модули <em>PHP</em></a></li>
+<li><a href="#anchor-php-ini">Настройки <em>PHP</em> (php.ini)</a></li>
+</ul>
+</li>
+<li><a href="#anchor-dns">Настройка локального <em>DNS</em></a></li>
+<li><a href="#anchor-adminer">Установка <em>Adminer</em></a></li>
+<li><a href="#anchor-nodejs">Установка <em>Node.js</em></a></li>
+<li><a href="#anchor-ide">Установка среды разработки</a><ul>
+<li><a href="#anchor-java">Установка <em>Java Platform (JDK)</em></a></li>
+<li><a href="#anchor-netbeans">Установка <em>NetBeans IDE</em></a></li>
+<li><a href="#anchor-atom">Установка <em>Atom</em></a></li>
+</ul>
+</li>
+<li><a href="#anchor-virtualbox">Установка <em>VirtualBox</em></a><ul>
+<li><a href="#anchor-ie-vm">Установка <em>Internet Explorer</em></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="anchor-lamp">Установка <acronym title="Linux, Apache, MySQL, and PHP">LAMP</acronym> сервера</h3>
+
+<p><a href="http://help.ubuntu.ru/wiki/lamp">источник</a></p>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install tasksel
+sudo tasksel install lamp-server</code></pre>
+<p>Открываем в браузере <code>http://localhost/</code> Если увидели: <samp>It works!</samp> — все сделано правильно.</p>
+<p>Зададим веб-серверу <em>Apache</em> его имя — для этого введем в консоле:</p>
+<pre class="highlight"><code class="hljs bash">sudo nano /etc/apache2/apache2.conf</code></pre>
+<p>И добавим строку:</p>
+<pre class="highlight"><code class="hljs no-highlight">ServerName localhost</code></pre>
+<p>Вместо <code>localhost</code> можно указать ваш домен, если он настроен.</p>
+<p>Перезапустим <em>Apache</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo service apache2 restart</code></pre>
+<div class="special">
+<p>Советую создать алиас для быстрого вызова данной команды. Использовать ее будете часто.</p>
+
+<pre class="highlight"><code class="hljs bash">nano ~/.bash_aliases
+alias apre="sudo service apache2 restart"</code></pre>
+
+<p>Чтобы алиас заработал сразу — можно ввести команду:</p>
+
+<pre class="highlight"><code class="hljs bash">source ~/.bashrc</code></pre>
+</div>
+
+
+
+<h4 id="anchor-lamp-apache">Модули <em>Apache</em></h4>
+
+<p>Смотрим подключенные модули:</p>
+<pre class="highlight"><code class="hljs bash">sudo a2dismod</code></pre>
+<p>Выведет список подключенных модулей, которые тут же можно отключить.</p>
+<p>Или по-старинке:</p>
+<pre class="highlight"><code class="hljs bash">ls /etc/apache2/mods-enabled/</code></pre>
+<p>Подключаем нужные модули (принцип работы тот же):</p>
+<pre class="highlight"><code class="hljs bash">sudo a2enmod rewrite</code></pre>
+<h3 id="anchor-sites">Директория проектов</h3>
+
+<pre class="highlight"><code class="hljs bash">mkdir ~/Sites</code></pre>
+<p>Чтобы жить было легче — создаем симлинк:</p>
+<pre class="highlight"><code class="hljs bash">sudo ln -s <span class="hljs-variable">$HOME</span>/Sites /sites</code></pre>
+<div class="warning">
+<p>Если ваш раздел зашифрован, то директорию для сайтов придется создавать в другом месте:</p>
+
+<pre class="highlight"><code class="hljs bash">sudo mkdir /home/public_html
+cd /home/public_html
+sudo mkdir \`whoami\`
+sudo chown \`whoami\`:\`whoami\` \`whoami\`
+chmod +x \`whoami\`
+ln -s /home/public_html/\`whoami\` /home/\`whoami\`/Sites
+sudo ln -s /home/public_html/\`whoami\` /sites</code></pre>
+</div>
+
+
+<h3 id="anchor-site-apache">Добавление сайтов в <em>Apache</em></h3>
+
+<pre class="highlight"><code class="hljs bash">sudo nano /etc/apache2/sites-available/vovan.conf</code></pre>
+<p>Добавляем запись для нового виртуального хоста (он же наш локальный сайт):</p>
+<pre class="highlight"><code class="hljs apache"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span>
+    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /sites/example/www
+    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> example
+    <span class="hljs-attribute">ServerAlias</span> example.vovan
+    <span class="hljs-attribute">ErrorLog</span> /sites/example/error.log
+    <span class="hljs-attribute">CustomLog</span> /sites/example/access.log common
+    <span class="hljs-section">&lt;Directory "/sites/example/www"&gt;</span>
+        <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks
+        <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted
+    <span class="hljs-section">&lt;/Directory&gt;</span>
+<span class="hljs-section">&lt;/VirtualHost&gt;</span></code></pre>
+<p>Включаем созданный хост в <em>Apache</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo a2ensite vovan</code></pre>
+<p>Новые сайты добавляем в тот же файл:</p>
+<pre class="highlight"><code class="hljs apache"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span>
+    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /sites/example/www
+    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> example
+    <span class="hljs-attribute">ServerAlias</span> example.vovan
+    <span class="hljs-attribute">ErrorLog</span> /sites/example/error.log
+    <span class="hljs-attribute">CustomLog</span> /sites/example/access.log common
+    <span class="hljs-section">&lt;Directory "/sites/example/www"&gt;</span>
+        <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks
+        <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted
+    <span class="hljs-section">&lt;/Directory&gt;</span>
+<span class="hljs-section">&lt;/VirtualHost&gt;</span>
+<span class="hljs-section">&lt;VirtualHost *:80&gt;</span>
+    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /sites/adminer/www
+    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> adminer
+    <span class="hljs-attribute">ServerAlias</span> adminer.vovan
+    <span class="hljs-attribute">ErrorLog</span> /sites/adminer/error.log
+    <span class="hljs-attribute">CustomLog</span> /sites/adminer/access.log common
+    <span class="hljs-section">&lt;Directory "/sites/adminer/www"&gt;</span>
+        <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks
+        <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted
+    <span class="hljs-section">&lt;/Directory&gt;</span>
+<span class="hljs-section">&lt;/VirtualHost&gt;</span></code></pre>
+<p>Перезапустим <em>Apache</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo service apache2 restart</code></pre>
+<h3 id="anchor-php"><em>PHP</em></h3>
+
+<h4 id="anchor-php-modules">Модули <em>PHP</em></h4>
+
+<p>Установим модуль <em>PHP</em> для работы с <em>JSON</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install php5-json</code></pre>
+<p>Модуль <em>PHP</em> для работы с картинками:</p>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install php5-gd</code></pre>
+<p>Кэширование:</p>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install php5-memcache</code></pre>
+<h4 id="anchor-php-ini">Настройка <em>PHP</em> <small>(php.ini)</small></h4>
+
+<pre class="highlight"><code class="hljs bash">sudo nano /etc/php5/apache2/php.ini</code></pre>
+<p>Меняем следующие настройки:</p>
+<pre class="highlight"><code class="hljs no-highlight">short_open_tag On
+error_reporting = E_ALL
+post_max_size = 128M
+upload_max_filesize = 512M
+date.timezone = &quot;Europe/Moscow&quot;</code></pre>
+<p>Свою временную зону смотрим по адресу <a href="http://ru2.php.net/manual/en/timezones.php">http://ru2.php.net/manual/en/timezones.php</a></p>
+<h3 id="anchor-dns">Настройка локального <acronym title="Domain Name System">DNS</acronym></h3>
+
+<p>Установим <em>Dnsmasq</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo apt-get install dnsmasq
+sudo nano /etc/dnsmasq.conf</code></pre>
+<p>Находим строку с настройкой адреса <code>address=/</code> (включаем поиск: <kbd>Ctrl</kbd>+<kbd>w</kbd>, пишем слово <code>address=/</code>, жмем <kbd>Enter</kbd>)</p>
+<p>Правим ее следующим образом:</p>
+<pre class="highlight"><code class="hljs no-highlight">address=/vovan/192.168.10.303</code></pre>
+<p>Где <code>vovan</code> — это имя нашего домена, а <code>192.168.10.303</code> — <em>IP</em> адрес компьютера.</p>
+<p>Айпи нужен для того, чтобы наши сайты были доступны из виртуальных машин. Если же вам такая возможность не нужна, то можно оставить адрес по-умолчанию — <code>127.0.0.1</code></p>
+<p>Узнать свой локальный айпи можно с помощью команды <code>ifconfig</code></p>
+<pre class="highlight"><code class="hljs bash">ifconfig</code></pre>
+<p><samp>eth0      Link encap:Ethernet  HWaddr 00:55:88:00:00:00
+inet addr:<strong style="text-decoration:underline;">192.168.10.303</strong> ...</samp></p>
+<p>Перезапустим <em>Dnsmasq</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo service dnsmasq restart</code></pre>
+<p class="special">Теперь наши сайты доступны по адресам типа <a href="http://example.vovan">http://example.vovan</a></p>
+
+
+
+<h3 id="anchor-adminer">Установка <em>Adminer</em></h3>
+
+<p>Быстрая компактная альтернатива <em>phpMyAdmin</em>. Качаем: <a href="http://www.adminer.org/">http://www.adminer.org/</a></p>
+<pre class="highlight"><code class="hljs bash">mkdir -p ~/Sites/adminer/www
+mv ~/Downloads/adminer-4.2.2.php ~/Sites/adminer/www/index.php
+chmod 755 ~/Sites/adminer/www/index.php
+sudo nano /etc/apache2/sites-available/vovan.conf</code></pre>
+<pre class="highlight"><code class="hljs apache"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span>
+    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /sites/example/www
+    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> example
+    <span class="hljs-attribute">ServerAlias</span> example.vovan
+    <span class="hljs-attribute">ErrorLog</span> /sites/example/error.log
+    <span class="hljs-attribute">CustomLog</span> /sites/example/access.log common
+    <span class="hljs-section">&lt;Directory "/sites/example/www"&gt;</span>
+        <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks
+        <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted
+    <span class="hljs-section">&lt;/Directory&gt;</span>
+<span class="hljs-section">&lt;/VirtualHost&gt;</span>
+<span class="hljs-section">&lt;VirtualHost *:80&gt;</span>
+    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /sites/adminer/www
+    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> adminer
+    <span class="hljs-attribute">ServerAlias</span> adminer.vovan
+    <span class="hljs-attribute">ErrorLog</span> /sites/adminer/error.log
+    <span class="hljs-attribute">CustomLog</span> /sites/adminer/access.log common
+    <span class="hljs-section">&lt;Directory "/sites/adminer/www"&gt;</span>
+        <span class="hljs-attribute"><span class="hljs-nomarkup">Options</span></span> FollowSymLinks
+        <span class="hljs-attribute">Require</span> <span class="hljs-literal">all</span> granted
+    <span class="hljs-section">&lt;/Directory&gt;</span>
+<span class="hljs-section">&lt;/VirtualHost&gt;</span></code></pre>
+<p>Перезапустим <em>Apache</em>:</p>
+<pre class="highlight"><code class="hljs bash">sudo service apache2 restart</code></pre>
+<p>По адресу <code>http://adminer.vovan</code> мы можем управлять локальными <em>MySQL</em> базами.</p>
+<h3 id="anchor-nodejs">Установка <em>Node.js</em></h3>
+
+<p>Ставим по инструкции (<a href="https://github.com/nodesource/distributions#installation-instructions">installation-instructions</a>):</p>
+<pre class="highlight"><code class="hljs bash">curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs</code></pre>
+<p>Чтобы избежать проблем с правами — переопределим местонахождение пакетов (<a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">fixing-npm-permissions</a>):</p>
+<pre class="highlight"><code class="hljs bash">mkdir -p ~/.npm-global/bin
+npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">'~/.npm-global'</span></code></pre>
+<h3 id="anchor-ide">Установка среды разработки</h3>
+
+<p>Большинство сред разработки написаны на <em>Java</em>, поэтому с нее и начнем.</p>
+<h4 id="anchor-java">Установка <em>Java Platform (JDK/JRE)</em></h4>
+
+<pre class="highlight"><code class="hljs bash">sudo add-apt-repository ppa:webupd8team/java &amp;&amp; sudo apt-get update
+sudo apt-get install oracle-java8-installer oracle-java8-set-default</code></pre>
+<h4 id="anchor-netbeans">Установка <em>NetBeans IDE</em></h4>
+
+<p>Качаем: <a href="https://netbeans.org/downloads/">https://netbeans.org/downloads/</a></p>
+<p>Устанавливаем:</p>
+<pre class="highlight"><code class="hljs bash">sh ~/Downloads/netbeans-7.2.1-ml-php-linux.sh</code></pre>
+<h4 id="anchor-atom">Установка <em>Atom</em></h4>
+
+<p>Качаем <code>.deb</code> с <a href="https://atom.io">официального сайта</a></p>
+<pre class="highlight"><code class="hljs bash">sudo dpkg -i ~/Downloads/atom-amd64.deb</code></pre>
+<p>Чтобы никогда не увидеть ошибку <samp>TypeError: Unable to watch path</samp> (<a href="https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path">typeerror-unable-to-watch-path</a>):</p>
+<pre class="highlight"><code class="hljs bash">sudo sysctl fs.inotify.max_user_watches=32768
+<span class="hljs-built_in">echo</span> 32768 | sudo tee -a /proc/sys/fs/inotify/max_user_watches</code></pre>
+<p>Делаем <em>Atom</em> редактором по-умолчанию — заменим <code>gedit.desktop</code> на <code>atom.desktop</code></p>
+<pre class="highlight"><code class="hljs bash">sudo atom /usr/share/applications/defaults.list</code></pre>
+<h3 id="anchor-virtualbox">Установка <em>VirtualBox</em></h3>
+
+<p>Устанавливаем виртуальную машину через менеджер пакетов...</p>
+<p>Из настроек виртуальной машины нас интересует только следующее:</p>
+<ul>
+<li><p><strong>Network</strong></p>
+<pre class="highlight"><code class="hljs no-highlight">Network → Adapter 1
+  Attached to: NAT
+  Advanced:
+      PCnet-FAST III (Am79C973)</code></pre>
+</li>
+<li><p><strong>Shared Folders</strong></p>
+<pre class="highlight"><code class="hljs no-highlight">Add shared folder
+  Folder Path: /sites
+      Auto-mount</code></pre>
+</li>
+</ul>
+<h4 id="anchor-ie-vm">Установка <em>Internet Explorer</em></h4>
+
+<p>Качаем и ставим нужные версии: <a href="https://dev.modern.ie/tools/vms/">https://dev.modern.ie/tools/vms/</a></p>
+<p>Теперь, запущенный локально сайт, например <code>http://localhost:3000</code> на виртуалке будет доступен по адресу <code>http://10.0.2.2:3000/</code> А те, что добавлены в апач, по тем же ссылкам: <code>http://adminer.vovan</code> например.</p>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/ubuntu-for-web-dev.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Apache</span><span class="tags__tag">Atom</span><span class="tags__tag">DNS</span><span class="tags__tag">Dnsmasq</span><span class="tags__tag">HTML</span><span class="tags__tag">Internet Explorer</span><span class="tags__tag">Java</span><span class="tags__tag">LAMP</span><span class="tags__tag">Linux</span><span class="tags__tag">Node.js</span><span class="tags__tag">PHP</span><span class="tags__tag">Ubuntu</span><span class="tags__tag">VirtualBox</span></div><time class="post__date" datetime="2013-01-13">13 января 2013 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>

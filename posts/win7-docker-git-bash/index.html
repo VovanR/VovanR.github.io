@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="ru"><head><title>Запуск докер на Windows 7, Docker Toolbox, Git Bash</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post"><h1 class="post__title">Запуск докер на Windows 7, Docker Toolbox, Git Bash</h1><div class="post__text"><p>Установить <em>Docker Toolbox</em> <a href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/</a><br>
+Если уже установлен <em>VirtualBox</em>, то в установщике <em>Docker Toolbox</em> снимаем галку <em>VirtualBox</em></p>
+<p>Запускаем наш контейнер</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx:/etc/nginx:ro --name my-nginx-server nginx</code></pre>
+<p>В директории <code>nginx</code> должен лежать конфиг-файл <code>nginx.conf</code></p>
+<p>Можно передать напрямую</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --name my-nginx-server nginx</code></pre>
+<p>Посмотреть что подключилось</p>
+<pre class="highlight"><code class="hljs bash">docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx/nginx.conf:/etc/nginx/nginx.conf:ro --name my-nginx-server nginx ls -al /etc/nginx</code></pre>
+<h2 id="-">Ошибка конвертирования путей</h2>
+<p><a href="https://github.com/docker/toolbox/issues/456">источник</a></p>
+<p>Ошибка возниает в <em>Git Bash</em> из-за конвертирования путей</p>
+<p class="warning">C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: invalid mode: \Program Files\Git\etc\nginx;ro.
+See 'C:\Program Files\Docker Toolbox\docker.exe run --help'.</p>
+
+<p>Добавляем переменную среды <code>MSYS_NO_PATHCONV=1</code></p>
+<pre class="highlight"><code class="hljs bash">MSYS_NO_PATHCONV=1 docker run --rm -it -p 8080:8080 -v $(<span class="hljs-built_in">pwd</span>)/nginx:/etc/nginx:ro --name my-nginx-server nginx</code></pre>
+<h2 id="-">Ошибка доступа к диску</h2>
+<p><a href="https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows">источник</a></p>
+<p>Ошибка ниже возникает, если запускаемый проект находится не на диске <code>C:</code>. По умолчанию виртуальная машина <em>Docker Toolbox</em> имеет доступ только к диску <code>C:</code></p>
+<p class="warning">C:\Program Files\Docker Toolbox\docker.exe: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "process_linux.go:402: container init caused \"rootfs_linux.go:58: mounting \\\"/e/work/my-project/ngin
+x/nginx.conf\\\" to rootfs \\\"/mnt/sda1/var/lib/docker/aufs/mnt/1f1bcd6fa585643c7\\\" at \\\"/mnt/sda1/var/lib/docker/aufs/mnt/1f1bcd6fa585643c7/etc/nginx/nginx.conf\\\"
+caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type.</p>
+
+<p>Останавливаем машину</p>
+<pre class="highlight"><code class="hljs bash">docker-machine stop</code></pre>
+<p>Открываем <em>VirtualBox</em>, идем в настройки виртуальной машины <em>Docker Toolbox</em></p>
+<p><em>Settings</em> → <em>Shared Folders</em> → <em>Add share</em></p>
+<ul>
+<li>Path: <code>E:\</code></li>
+<li>Folder name: <code>e/</code></li>
+</ul>
+<p>Отметить <em>&quot;Авто-подключение&quot;</em></p>
+<p>Запускаем машину</p>
+<pre class="highlight"><code class="hljs bash">docker-machine start</code></pre>
+<p>Узнать IP-адрес запущенного nginx-сервера</p>
+<pre class="highlight"><code class="hljs bash">docker-machine ip</code></pre>
+<p><samp>192.168.99.100</samp></p>
+<p>Проверяем</p>
+<pre class="highlight"><code class="hljs bash">curl http://192.168.99.100:8080</code></pre>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://support.divio.com/local-development/docker/how-to-use-a-directory-outside-cusers-with-docker-toolbox-on-windowsdocker-for-windows">How to use a directory outside <code>C:\Users</code> with Docker Toolbox on Windows/Docker for Windows</a></li>
+<li><a href="https://docs.docker.com/samples/library/nginx/#running-nginx-in-debug-mode">Running nginx in debug mode</a></li>
+<li><a href="https://docs.docker.com/storage/volumes/">Use volumes</a></li>
+<li><a href="https://docs.docker.com/get-started/part2/">Get Started, Part 2: Containers</a></li>
+</ul>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/win7-docker-git-bash.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Docker</span><span class="tags__tag">VirtualBox</span><span class="tags__tag">Windows</span></div><time class="post__date" datetime="2018-05-21">21 мая 2018 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>

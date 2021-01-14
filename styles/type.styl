@@ -1,0 +1,91 @@
+html {
+    color: #172b4d;
+    font-size: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857143;
+}
+
+
+/*
+ * Headings
+ */
+
+base-margin-vertical = 15px
+
+base-heading-font-family = "Helvetica Neue", Helvetica, Arial, sans-serif
+base-heading-font-weight = normal
+base-heading-color = #172b4d
+base-heading-text-transform = none
+base-heading-margin-top = 3rem
+
+base-h1-font-size = 36px
+base-h1-line-height = 42px
+
+base-h2-font-size = 24px
+base-h2-line-height = 30px
+
+base-h3-font-size = 18px
+base-h3-line-height = 24px
+
+base-h4-font-size = 16px
+base-h4-line-height = 22px
+
+base-h5-font-size = 14px
+base-h5-line-height = 20px
+
+base-h6-font-size = 12px
+base-h6-line-height = 18px
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 base-margin-vertical;
+    color: base-heading-color;
+    text-transform: base-heading-text-transform;
+    font-weight: base-heading-font-weight;
+    font-family: base-heading-font-family;
+
+    * + & {
+        margin-top: base-heading-margin-top;
+    }
+}
+
+h1 {
+    font-weight: bold;
+    font-size: base-h1-font-size;
+    line-height: base-h1-line-height;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: base-h2-font-size;
+    line-height: base-h2-line-height;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: base-h3-font-size;
+    line-height: base-h3-line-height;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: base-h4-font-size;
+    line-height: base-h4-line-height;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: base-h5-font-size;
+    line-height: base-h5-line-height;
+}
+
+h6 {
+    font-weight: bold;
+    font-size: base-h6-font-size;
+    line-height: base-h6-line-height;
+}

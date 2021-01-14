@@ -1,0 +1,36 @@
+/*
+ * Note
+ */
+
+.note,
+.caution,
+.warning,
+.special {
+    font-size: 87.5%;
+    margin: 0 0 15px;
+    padding: 5px 5px 5px 10px;
+    // border-left: 3px solid #999;
+    background-color: #efefef;
+
+    * + & {
+        margin-top: 15px;
+    }
+}
+
+.warning {
+    color: #883731;
+    border-left-color: #f44336;
+    background-color: #ffebee;
+}
+
+.caution {
+    color: #82492a;
+    border-left-color: #ff9800;
+    background-color: #fff3e0;
+}
+
+.special {
+    color: #364754;
+    border-left-color: #03a9f4;
+    background-color: #e1f5fe;
+}

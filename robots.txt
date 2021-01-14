@@ -1,0 +1,6 @@
+# www.robotstxt.org/
+# https://developers.google.com/search/reference/robots_txt
+
+User-agent: *
+
+Sitemap: https://vovanr.com/sitemap.xml

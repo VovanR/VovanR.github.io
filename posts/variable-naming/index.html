@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="ru"><head><title>Нэйминг (именование) переменных</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post post_status_draft"><h1 class="post__title">Нэйминг (именование) переменных</h1><div class="post__text"><p>Naming conventions</p>
+<h2 id="-">Булево</h2>
+<p>Переменная или свойство:</p>
+<ul>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+<li><code>visible</code></li>
+<li><code>loading</code></li>
+</ul>
+<h2 id="-">Функция проверка условия</h2>
+<p>Функция или метод:</p>
+<ul>
+<li><code>checkCustomSignUpFields</code></li>
+</ul>
+<p>Возвращает булево значение.</p>
+<h2 id="-">Функция проверки состояния</h2>
+<p>Функция или метод:</p>
+<ul>
+<li><code>isOnline</code></li>
+<li><code>isDisabled</code></li>
+<li><code>isVisible</code></li>
+<li><code>isLoading</code></li>
+</ul>
+<p>Возвращает булево значение.</p>
+<h2 id="-">Валидация</h2>
+<p>Метод:</p>
+<ul>
+<li><code>validateString</code></li>
+<li><code>validateEmail</code></li>
+</ul>
+<p>Функция:</p>
+<ul>
+<li><code>stringValidator</code></li>
+<li><code>emailValidator</code></li>
+</ul>
+<h2 id="-">Функция сравнения</h2>
+<p>Метод:</p>
+<ul>
+<li><code>compareDate(a, b)</code></li>
+<li><code>compareString(a, b)</code></li>
+<li><code>compareBoolean(a, b)</code></li>
+</ul>
+<p>Функция:</p>
+<ul>
+<li><code>dateComparator(a, b)</code></li>
+<li><code>stringComparator(a, b)</code></li>
+<li><code>booleanComparator(a, b)</code></li>
+</ul>
+<p>Возвращаемое значение:</p>
+<ul>
+<li><code>a === b</code> — <code>0</code></li>
+<li><code>a &lt; b</code> — <code>-1</code></li>
+<li><code>a &gt; b</code> — <code>1</code></li>
+</ul>
+<h2 id="-">Функция преобразования</h2>
+<p>Подготовка данных для отправки:</p>
+<ul>
+<li><code>prepareData</code></li>
+</ul>
+<p>Преобразование полученных данных:</p>
+<ul>
+<li><code>processFetchData</code></li>
+</ul>
+<h2 id="-">Функция вычислений</h2>
+<ul>
+<li><code>calculateDays</code></li>
+</ul>
+<h2 id="-">Константа</h2>
+<pre class="highlight"><code class="hljs javascript">BUTTON_VARIANT = {
+  <span class="hljs-attr">DANGER</span>: <span class="hljs-string">'danger'</span>,
+  <span class="hljs-attr">WARNING</span>: <span class="hljs-string">'warning'</span>,
+}</code></pre>
+<pre class="highlight"><code class="hljs javascript">DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING</code></pre>
+<h2 id="-">Метод</h2>
+<ul>
+<li><code>getName</code></li>
+<li><code>setName</code></li>
+</ul>
+<h2 id="-">Обработчик события</h2>
+<p><code>HIA</code> (Handle Item Action)</p>
+<ul>
+<li><code>handleClick</code></li>
+<li><code>handleListItemClick</code></li>
+</ul>
+<h2 id="-">Класс</h2>
+<p>Базовый класс с префиксом <code>Base</code>:</p>
+<ul>
+<li><p><code>BaseValidator</code></p>
+</li>
+<li><p><code>EmailValidator</code></p>
+</li>
+</ul>
+<h2 id="-">Переменная</h2>
+<h2 id="-">Каррирование</h2>
+<ul>
+<li><code>curriedSum</code></li>
+<li><code>curriedProcessInputData</code></li>
+</ul>
+<h2 id="-">Мемоизация</h2>
+<ul>
+<li><code>memoizedCalculateDate</code></li>
+</ul>
+<h2 id="debounce">Debounce</h2>
+<ul>
+<li><code>debouncedFetchData</code></li>
+</ul>
+<h2 id="throttle">Throttle</h2>
+<ul>
+<li><code>throttledSaveData</code></li>
+</ul>
+<h2 id="-">Материалы</h2>
+<ul>
+<li><a href="https://habr.com/post/172091/">90 рекомендаций по стилю написания программ на C++</a></li>
+<li><a href="https://ymatuhin.ru/front-end/how-to-name-variables/">Как называть переменные</a></li>
+</ul>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/variable-naming.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Development</span></div><time class="post__date" datetime="2018-09-10">10 сентября 2018 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>

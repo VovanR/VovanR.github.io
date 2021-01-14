@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ru"><head><title>My Book Live Ubuntu бэкап</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post"><h1 class="post__title">My Book Live Ubuntu бэкап</h1><div class="post__text"><ol>
+<li><p>Настраиваем статический <acronym title="Internet Protocol">IP</acronym> для хранилища <kbd>Настройки</kbd>→<kbd>Сеть</kbd> (но лучше сделать это через маршрутизатор, а на хранилище оставить <acronym title="Dynamic Host Configuration Protocol">DHCP</acronym>).</p>
+<p><img src="/images/my-book-live-ubuntu-backup/my-book-live-ubuntu-backup__configure-1.png" alt="Настройка статического IP"></p>
+</li>
+<li><p>Создаем нового пользователя <code>vovan</code>:</p>
+<p><img src="/images/my-book-live-ubuntu-backup/my-book-live-ubuntu-backup__configure-2.png" alt="Добавление нового пользователя"></p>
+</li>
+</ol>
+<ol start="3">
+<li><p>Создаем для пользователя папку <code>vovan_shared</code>:</p>
+<p><img src="/images/my-book-live-ubuntu-backup/my-book-live-ubuntu-backup__configure-3.png" alt="Добавление папки для пользователя"></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>Сделаем автоматически подключаемый диск (более подробно по <a href="https://ubuntuforums.org/showthread.php?t=1658828">ссылке</a> и <a href="https://help.ubuntu.com/community/MountWindowsSharesPermanently">тут</a>).</p>
+<pre class="highlight"><code class="hljs bash">sudo mkdir /root/smb/
+sudo chmod 700 /root/smb/
+sudo nano /root/smb/credentials</code></pre>
+<p>Запишем в <code>credentials</code> логин и пароль созданного пользователя:</p>
+<pre class="highlight"><code class="hljs no-highlight">username=vovan
+password=vovanpassword</code></pre>
+<pre class="highlight"><code class="hljs bash">sudo chown root /root/smb/credentials
+sudo chmod 600 /root/smb/credentials</code></pre>
+<p>Назовем подключаемый диск как <code>My-Book-Live</code></p>
+<pre class="highlight"><code class="hljs bash">sudo mkdir /media/My-Book-Live
+sudo apt-get install cifs-utils
+sudo apt-get install smbfs
+sudo nano /etc/fstab</code></pre>
+<p>Запишем в <code>fstab</code> (это одна строка):</p>
+<pre class="highlight"><code class="hljs no-highlight">//192.168.10.110/vovan_shared /media/My-Book-Live cifs credentials=/root/smb/credentials,rw,iocharset=utf8,uid=1000,gid=1000 0 0</code></pre>
+<p>Перезагрузка <code>fstab</code>:</p>
+<pre class="highlight"><code class="hljs bash">sudo mount -a</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><p>Можно бэкапить:</p>
+<pre class="highlight"><code class="hljs bash">sudo -i
+<span class="hljs-built_in">cd</span> /home/vovan &amp;&amp; rsync -avz --progress --delete /home/vovan /media/My-Book-Live/backup --exclude <span class="hljs-string">".*"</span> --exclude <span class="hljs-string">"Downloads"</span></code></pre>
+<p>А так я делаю бэкап виндовой папки &quot;Мои документы&quot;.</p>
+<pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">cd</span> <span class="hljs-string">'/media/Documents/Мои документы'</span> &amp;&amp; rsync -avz --progress --delete <span class="hljs-string">'/media/Documents/Мои документы'</span> /media/My-Book-Live/backup --exclude <span class="hljs-string">".*"</span> --exclude <span class="hljs-string">"Thumbs.db"</span></code></pre>
+</li>
+</ol>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/my-book-live-ubuntu-backup.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Backup</span><span class="tags__tag">Linux</span><span class="tags__tag">Ubuntu</span><span class="tags__tag">WD My Book Live</span></div><time class="post__date" datetime="2012-01-04">4 января 2012 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>

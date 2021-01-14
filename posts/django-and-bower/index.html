@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ru"><head><title>Как использовать Bower в Django</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@VovanR"><meta name="twitter:creator" content="@VovanR"><link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=rMMKb0vWEj"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=rMMKb0vWEj"><link rel="icon" type="image/png" href="/favicon-32x32.png?v=rMMKb0vWEj" sizes="32x32"><link rel="icon" type="image/png" href="/favicon-194x194.png?v=rMMKb0vWEj" sizes="194x194"><link rel="icon" type="image/png" href="/favicon-96x96.png?v=rMMKb0vWEj" sizes="96x96"><link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=rMMKb0vWEj" sizes="192x192"><link rel="icon" type="image/png" href="/favicon-16x16.png?v=rMMKb0vWEj" sizes="16x16"><link rel="manifest" href="/manifest.json?v=rMMKb0vWEj"><link rel="mask-icon" href="/safari-pinned-tab.svg?v=rMMKb0vWEj" color="#5bbad5"><link rel="shortcut icon" href="/favicon.ico?v=rMMKb0vWEj"><meta name="msapplication-TileColor" content="#154489"><meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj"><meta name="theme-color" content="#154489"><link  rel="stylesheet" href="/styles/style.css" /><script>document.querySelector('html').classList.add('js')
+</script></head><body><header class="header"><div class="header__name"><div class="logo"><a class="logo__text" href="/">Владимир Родкин</a><span class="logo__description">Про фронт-энд</span></div></div><div class="header__logo"><span class="logo__image logo__image_size_64"></span></div><div class="header__nav"><nav class="nav"><div class="nav__item"><a class="nav__link" href="https://vovanr.com/services/">Сервисы</a></div><div class="nav__item"><a class="nav__link" href="https://blog.vovanr.com/">Блог</a></div><div class="nav__item"><a class="nav__link" href="https://vovanr.com/notes/">Заметки</a></div></nav></div></header><div class="content"><article class="post"><h1 class="post__title">Как использовать Bower в Django</h1><div class="post__text"><h2 id="-bower">Установка <em>Bower</em></h2>
+<p>У вас должен быть установлен <em>Node.js</em> и <em>Git</em>.</p>
+<p><a href="/posts/ubuntu-for-web-dev/#anchor-nodejs">Устанавливаем <em>Node.js</em></a>.</p>
+<p>Теперь ставим <a href="https://bower.io/">Bower</a></p>
+<pre class="highlight"><code class="hljs bash">npm install -g bower</code></pre>
+<h2 id="-bower">Настройки для <em>Bower</em></h2>
+<p>Создаем в корне проекта файл <code>.bowerrc</code></p>
+<pre class="highlight"><code class="hljs json">{
+  <span class="hljs-attr">"directory"</span>: <span class="hljs-string">"./bower_components/vendor"</span>
+}</code></pre>
+<p>И файл <code>bower.json</code></p>
+<pre class="highlight"><code class="hljs json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"myproject"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0"</span>,
+  <span class="hljs-attr">"dependencies"</span>: {
+    <span class="hljs-attr">"bootstrap"</span>: <span class="hljs-string">"~3.3.1"</span>,
+    <span class="hljs-attr">"jquery"</span>: <span class="hljs-string">"~2.1.1"</span>,
+    <span class="hljs-attr">"modernizr"</span>: <span class="hljs-string">"~2.8.3"</span>,
+    <span class="hljs-attr">"normalize-css"</span>: <span class="hljs-string">"~3.0.1"</span>
+  },
+  <span class="hljs-attr">"private"</span>: <span class="hljs-literal">true</span>
+}</code></pre>
+<h2 id="-">Установка пакетов</h2>
+<p>В корне проекта запускаем:</p>
+<pre class="highlight"><code class="hljs bash">bower install</code></pre>
+<h2 id="-django">Настройка <em>Django</em></h2>
+<p>Чтобы пакеты бовера стали доступны через <code>staticfiles</code>, добавим директорию в настройках проекта (<code>settings.py</code>):</p>
+<pre class="highlight"><code class="hljs python">STATICFILES_DIRS = (
+    . . .
+    os.path.join(BASE_DIR, <span class="hljs-string">'bower_components'</span>),
+)</code></pre>
+<h2 id="-">Вызов библиотек в шаблоне</h2>
+<p>Подключаем <code>{% load staticfiles %}</code> в шаблоне нашего приложения.</p>
+<p>Теперь мы можем подключать библиотеки так: <code>{% static &#39;vendor/jquery/dist/jquery.min.js&#39; %}</code></p>
+<h3 id="-jquery-cdn">Пример подключения <em>jQuery</em> из <em>CDN</em></h3>
+<p>За основу взят шаблон <a href="https://github.com/h5bp/html5-boilerplate/blob/master/dist/index.html">HTML5 Boilerplate</a></p>
+<pre class="highlight"><code class="hljs django"><span class="xml"><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-js"</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">""</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">""</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"apple-touch-icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"apple-touch-icon.png"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Place favicon.ico in the root directory --&gt;</span>
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">load</span></span> staticfiles %}</span><span class="xml">
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">block</span></span> styles %}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'vendor/normalize-css/normalize.css' %}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'css/main.css' %}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endblock</span></span> styles %}</span><span class="xml">
+
+    </span><span class="hljs-comment">{# Модернизр нельзя убирать из `head`, так как он добавляет поддержку #}</span><span class="xml">
+    </span><span class="hljs-comment">{# HTML5 тэгов в старых браузерах #}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'vendor/modernizr/modernizr.js' %}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--[if lt IE 8]&gt;
+        &lt;p class="browserupgrade"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="https://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;
+    &lt;![endif]--&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Add your site or application content here --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello world! This is HTML5 Boilerplate.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">block</span></span> scripts %}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">window</span>.jQuery || <span class="hljs-built_in">document</span>.write(<span class="hljs-string">'&lt;script src="</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'vendor/jquery/dist/jquery.min.js' %}</span><span class="xml"><span class="handlebars"><span class="xml">"&gt;<span class="hljs-tag">&lt;<span class="hljs-name">\</span>/<span class="hljs-attr">script</span>&gt;</span>')</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'js/plugins.js' %}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">static</span></span> 'js/main.js' %}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endblock</span></span> scripts %}</span><span class="xml">
+
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">block</span></span> analytics %}</span><span class="xml">
+    <span class="hljs-comment">&lt;!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b,o,i,l,e,r</span>)</span>{b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{(b[l].q=b[l].q||[]).push(<span class="hljs-built_in">arguments</span>)});b[l].l=+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[<span class="hljs-number">0</span>];
+    e.src=<span class="hljs-string">'//www.google-analytics.com/analytics.js'</span>;
+    r.parentNode.insertBefore(e,r)}(<span class="hljs-built_in">window</span>,<span class="hljs-built_in">document</span>,<span class="hljs-string">'script'</span>,<span class="hljs-string">'ga'</span>));
+    ga(<span class="hljs-string">'create'</span>,<span class="hljs-string">'UA-XXXXX-X'</span>,<span class="hljs-string">'auto'</span>);ga(<span class="hljs-string">'send'</span>,<span class="hljs-string">'pageview'</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-name">endblock</span></span> analytics %}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+<h2 id="-">Дополнительные материалы:</h2>
+<ul>
+<li><a href="http://nano.sapegin.ru/all/bower">Bower: зачем фронтенду нужен менеджер пакетов</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">How To Install Node.js on an Ubuntu 14.04 server</a></li>
+</ul>
+</div><div class="post__meta"><a class="post__source" href="https://github.com/VovanR/VovanR.github.io/tree/source/src/documents/posts/django-and-bower.html.md" target="_blank" rel="noopener">Исходный код статьи</a><div class="tags post__tags"><span class="tags__tag">Bower</span><span class="tags__tag">Django</span></div><time class="post__date" datetime="2014-11-20">20 ноября 2014 г.</time><div class="post__share"><script src="/vendor/likely/likely.js"></script><link rel="stylesheet" href="/vendor/likely/likely.css"/><div class="likely"><div class="twitter"></div><div class="facebook"></div><div class="vkontakte"></div><div class="telegram"></div><div class="odnoklassniki"></div><div class="linkedin"></div></div></div></div></article></div><footer class="footer"><div class="footer__social-list"><a href="https://twitter.com/VovanR">Твитер</a><a href="https://github.com/VovanR">Гитхаб</a><a href="https://www.npmjs.com/~vovanr">нпм</a></div><div class="footer__copyright"><a href="https://github.com/vovanr/vovanr.github.io/tree/source">©&nbsp;Владимир Родкин, 2021</a></div><div class="footer__build-info">Блог&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a></div></footer></body></html>
