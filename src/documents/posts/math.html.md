@@ -2,7 +2,7 @@
 title: Математика
 layout: post
 tags:
-    - 'development'
+  - 'development'
 date: 2019-01-24
 status: draft
 ```

@@ -2,9 +2,9 @@
 title: Автоматический деплой GitHub Pages через Travis CI
 layout: post
 tags:
-    - 'deploy'
-    - 'gh-pages'
-    - 'travis'
+  - 'deploy'
+  - 'gh-pages'
+  - 'travis'
 date: 2018-05-15
 ```
 

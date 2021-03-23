@@ -2,8 +2,8 @@
 title: Git mailmap или как объединить разработчика
 layout: post
 tags:
-    - 'development'
-    - 'git'
+  - 'development'
+  - 'git'
 date: 2020-07-27
 ```
 

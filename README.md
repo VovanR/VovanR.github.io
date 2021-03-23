@@ -2,10 +2,11 @@
 
 Powered by [DocPad](https://docpad.org/).
 
-## Deploy
+## Development
 
-```
-docpad deploy-ghpages --env static
+```shell
+npm install
+npm start
 ```
 
 ## License

@@ -2,10 +2,10 @@
 title: Ubuntu сравнение папок и файлов
 layout: post
 tags:
-    - 'diff'
-    - 'linux'
-    - 'meld'
-    - 'ubuntu'
+  - 'diff'
+  - 'linux'
+  - 'meld'
+  - 'ubuntu'
 date: 2014-12-23
 ```
 

@@ -2,9 +2,9 @@
 title: RequireJS подключение зависимостей модуля
 layout: post
 tags:
-    - 'amd'
-    - 'javascript'
-    - 'requirejs'
+  - 'amd'
+  - 'javascript'
+  - 'requirejs'
 date: 2015-05-17
 ```
 
@@ -14,21 +14,21 @@ date: 2015-05-17
 
 ```javascript
 define([
-    'jquery',
-    'lodash',
+  'jquery',
+  'lodash',
 
-    // nothing returns
-    'jqueryCookie',
-    'jqueryPerfectScrollbar',
-    'jqueryRaty',
+  // nothing returns
+  'jqueryCookie',
+  'jqueryPerfectScrollbar',
+  'jqueryRaty',
 ], function (
-    $,
-    _
+  $,
+  _
 ) {
 
-    'use strict';
+  'use strict';
 
-    // Module code...
+  // Module code...
 
 });
 ```

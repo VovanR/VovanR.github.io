@@ -2,9 +2,9 @@
 title: PHP настройка временной зоны (date.timezone)
 layout: post
 tags:
-    - 'bug'
-    - 'php'
-    - 'apache'
+  - 'bug'
+  - 'php'
+  - 'apache'
 date: 2012-08-12
 ```
 

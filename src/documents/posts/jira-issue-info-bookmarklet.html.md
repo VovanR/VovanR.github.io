@@ -2,9 +2,9 @@
 title: Букмарклет тултипа информации по задаче из JIRA
 layout: post
 tags:
-    - 'bookmarklet'
-    - 'development'
-    - 'javascript'
+  - 'bookmarklet'
+  - 'development'
+  - 'javascript'
 date: 2018-10-31
 ```
 

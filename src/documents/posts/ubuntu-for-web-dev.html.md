@@ -2,19 +2,19 @@
 title: Настройка Ubuntu для веб-разработчика
 layout: post
 tags:
-    - 'apache'
-    - 'atom'
-    - 'dns'
-    - 'dnsmasq'
-    - 'html'
-    - 'ie'
-    - 'java'
-    - 'lamp'
-    - 'linux'
-    - 'nodejs'
-    - 'php'
-    - 'ubuntu'
-    - 'virtualbox'
+  - 'apache'
+  - 'atom'
+  - 'dns'
+  - 'dnsmasq'
+  - 'html'
+  - 'ie'
+  - 'java'
+  - 'lamp'
+  - 'linux'
+  - 'nodejs'
+  - 'php'
+  - 'ubuntu'
+  - 'virtualbox'
 date: 2013-01-13
 status: popular
 ```
@@ -22,21 +22,21 @@ status: popular
 <p class="note">Проверено на Xubuntu 12.04 – 16.10. Подойдет и для других дистрибутивов.</p>
 
 - [Установка *LAMP* сервера](#anchor-lamp)
-    - [Модули *Apache*](#anchor-lamp-apache)
+  - [Модули *Apache*](#anchor-lamp-apache)
 - [Директория проектов](#anchor-sites)
 - [Добавление сайтов в *Apache*](#anchor-site-apache)
 - [*PHP*](#anchor-php)
-    - [Модули *PHP*](#anchor-php-modules)
-    - [Настройки *PHP* (php.ini)](#anchor-php-ini)
+  - [Модули *PHP*](#anchor-php-modules)
+  - [Настройки *PHP* (php.ini)](#anchor-php-ini)
 - [Настройка локального *DNS*](#anchor-dns)
 - [Установка *Adminer*](#anchor-adminer)
 - [Установка *Node.js*](#anchor-nodejs)
 - [Установка среды разработки](#anchor-ide)
-    - [Установка *Java Platform (JDK)*](#anchor-java)
-    - [Установка *NetBeans IDE*](#anchor-netbeans)
-    - [Установка *Atom*](#anchor-atom)
+  - [Установка *Java Platform (JDK)*](#anchor-java)
+  - [Установка *NetBeans IDE*](#anchor-netbeans)
+  - [Установка *Atom*](#anchor-atom)
 - [Установка *VirtualBox*](#anchor-virtualbox)
-    - [Установка *Internet Explorer*](#anchor-ie-vm)
+  - [Установка *Internet Explorer*](#anchor-ie-vm)
 
 
 

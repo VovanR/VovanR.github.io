@@ -6,9 +6,9 @@ sitemap: false
 ---
 
 p
-    | Ooops! Something went wrong while we were processing your request to <code>#{req.url}</code>. Here's the details:
+  | Ooops! Something went wrong while we were processing your request to <code>#{req.url}</code>. Here's the details:
 
 p
-    pre
-        code
-            != err ? (err.message || err.stack || '') : ''
+  pre
+    code
+      != err ? (err.message || err.stack || '') : ''

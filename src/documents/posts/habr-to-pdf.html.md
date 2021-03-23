@@ -2,8 +2,8 @@
 title: Сохранить пост Habrahabr в PDF
 layout: post
 tags:
-    - 'bookmarklet'
-    - 'javascript'
+  - 'bookmarklet'
+  - 'javascript'
 date: 2011-11-06
 status: old
 ```

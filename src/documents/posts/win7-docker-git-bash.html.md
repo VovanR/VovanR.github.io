@@ -2,9 +2,9 @@
 title: Запуск докер на Windows 7, Docker Toolbox, Git Bash
 layout: post
 tags:
-    - 'docker'
-    - 'virtualbox'
-    - 'windows'
+  - 'docker'
+  - 'virtualbox'
+  - 'windows'
 date: 2018-05-21
 ```
 

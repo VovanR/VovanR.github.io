@@ -2,9 +2,9 @@
 title: Как создать логотип для проекта
 layout: post
 tags:
-    - 'favicon'
-    - 'gh-pages'
-    - 'svg'
+  - 'favicon'
+  - 'gh-pages'
+  - 'svg'
 date: 2018-09-06
 ```
 

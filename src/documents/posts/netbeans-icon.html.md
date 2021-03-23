@@ -2,8 +2,8 @@
 title: Иконка NetBeans
 layout: post
 tags:
-    - 'linux'
-    - 'netbeans'
+  - 'linux'
+  - 'netbeans'
 date: 2011-10-08
 status: old
 ```

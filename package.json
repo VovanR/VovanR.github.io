@@ -1,7 +1,11 @@
 {
   "name": "VovanR",
   "version": "0.0.0",
+  "description": "My homepage",
   "private": true,
+  "repository": "VovanR/VovanR.github.io",
+  "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
+  "homepage": "https://vovanr.github.io/",
   "devDependencies": {
     "docpad": "6.79.4",
     "docpad-plugin-cleanurls": "2.11.0",

@@ -2,7 +2,7 @@
 title: Нэйминг (именование) переменных
 layout: post
 tags:
-    - 'development'
+  - 'development'
 date: 2018-09-10
 status: draft
 ```

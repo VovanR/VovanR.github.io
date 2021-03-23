@@ -2,10 +2,10 @@
 title: My Book Live Ubuntu бэкап
 layout: post
 tags:
-    - 'backup'
-    - 'linux'
-    - 'ubuntu'
-    - 'wd-mybook-live'
+  - 'backup'
+  - 'linux'
+  - 'ubuntu'
+  - 'wd-mybook-live'
 date: 2012-01-04
 ```
 

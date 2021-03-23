@@ -2,7 +2,7 @@
 title: Как и где вести свои заметки
 layout: post
 tags:
-    - 'development'
+  - 'development'
 date: 2014-12-23
 ```
 

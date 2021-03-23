@@ -2,8 +2,8 @@
 title: Как использовать Bower в Django
 layout: post
 tags:
-    - 'bower'
-    - 'django'
+  - 'bower'
+  - 'django'
 date: 2014-11-20
 ```
 

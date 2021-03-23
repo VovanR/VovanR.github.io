@@ -2,9 +2,9 @@
 title: SVN открыть в редакторе все конфликты
 layout: post
 tags:
-    - 'bash'
-    - 'netbeans'
-    - 'svn'
+  - 'bash'
+  - 'netbeans'
+  - 'svn'
 date: 2012-07-18
 ```
 

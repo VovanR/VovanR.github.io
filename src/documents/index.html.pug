@@ -5,29 +5,29 @@ sitemap: false
 ---
 
 section.short-posts
-    each post in getCollection('posts').toJSON()
-        article.short-post.short-post_state_inactive.js-short-post(class=post.status ? ('short-post_status_' + post.status) : '')
-            h2.short-post__title
-                a(href= post.url + '/')
-                    != post.title
+  each post in getCollection('posts').toJSON()
+    article.short-post.short-post_state_inactive.js-short-post(class=post.status ? ('short-post_status_' + post.status) : '')
+      h2.short-post__title
+        a(href= post.url + '/')
+          != post.title
 
-            .short-post__meta
-                time.short-post__date(datetime= pubDateForDatetimeAttribute(post.date))
-                    != pubDate(post.date)
+      .short-post__meta
+        time.short-post__date(datetime= pubDateForDatetimeAttribute(post.date))
+          != pubDate(post.date)
 
 script.
-    (function () {
-        // We don't waiting for footer dom loaded
-        var posts = document.querySelectorAll('.js-short-post');
-        var postsLength = posts.length;
-        var showNext = function (index) {
-            setTimeout(function () {
-                posts[index].classList.remove('short-post_state_inactive');
-                index += 1;
-                if (index < postsLength) {
-                    showNext(index);
-                }
-            }, 25);
-        };
-        showNext(0);
-    })();
+  (function () {
+    // We don't waiting for footer dom loaded
+    var posts = document.querySelectorAll('.js-short-post');
+    var postsLength = posts.length;
+    var showNext = function (index) {
+      setTimeout(function () {
+        posts[index].classList.remove('short-post_state_inactive');
+        index += 1;
+        if (index < postsLength) {
+          showNext(index);
+        }
+      }, 25);
+    };
+    showNext(0);
+  })();

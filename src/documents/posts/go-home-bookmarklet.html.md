@@ -2,8 +2,8 @@
 title: Букмарклет для перехода на главную страницу
 layout: post
 tags:
-    - 'bookmarklet'
-    - 'javascript'
+  - 'bookmarklet'
+  - 'javascript'
 date: 2011-12-13
 ```
 

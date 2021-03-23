@@ -2,10 +2,10 @@
 title: Быстрая диагностика HTML кода
 layout: post
 tags:
-    - 'bookmarklet'
-    - 'css'
-    - 'diagnostics'
-    - 'javascript'
+  - 'bookmarklet'
+  - 'css'
+  - 'diagnostics'
+  - 'javascript'
 date: 2012-07-22
 ```
 

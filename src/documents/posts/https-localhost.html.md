@@ -2,10 +2,10 @@
 title: https://localhost
 layout: post
 tags:
-    - 'development'
-    - 'docker'
-    - 'ubuntu'
-    - 'windows'
+  - 'development'
+  - 'docker'
+  - 'ubuntu'
+  - 'windows'
 date: 2019-10-15
 ```
 
