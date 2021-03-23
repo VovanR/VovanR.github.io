@@ -4,10 +4,10 @@
         <description><![CDATA[Про фронт-энд]]></description>
         <link>https://vovanr.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 14 Jan 2021 06:12:18 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Mar 2021 14:32:06 GMT</lastBuildDate>
         <atom:link href="https://vovanr.com/rss.xml" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Владимир Родкин]]></author>
-        <pubDate>Thu, 14 Jan 2021 06:12:11 GMT</pubDate>
+        <pubDate>Tue, 23 Mar 2021 14:31:58 GMT</pubDate>
         <item>
             <title><![CDATA[Git mailmap или как объединить разработчика]]></title>
             <description><![CDATA[<p>Бывает, что разработчик коммитит под разными именами или имейлами, а это часто может сбивать с толку.
@@ -253,13 +253,18 @@ sign    significand |<span class="hljs-string">
 <li><code>checkCustomSignUpFields</code></li>
 </ul>
 <p>Возвращает булево значение.</p>
-<h2 id="-">Функция проверки состояния</h2>
+<h2 id="-">Функция проверки состояния (предикаты)</h2>
 <p>Функция или метод:</p>
 <ul>
 <li><code>isOnline</code></li>
 <li><code>isDisabled</code></li>
 <li><code>isVisible</code></li>
 <li><code>isLoading</code></li>
+</ul>
+<p>Возвращает булево значение.</p>
+<h2 id="-">Вхождение</h2>
+<ul>
+<li><code>hasItem</code></li>
 </ul>
 <p>Возвращает булево значение.</p>
 <h2 id="-">Валидация</h2>
@@ -273,6 +278,11 @@ sign    significand |<span class="hljs-string">
 <li><code>stringValidator</code></li>
 <li><code>emailValidator</code></li>
 </ul>
+<p>Пример</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">const</span> errors = validateEmail(email)
+<span class="hljs-keyword">if</span> (errors.length &gt; <span class="hljs-number">0</span>) {
+  <span class="hljs-comment">// . . .</span>
+}</code></pre>
 <h2 id="-">Функция сравнения</h2>
 <p>Метод:</p>
 <ul>
@@ -331,6 +341,20 @@ sign    significand |<span class="hljs-string">
 </li>
 </ul>
 <h2 id="-">Переменная</h2>
+<h2 id="-">Количество</h2>
+<ul>
+<li><code>itemsCount</code></li>
+<li><code>errorsCount</code></li>
+</ul>
+<h2 id="-hash-map-">Хэш-карта (HASH-map)</h2>
+<ul>
+<li><a href="https://twitter.com/VovanR/status/1362421415253803010">Мой вопрос в Твитере</a></li>
+</ul>
+<ul>
+<li><code>valuesByKeys</code></li>
+<li><code>callbacksByEvents</code></li>
+<li><code>filtersByGroups</code></li>
+</ul>
 <h2 id="-">Каррирование</h2>
 <ul>
 <li><code>curriedSum</code></li>
@@ -352,6 +376,8 @@ sign    significand |<span class="hljs-string">
 <ul>
 <li><a href="https://habr.com/post/172091/">90 рекомендаций по стилю написания программ на C++</a></li>
 <li><a href="https://ymatuhin.ru/front-end/how-to-name-variables/">Как называть переменные</a></li>
+<li><a href="https://ru.hexlet.io/blog/posts/naming-in-programming">Именование в программировании</a></li>
+<li><a href="https://ru.hexlet.io/blog/posts/naming-errors-1">Ошибки именования в программировании I</a></li>
 </ul>
 ]]></description>
             <link>https://vovanr.com/posts/variable-naming</link>
@@ -557,21 +583,21 @@ deploy:
 <li>Зависимости, которые ничего не возвращают, подключаются в секции <code>nothing returns</code></li>
 </ul>
 <pre class="highlight"><code class="hljs javascript">define([
-    <span class="hljs-string">'jquery'</span>,
-    <span class="hljs-string">'lodash'</span>,
+  <span class="hljs-string">'jquery'</span>,
+  <span class="hljs-string">'lodash'</span>,
 
-    <span class="hljs-comment">// nothing returns</span>
-    <span class="hljs-string">'jqueryCookie'</span>,
-    <span class="hljs-string">'jqueryPerfectScrollbar'</span>,
-    <span class="hljs-string">'jqueryRaty'</span>,
+  <span class="hljs-comment">// nothing returns</span>
+  <span class="hljs-string">'jqueryCookie'</span>,
+  <span class="hljs-string">'jqueryPerfectScrollbar'</span>,
+  <span class="hljs-string">'jqueryRaty'</span>,
 ], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
-    $,
-    _
+  $,
+  _
 </span>) </span>{
 
-    <span class="hljs-string">'use strict'</span>;
+  <span class="hljs-string">'use strict'</span>;
 
-    <span class="hljs-comment">// Module code...</span>
+  <span class="hljs-comment">// Module code...</span>
 
 });</code></pre>
 <p>Это упрощает рефакторинг и беглый парсинг взглядом.</p>
