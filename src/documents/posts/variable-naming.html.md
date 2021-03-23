@@ -26,13 +26,20 @@ Naming conventions
 Возвращает булево значение.
 
 
-## Функция проверки состояния
+## Функция проверки состояния (предикаты)
 
 Функция или метод:
 - `isOnline`
 - `isDisabled`
 - `isVisible`
 - `isLoading`
+
+Возвращает булево значение.
+
+
+## Вхождение
+
+- `hasItem`
 
 Возвращает булево значение.
 
@@ -46,6 +53,14 @@ Naming conventions
 Функция:
 - `stringValidator`
 - `emailValidator`
+
+Пример
+```js
+const errors = validateEmail(email)
+if (errors.length > 0) {
+  // . . .
+}
+```
 
 
 ## Функция сравнения
@@ -119,6 +134,22 @@ DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING
 ## Переменная
 
 
+## Количество
+
+- `itemsCount`
+- `errorsCount`
+
+
+## Хэш-карта (HASH-map)
+
+- [Мой вопрос в Твитере](https://twitter.com/VovanR/status/1362421415253803010)
+
+
+- `valuesByKeys`
+- `callbacksByEvents`
+- `filtersByGroups`
+
+
 ## Каррирование
 
 - `curriedSum`
@@ -144,3 +175,5 @@ DEFAULT_BUTTON_VARIANT = BUTTON_VARIANT.WARNING
 
 - [90 рекомендаций по стилю написания программ на C++](https://habr.com/post/172091/)
 - [Как называть переменные](https://ymatuhin.ru/front-end/how-to-name-variables/)
+- [Именование в программировании](https://ru.hexlet.io/blog/posts/naming-in-programming)
+- [Ошибки именования в программировании I](https://ru.hexlet.io/blog/posts/naming-errors-1)
