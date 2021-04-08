@@ -4,10 +4,10 @@
         <description><![CDATA[Про фронт-энд]]></description>
         <link>https://vovanr.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 23 Mar 2021 14:32:06 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 08 Apr 2021 10:11:36 GMT</lastBuildDate>
         <atom:link href="https://vovanr.com/rss.xml" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Владимир Родкин]]></author>
-        <pubDate>Tue, 23 Mar 2021 14:31:58 GMT</pubDate>
+        <pubDate>Thu, 08 Apr 2021 10:11:27 GMT</pubDate>
         <item>
             <title><![CDATA[Git mailmap или как объединить разработчика]]></title>
             <description><![CDATA[<p>Бывает, что разработчик коммитит под разными именами или имейлами, а это часто может сбивать с толку.
