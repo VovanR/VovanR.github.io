@@ -99,4 +99,4 @@ deploy:
 ## Примеры
 - https://github.com/geops/ole2/blob/master/.travis.yml
 - https://github.com/inside-demo/webpack-global-vendor-demo/blob/master/.travis.yml
-- https://github.com/VovanR/VovanR.github.io/blob/source/.travis.yml
+- https://github.com/VovanR/VovanR.github.io/blob/02bba9784ecc73d5454e8be1df8947119858134a/.travis.yml
