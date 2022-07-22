@@ -7,18 +7,19 @@
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "homepage": "https://vovanr.github.io/",
   "devDependencies": {
-    "docpad": "6.79.4",
+    "docpad": "6.82.5",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-highlightjs": "2.6.0",
     "docpad-plugin-marked": "2.5.0",
     "docpad-plugin-pug": "2.2.0",
     "docpad-plugin-rss": "2.3.1",
+    "docpad-plugin-serve": "^2.0.1",
     "docpad-plugin-sitemap": "2.5.0",
     "docpad-plugin-stylus": "2.14.0",
-    "moment": "2.22.2"
+    "moment": "^2.24.0"
   },
   "scripts": {
-    "start": "docpad-server",
+    "start": "docpad run",
     "build": "docpad generate --silent --env static"
   }
 }
