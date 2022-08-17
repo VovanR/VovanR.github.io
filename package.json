@@ -15,7 +15,7 @@
     "docpad-plugin-rss": "2.3.1",
     "docpad-plugin-sitemap": "2.5.0",
     "docpad-plugin-stylus": "2.14.0",
-    "moment": "2.22.2"
+    "moment": "2.29.4"
   },
   "scripts": {
     "start": "docpad-server",
