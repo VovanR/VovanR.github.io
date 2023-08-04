@@ -1,5 +1,5 @@
 doctype html
-html(lang='ru')
+html(lang='en')
     head
         title= pageTitle()
         meta(charset='utf-8')
@@ -64,13 +64,13 @@ html(lang='ru')
                 nav.nav
                     .nav__item
                         a.nav__link(href='https://vovanr.com/services/')
-                            | Сервисы
+                            | Services
                     .nav__item
                         a.nav__link(href='https://blog.vovanr.com/')
-                            | Блог
+                            | Blog
                     .nav__item
                         a.nav__link(href='https://vovanr.com/notes/')
-                            | Заметки
+                            | Notes
 
         .content
             != content
@@ -78,7 +78,7 @@ html(lang='ru')
         footer.footer
             .footer__social-list
                 each item in site.socialLinks
-                    a(href= item.url)
+                    a(href= item.url, rel="nofollow me")
                         != item.name
 
             .footer__copyright
@@ -86,5 +86,5 @@ html(lang='ru')
                     | ©&nbsp;#{site.author}, #{(new Date).getFullYear()}
 
             .footer__build-info
-                | Сайт&nbsp;работает&nbsp;на&nbsp;<a href='https://docpad.org'>DocPad</a>, хостится&nbsp;на&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a><br/>
+                | This&nbsp;site&nbsp;is&nbsp;powered&nbsp;by&nbsp;<a href='https://docpad.org'>DocPad</a>, and&nbsp;hosted&nbsp;on&nbsp;<a href='https://pages.github.com/'>GitHub&nbsp;Pages</a><br/>
                 | <a href="https://stats.uptimerobot.com/w2yzATL2ZR">Statuspage</a>

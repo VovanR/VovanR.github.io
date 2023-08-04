@@ -9,23 +9,27 @@ docpadConfig = {
     # Specify some site properties
     site:
       url: 'https://vovanr.com'
-      title: 'Владимир Родкин'
-      author: 'Владимир Родкин'
-      description: 'Про фронт-энд'
+      title: 'Vladimir Rodkin'
+      author: 'Vladimir Rodkin'
+      description: 'About Front-end'
       copyrightUrl: 'https://twitter.com/VovanR'
       twitter: '@VovanR'
       siteSourceURL: 'https://github.com/VovanR/VovanR.github.io'
       socialLinks: [
         {
-          name: 'Твитер'
+          name: 'Twitter'
           url: 'https://twitter.com/VovanR'
         }
         {
-          name: 'Гитхаб'
+          name: 'Mastodon'
+          url: 'https://mastodon.social/@vovanr'
+        }
+        {
+          name: 'GitHub'
           url: 'https://github.com/VovanR'
         }
         {
-          name: 'нпм'
+          name: 'npm'
           url: 'https://www.npmjs.com/~vovanr'
         }
       ]
@@ -138,7 +142,7 @@ docpadConfig = {
   events:
     generateBefore: (opts) ->
       # Configure Moment.js
-      moment.locale('ru')
+      moment.locale('en')
 }
 
 # Export our DocPad Configuration
