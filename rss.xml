@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Владимир Родкин]]></title>
-        <description><![CDATA[Про фронт-энд]]></description>
+        <title><![CDATA[Vladimir Rodkin]]></title>
+        <description><![CDATA[About Front-end]]></description>
         <link>https://vovanr.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 17 Aug 2022 06:00:01 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Aug 2023 15:13:06 GMT</lastBuildDate>
         <atom:link href="https://vovanr.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <author><![CDATA[Владимир Родкин]]></author>
-        <pubDate>Wed, 17 Aug 2022 05:59:54 GMT</pubDate>
+        <author><![CDATA[Vladimir Rodkin]]></author>
+        <pubDate>Fri, 04 Aug 2023 15:12:57 GMT</pubDate>
         <item>
             <title><![CDATA[Git mailmap или как объединить разработчика]]></title>
             <description><![CDATA[<p>Бывает, что разработчик коммитит под разными именами или имейлами, а это часто может сбивать с толку.
@@ -50,7 +50,7 @@ Baz Qux <span class="hljs-params">&lt;baz.qux@example.com&gt;</span>
 ]]></description>
             <link>https://vovanr.com/posts/git-mailmap</link>
             <guid isPermaLink="true">https://vovanr.com/posts/git-mailmap</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -142,7 +142,7 @@ nginx<span class="hljs-regexp">/etc/</span>ssl<span class="hljs-regexp">/private
 ]]></description>
             <link>https://vovanr.com/posts/https-localhost</link>
             <guid isPermaLink="true">https://vovanr.com/posts/https-localhost</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 15 Oct 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -187,7 +187,7 @@ sign    significand |<span class="hljs-string">
 ]]></description>
             <link>https://vovanr.com/posts/math</link>
             <guid isPermaLink="true">https://vovanr.com/posts/math</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -233,7 +233,7 @@ sign    significand |<span class="hljs-string">
 ]]></description>
             <link>https://vovanr.com/posts/jira-issue-info-bookmarklet</link>
             <guid isPermaLink="true">https://vovanr.com/posts/jira-issue-info-bookmarklet</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Wed, 31 Oct 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -382,7 +382,7 @@ sign    significand |<span class="hljs-string">
 ]]></description>
             <link>https://vovanr.com/posts/variable-naming</link>
             <guid isPermaLink="true">https://vovanr.com/posts/variable-naming</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 10 Sep 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -428,7 +428,7 @@ sign    significand |<span class="hljs-string">
 ]]></description>
             <link>https://vovanr.com/posts/create-project-logo</link>
             <guid isPermaLink="true">https://vovanr.com/posts/create-project-logo</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Thu, 06 Sep 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -483,7 +483,7 @@ caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory 
 ]]></description>
             <link>https://vovanr.com/posts/win7-docker-git-bash</link>
             <guid isPermaLink="true">https://vovanr.com/posts/win7-docker-git-bash</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 21 May 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -572,7 +572,7 @@ deploy:
 ]]></description>
             <link>https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</link>
             <guid isPermaLink="true">https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 15 May 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -604,7 +604,7 @@ deploy:
 ]]></description>
             <link>https://vovanr.com/posts/requirejs-module-dependencies</link>
             <guid isPermaLink="true">https://vovanr.com/posts/requirejs-module-dependencies</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Sun, 17 May 2015 00:00:00 GMT</pubDate>
         </item>
         <item>
@@ -631,7 +631,7 @@ deploy:
 ]]></description>
             <link>https://vovanr.com/posts/ubuntu-diff-folders-and-files</link>
             <guid isPermaLink="true">https://vovanr.com/posts/ubuntu-diff-folders-and-files</guid>
-            <dc:creator><![CDATA[Владимир Родкин]]></dc:creator>
+            <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 23 Dec 2014 00:00:00 GMT</pubDate>
         </item>
     </channel>
