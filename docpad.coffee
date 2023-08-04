@@ -142,7 +142,7 @@ docpadConfig = {
   events:
     generateBefore: (opts) ->
       # Configure Moment.js
-      moment.locale('ru')
+      moment.locale('en')
 }
 
 # Export our DocPad Configuration
