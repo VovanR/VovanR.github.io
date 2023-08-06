@@ -78,7 +78,7 @@ html(lang='en')
         footer.footer
             .footer__social-list
                 each item in site.socialLinks
-                    a(href= item.url, rel="nofollow me")
+                    a(href= item.url, rel="me")
                         != item.name
 
             .footer__copyright
