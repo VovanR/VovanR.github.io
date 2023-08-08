@@ -14,6 +14,7 @@ docpadConfig = {
       description: 'About Front-end'
       copyrightUrl: 'https://twitter.com/VovanR'
       twitter: '@VovanR'
+      mastodonUrl: 'https://mastodon.social/@vovanr'
       siteSourceURL: 'https://github.com/VovanR/VovanR.github.io'
       socialLinks: [
         {
