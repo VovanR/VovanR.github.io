@@ -7,7 +7,7 @@
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "homepage": "https://vovanr.github.io/",
   "devDependencies": {
-    "docpad": "6.79.4",
+    "docpad": "6.83.2",
     "docpad-plugin-cleanurls": "2.11.0",
     "docpad-plugin-highlightjs": "2.6.0",
     "docpad-plugin-marked": "2.5.0",
