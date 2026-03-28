@@ -3,4 +3,4 @@
 
 User-agent: *
 
-Sitemap: https://vovanr.com/sitemap.xml
+Sitemap: https://vovanr.github.io/sitemap.xml

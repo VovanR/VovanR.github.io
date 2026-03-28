@@ -2,10 +2,10 @@
     <channel>
         <title><![CDATA[Vladimir Rodkin]]></title>
         <description><![CDATA[About Front-end]]></description>
-        <link>https://vovanr.com</link>
+        <link>https://vovanr.github.io</link>
         <generator>RSS for Node</generator>
         <lastBuildDate>Tue, 08 Aug 2023 15:12:52 GMT</lastBuildDate>
-        <atom:link href="https://vovanr.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://vovanr.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <author><![CDATA[Vladimir Rodkin]]></author>
         <pubDate>Tue, 08 Aug 2023 15:12:46 GMT</pubDate>
         <item>
@@ -48,8 +48,8 @@ Baz Qux <span class="hljs-params">&lt;baz.qux@example.com&gt;</span>
 <li><a href="https://git-scm.com/docs/git-shortlog#_mapping_authors">Mapping Authors</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/git-mailmap</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/git-mailmap</guid>
+            <link>https://vovanr.github.io/posts/git-mailmap</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/git-mailmap</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 27 Jul 2020 00:00:00 GMT</pubDate>
         </item>
@@ -140,8 +140,8 @@ nginx<span class="hljs-regexp">/etc/</span>ssl<span class="hljs-regexp">/private
 <li><a href="https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec">How to get HTTPS working on your local development environment in 5 minutes</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/https-localhost</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/https-localhost</guid>
+            <link>https://vovanr.github.io/posts/https-localhost</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/https-localhost</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 15 Oct 2019 00:00:00 GMT</pubDate>
         </item>
@@ -185,8 +185,8 @@ sign    significand |<span class="hljs-string">
 <li><a href="https://exploringjs.com/impatient-js/ch_numbers.html">JavaScript for impatient programmers. Numbers</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/math</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/math</guid>
+            <link>https://vovanr.github.io/posts/math</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/math</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Thu, 24 Jan 2019 00:00:00 GMT</pubDate>
         </item>
@@ -231,8 +231,8 @@ sign    significand |<span class="hljs-string">
 <li><a href="https://github.com/VovanR/working-bookmarklets">Исходный код букмарклета</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/jira-issue-info-bookmarklet</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/jira-issue-info-bookmarklet</guid>
+            <link>https://vovanr.github.io/posts/jira-issue-info-bookmarklet</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/jira-issue-info-bookmarklet</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Wed, 31 Oct 2018 00:00:00 GMT</pubDate>
         </item>
@@ -380,8 +380,8 @@ sign    significand |<span class="hljs-string">
 <li><a href="https://ru.hexlet.io/blog/posts/naming-errors-1">Ошибки именования в программировании I</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/variable-naming</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/variable-naming</guid>
+            <link>https://vovanr.github.io/posts/variable-naming</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/variable-naming</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 10 Sep 2018 00:00:00 GMT</pubDate>
         </item>
@@ -426,8 +426,8 @@ sign    significand |<span class="hljs-string">
 <li><a href="https://github.com/VovanR/vovanr-project-logos">vovanr-project-logos</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/create-project-logo</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/create-project-logo</guid>
+            <link>https://vovanr.github.io/posts/create-project-logo</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/create-project-logo</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Thu, 06 Sep 2018 00:00:00 GMT</pubDate>
         </item>
@@ -481,8 +481,8 @@ caused \\\"not a directory\\\"\"": unknown: Are you trying to mount a directory 
 <li><a href="https://docs.docker.com/get-started/part2/">Get Started, Part 2: Containers</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/win7-docker-git-bash</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/win7-docker-git-bash</guid>
+            <link>https://vovanr.github.io/posts/win7-docker-git-bash</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/win7-docker-git-bash</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Mon, 21 May 2018 00:00:00 GMT</pubDate>
         </item>
@@ -570,8 +570,8 @@ deploy:
 <li><a href="https://github.com/VovanR/VovanR.github.io/blob/02bba9784ecc73d5454e8be1df8947119858134a/.travis.yml">https://github.com/VovanR/VovanR.github.io/blob/02bba9784ecc73d5454e8be1df8947119858134a/.travis.yml</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/deploy-gh-pages-with-travis-ci</guid>
+            <link>https://vovanr.github.io/posts/deploy-gh-pages-with-travis-ci</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/deploy-gh-pages-with-travis-ci</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 15 May 2018 00:00:00 GMT</pubDate>
         </item>
@@ -602,8 +602,8 @@ deploy:
 });</code></pre>
 <p>Это упрощает рефакторинг и беглый парсинг взглядом.</p>
 ]]></description>
-            <link>https://vovanr.com/posts/requirejs-module-dependencies</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/requirejs-module-dependencies</guid>
+            <link>https://vovanr.github.io/posts/requirejs-module-dependencies</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/requirejs-module-dependencies</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Sun, 17 May 2015 00:00:00 GMT</pubDate>
         </item>
@@ -629,8 +629,8 @@ deploy:
 <li><a href="//habrahabr.ru/post/150001/">Обзор инструментов для визуального сравнения и разрешения конфликтов слияния</a></li>
 </ul>
 ]]></description>
-            <link>https://vovanr.com/posts/ubuntu-diff-folders-and-files</link>
-            <guid isPermaLink="true">https://vovanr.com/posts/ubuntu-diff-folders-and-files</guid>
+            <link>https://vovanr.github.io/posts/ubuntu-diff-folders-and-files</link>
+            <guid isPermaLink="true">https://vovanr.github.io/posts/ubuntu-diff-folders-and-files</guid>
             <dc:creator><![CDATA[Vladimir Rodkin]]></dc:creator>
             <pubDate>Tue, 23 Dec 2014 00:00:00 GMT</pubDate>
         </item>
